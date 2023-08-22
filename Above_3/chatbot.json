@@ -1,0 +1,98 @@
+{
+    "hundreds_word": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "articualtion": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "answer_with_sentences": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "wh_questions": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "pronouns": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "sentence_repetition": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "conplete_snetences": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "function_for_objects": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "matching": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "know_color": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "compare": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "wrong_answer": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    }
+}
