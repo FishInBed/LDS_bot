@@ -1,0 +1,58 @@
+{
+    "self_talking": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "articulation": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "describe_story_or_things": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "disfluent": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "can_not_follow_directions": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "7_digits": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    },
+    "say_4_colors": {
+        "prompt": {
+            "system": "你是一個繁體中文助理。",
+            "assistant": "",
+            "user": "擬定5句回覆「{{UTTERANCE}}」的句子。"
+        },
+        "document": []
+    }
+}
