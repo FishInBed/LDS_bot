@@ -56,6 +56,7 @@ try:
     from intent import Loki_congenital_disease
     from intent import Loki_genetic_disease
     from intent import Loki_hospitalized
+    from intent import Loki_yes_no
 
 except:
     from .intent import Loki_age
@@ -65,6 +66,7 @@ except:
     from .intent import Loki_congenital_disease
     from .intent import Loki_genetic_disease
     from .intent import Loki_hospitalized
+    from .intent import Loki_yes_no
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -221,6 +223,10 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # hospitalized
                 if lokiRst.getIntent(index, resultIndex) == "hospitalized":
                     resultDICT = Loki_hospitalized.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
+                # yes_no
+                if lokiRst.getIntent(index, resultIndex) == "yes_no":
+                    resultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
