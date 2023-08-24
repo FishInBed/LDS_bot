@@ -18,6 +18,11 @@
 from random import sample
 import json
 import os
+import re
+from ArticutAPI import Articut
+
+account_info = json.load(open(os.path.join(os.path.dirname(__file__), "../account.info"), encoding="utf-8"))
+articut = Articut(account_info["username"], account_info["api_key"])
 
 DEBUG_weight = True
 CHATBOT_MODE = True
@@ -52,7 +57,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[3000公克]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            split_num = re.sub("公?[克斤]|[Kk]?[Gg]", "", args[0])
+            split_measure = re.search("公?[克斤]|[Kk]?[Gg]", args[0])
+            num = articut(split_num, level = "lv3")["number"][split_num]
+            if split_measure in ["公斤", "斤", "KG", "Kg", "kg", "kG"]:
+                weight = num*1000
+            else:
+                weight = num
+            if weight < 3000:
+                resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
