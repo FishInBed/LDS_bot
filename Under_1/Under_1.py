@@ -49,32 +49,34 @@ import math
 import os
 import re
 try:
-    from intent import Loki_different_sounds
+    from intent import Loki_yes_no
     from intent import Loki_play_sounds
+    from intent import Loki_combined_sounds
+    from intent import Loki_look_at_face
+    from intent import Loki_understand_no
+    from intent import Loki_laughing
+    from intent import Loki_different_sounds
     from intent import Loki_eye_contact
     from intent import Loki_quiet
     from intent import Loki_cooing
-    from intent import Loki_combined_sounds
-    from intent import Loki_look_at_face
-    from intent import Loki_laghing
     from intent import Loki_find_dropped_objects
     from intent import Loki_play_with_adults
     from intent import Loki_understand_their_own_name
-    from intent import Loki_understand_no
     from intent import Loki_family_and_stangers
 except:
-    from .intent import Loki_different_sounds
+    from .intent import Loki_yes_no
     from .intent import Loki_play_sounds
+    from .intent import Loki_combined_sounds
+    from .intent import Loki_look_at_face
+    from .intent import Loki_understand_no
+    from .intent import Loki_laughing
+    from .intent import Loki_different_sounds
     from .intent import Loki_eye_contact
     from .intent import Loki_quiet
     from .intent import Loki_cooing
-    from .intent import Loki_combined_sounds
-    from .intent import Loki_look_at_face
-    from .intent import Loki_laghing
     from .intent import Loki_find_dropped_objects
     from .intent import Loki_play_with_adults
     from .intent import Loki_understand_their_own_name
-    from .intent import Loki_understand_no
     from .intent import Loki_family_and_stangers
 
 
@@ -205,13 +207,33 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
         for index, key in enumerate(inputLIST):
             lokiResultDICT = {}
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # different_sounds
-                if lokiRst.getIntent(index, resultIndex) == "different_sounds":
-                    lokiResultDICT = Loki_different_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+                # yes_no
+                if lokiRst.getIntent(index, resultIndex) == "yes_no":
+                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # play_sounds
                 if lokiRst.getIntent(index, resultIndex) == "play_sounds":
                     lokiResultDICT = Loki_play_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # combined_sounds
+                if lokiRst.getIntent(index, resultIndex) == "combined_sounds":
+                    lokiResultDICT = Loki_combined_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # look_at_face
+                if lokiRst.getIntent(index, resultIndex) == "look_at_face":
+                    lokiResultDICT = Loki_look_at_face.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # understand_no
+                if lokiRst.getIntent(index, resultIndex) == "understand_no":
+                    lokiResultDICT = Loki_understand_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # laughing
+                if lokiRst.getIntent(index, resultIndex) == "laughing":
+                    lokiResultDICT = Loki_laughing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # different_sounds
+                if lokiRst.getIntent(index, resultIndex) == "different_sounds":
+                    lokiResultDICT = Loki_different_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # eye_contact
                 if lokiRst.getIntent(index, resultIndex) == "eye_contact":
@@ -225,18 +247,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "cooing":
                     lokiResultDICT = Loki_cooing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # combined_sounds
-                if lokiRst.getIntent(index, resultIndex) == "combined_sounds":
-                    lokiResultDICT = Loki_combined_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # look_at_face
-                if lokiRst.getIntent(index, resultIndex) == "look_at_face":
-                    lokiResultDICT = Loki_look_at_face.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # laghing
-                if lokiRst.getIntent(index, resultIndex) == "laghing":
-                    lokiResultDICT = Loki_laghing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # find_dropped_objects
                 if lokiRst.getIntent(index, resultIndex) == "find_dropped_objects":
                     lokiResultDICT = Loki_find_dropped_objects.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -248,10 +258,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # understand_their_own_name
                 if lokiRst.getIntent(index, resultIndex) == "understand_their_own_name":
                     lokiResultDICT = Loki_understand_their_own_name.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # understand_no
-                if lokiRst.getIntent(index, resultIndex) == "understand_no":
-                    lokiResultDICT = Loki_understand_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # family_and_stangers
                 if lokiRst.getIntent(index, resultIndex) == "family_and_stangers":
@@ -331,16 +337,46 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # different_sounds
-    print("[TEST] different_sounds")
-    inputLIST = ['會','不多','不常','不會','偶爾','常常','很多','很少','不一定','不太會','有時候','看心情','不太確定']
-    testLoki(inputLIST, ['different_sounds'])
+    # yes_no
+    print("[TEST] yes_no")
+    inputLIST = ['對','是','會','不是','不會','可以','不可以']
+    testLoki(inputLIST, ['yes_no'])
     print("")
 
     # play_sounds
     print("[TEST] play_sounds")
     inputLIST = ['會','不多','不常','不會','偶爾','常常','很多','很少','不一定','不太會','有時候','看心情','不太確定','會但聲音都很像','不太會而且聲音很少','會但聲音沒什麼變化']
     testLoki(inputLIST, ['play_sounds'])
+    print("")
+
+    # combined_sounds
+    print("[TEST] combined_sounds")
+    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很多','很少','不一定','不太會','很少見','有時候','沒聽過','沒辦法','看心情','不太確定','會但不多','可以但不多','只聽過一兩次','可以但沒那麼多種']
+    testLoki(inputLIST, ['combined_sounds'])
+    print("")
+
+    # look_at_face
+    print("[TEST] look_at_face")
+    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','只看過一兩次']
+    testLoki(inputLIST, ['look_at_face'])
+    print("")
+
+    # understand_no
+    print("[TEST] understand_no")
+    inputLIST = ['是','會','不常','不會','不行','偶爾','可以','常常','總是','不一定','不太會','有時候','看心情','不太理人','不太確定','會但不多','會但不常','並不會每次','沒什麼反應','玩自己的不理人','玩自己的沒反應']
+    testLoki(inputLIST, ['understand_no'])
+    print("")
+
+    # laughing
+    print("[TEST] laughing")
+    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','總是','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','可以但不常','只看過一兩次']
+    testLoki(inputLIST, ['laughing'])
+    print("")
+
+    # different_sounds
+    print("[TEST] different_sounds")
+    inputLIST = ['會','不多','不常','不會','偶爾','常常','很多','很少','不一定','不太會','有時候','看心情','不太確定']
+    testLoki(inputLIST, ['different_sounds'])
     print("")
 
     # eye_contact
@@ -361,24 +397,6 @@ def testIntent():
     testLoki(inputLIST, ['cooing'])
     print("")
 
-    # combined_sounds
-    print("[TEST] combined_sounds")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很多','很少','不一定','不太會','很少見','有時候','沒聽過','沒辦法','看心情','不太確定','會但不多','可以但不多','只聽過一兩次','可以但沒那麼多種']
-    testLoki(inputLIST, ['combined_sounds'])
-    print("")
-
-    # look_at_face
-    print("[TEST] look_at_face")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','只看過一兩次']
-    testLoki(inputLIST, ['look_at_face'])
-    print("")
-
-    # laghing
-    print("[TEST] laghing")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','總是','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','可以但不常','只看過一兩次']
-    testLoki(inputLIST, ['laghing'])
-    print("")
-
     # find_dropped_objects
     print("[TEST] find_dropped_objects")
     inputLIST = ['會','不常','不會','偶爾','可以','常常','很少','總是','不一定','不太會','很少見','有時候','看心情','不太確定','會但不常','並不會每次','要看是什麼','只看過一兩次','要看是什麼樣的東西']
@@ -395,12 +413,6 @@ def testIntent():
     print("[TEST] understand_their_own_name")
     inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','很少','總是','不一定','不太會','不理人','很少見','有時候','沒辦法','看心情','不太確定','會但不常','並不會每次','可以但不常','沒什麼反應','只看過一兩次','小孩不太理人']
     testLoki(inputLIST, ['understand_their_own_name'])
-    print("")
-
-    # understand_no
-    print("[TEST] understand_no")
-    inputLIST = ['是','會','不常','不會','不行','偶爾','可以','常常','總是','不一定','不太會','有時候','看心情','不太理人','不太確定','會但不多','會但不常','並不會每次','沒什麼反應','玩自己的不理人','玩自己的沒反應']
-    testLoki(inputLIST, ['understand_no'])
     print("")
 
     # family_and_stangers
@@ -424,3 +436,4 @@ if __name__ == "__main__":
     resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
     resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
     resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    
