@@ -52,28 +52,28 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "不是早產":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["ten_month"] = True
         else:
             # write your code here
             pass
 
     if utterance == "是足月":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["ten_month"] = True
         else:
             # write your code here
             pass
 
     if utterance == "有早產":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["ten_month"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒有足月":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["ten_month"] = False
         else:
             # write your code here
             pass
