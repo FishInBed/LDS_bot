@@ -16,9 +16,12 @@
 """
 
 from random import sample
+from ArticutAPI import Articut
 import json
 import os
 
+account_info = json.load(open(os.path.join(os.path.dirname(__file__), "../account.info"), encoding="utf-8"))
+articut = Articut(account_info["username"], account_info["api_key"])
 DEBUG_age = True
 CHATBOT_MODE = True
 
@@ -53,6 +56,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[1]歲":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["age_year"] = articut.parse(args[0], level="lv3")["number"][args[0]]
         else:
             # write your code here
             pass
@@ -60,13 +64,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[1]歲[2]個月":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["age_year"] = articut.parse(args[0], level="lv3")["number"][args[0]]
+            resultDICT["age_month"] = articut.parse(args[1], level="lv3")["number"][args[1]]
         else:
-            # write your code here
             pass
 
     if utterance == "[1]足歲":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["age_year"] = articut.parse(args[0], level="lv3")["number"][args[0]]
         else:
             # write your code here
             pass
@@ -74,13 +80,34 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[1]足歲[2]個月":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["age_year"] = articut.parse(args[0], level="lv3")["number"][args[0]]
+            resultDICT["age_month"] = articut.parse(args[1], level="lv3")["number"][args[1]]
         else:
             # write your code here
             pass
 
     if utterance == "虛歲[1]歲":
         if CHATBOT_MODE:
+            num = articut.parse(args[0], level="lv3")["number"][args[0]]
+            if num == 1:
+                resultDICT["response"] = "那孩子現在幾個月大了呢？"
+            else:
+                resultDICT["age_year"] = num-1
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[2]個月":
+        if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+            month = articut.parse(args[0], level="lv3")["number"][args[0]]
+            if month == 12:
+                resultDICT["age_year"] = 1
+            elif month < 12:
+                resultDICT["age_month"] = month
+            else:
+                resultDICT["age_year"] = month // 12
+                resultDICT["age_month"] = month % 12
         else:
             # write your code here
             pass
