@@ -48,11 +48,54 @@ def getResponse(utterance, args):
 
     return resultSTR
 
+disease = ["唐氏症", "小胖威利症", "唇裂", "腭裂", "顎裂", "唇腭裂", "唇顎裂", "小兒症", "聽損", "甲狀腺功能低下", "先天性心臟病", "水腦症", "脊柱裂", "小腦症", "腦出血", "腦部缺氧性病變", "腦部感染", "中樞神經感染", "癩癎", "腦瘤"]
+
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[唇顎裂]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[我][兒子]有[唇顎裂]":
+        if CHATBOT_MODE:
+            if args[2] in disease:
+                resultDICT["cogenital_disease"] = args[2]
+        else:
+            # write your code here
+            pass
+
+    if utterance == "出生就[腦出血]":
+        if CHATBOT_MODE:
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
+        else:
+            # write your code here
+            pass
+
+    if utterance == "出生就確診[唇顎裂]":
+        if CHATBOT_MODE:
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
+        else:
+            # write your code here
+            pass
+
+    if utterance == "出生就被診斷有[唇顎裂]":
+        if CHATBOT_MODE:
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
+        else:
+            # write your code here
+            pass
+
+    if utterance == "我家小孩有[唇顎裂]":
+        if CHATBOT_MODE:
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
         else:
             # write your code here
             pass
