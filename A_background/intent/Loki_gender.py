@@ -20,7 +20,7 @@ import json
 import os
 
 DEBUG_gender = True
-CHATBOT_MODE = False
+CHATBOT_MODE = True
 
 userDefinedDICT = {}
 try:
@@ -52,14 +52,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "兒子":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["gender"] = "M"
         else:
             # write your code here
             pass
 
     if utterance == "女生":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["gender"] = "F"
         else:
             # write your code here
             pass
