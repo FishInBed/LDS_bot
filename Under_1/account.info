@@ -1,5 +1,6 @@
 {
     "username": "",
     "api_key": "",
-    "loki_key": ""
+    "loki_key": "",
+    "discord_token": ""
 }
