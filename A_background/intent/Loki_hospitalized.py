@@ -52,28 +52,28 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "因為[黃疸]住過院":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["hospitalized"] = True
         else:
             # write your code here
             pass
 
     if utterance == "因為[黃疸]住院過":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["hospitalized"] = True
         else:
             # write your code here
             pass
 
     if utterance == "曾經住過院":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["hospitalized"] = True
         else:
             # write your code here
             pass
 
     if utterance == "曾經住院過":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["hospitalized"] = True
         else:
             # write your code here
             pass
