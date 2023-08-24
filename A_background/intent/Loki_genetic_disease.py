@@ -49,7 +49,7 @@ def getResponse(utterance, args):
     return resultSTR
 
 disease = ["聽損", "視障", "視覺障礙", "自閉", "自閉症", "智能不足", "精神疾病"]
-relative = open("third_degree_relative.txt", encoding="utf-8").read().split("\n")
+relative = open("A_background/third_degree_relative.txt", encoding="utf-8").read().split("\n")
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
