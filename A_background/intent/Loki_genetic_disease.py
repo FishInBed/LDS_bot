@@ -48,11 +48,50 @@ def getResponse(utterance, args):
 
     return resultSTR
 
+disease = ["聽損", "視障", "視覺障礙", "自閉", "自閉症", "智能不足", "精神疾病"]
+relative = open("third_degree_relative.txt", encoding="utf-8").read().split("\n")
+
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[自閉]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if args[0] in disease :
+                resultDICT["genetic_disease"] = args[0]
+                resultDICT["response"] = "有{}的是哪位親戚呢？".format(args[0])
+            else:
+                resultDICT["genetic_disease"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[爸爸][自閉]":
+        if CHATBOT_MODE:
+            if args[1] in disease and args[0] != "":
+                if args[0] in relative:
+                    resultDICT["genetic_disease"] = True
+                else:
+                    resultDICT["genetic_disease"] = False
+            elif args[1] in disease and args[0] == "":
+                resultDICT["genetic_disease"] = args[1]
+                resultDICT["response"] = "有{}的是孩子的哪位親戚呢？".format(args[1])
+            else:
+                resultDICT["genetic_disease"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[爸爸]有[自閉]":
+        if CHATBOT_MODE:
+            if args[1] in disease and args[0] != "":
+                if args[0] in relative:
+                    resultDICT["genetic_disease"] = True
+                else:
+                    resultDICT["genetic_disease"] = False
+            elif args[1] in disease and args[0] == "":
+                resultDICT["genetic_disease"] = args[1]
+                resultDICT["response"] = "有{}的是孩子的哪位親戚呢？".format(args[1])
+            else:
+                resultDICT["genetic_disease"] = False
         else:
             # write your code here
             pass
