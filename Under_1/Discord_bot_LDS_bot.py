@@ -37,7 +37,11 @@ class BotClient(discord.Client):
     async def on_ready(self):
         # ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
-                             "latestQuest": ""
+                             "latestQuest": "",
+                             "age":None, 
+                             "gender":None,
+                             "sibling":None,
+                             "3c":None
         }
         self.mscDICT = { #userid:templateDICT
         }
@@ -49,13 +53,14 @@ class BotClient(discord.Client):
         # 如果訊息來自 bot 自己，就不要處理，直接回覆 None。不然會 Bot 會自問自答個不停。
         if message.author == self.user: #bot不會回自己
             return None
-
+        print(message)
         logging.debug("收到來自 {} 的訊息".format(message.author))
         logging.debug("訊息內容是 {}。".format(message.content))
         if self.user.mentioned_in(message):
             replySTR = "我是預設的回應字串…你會看到我這串字，肯定是出了什麼錯！"
             logging.debug("本 bot 被叫到了！")
-            msgSTR = message.content.replace("<@{}> ".format(self.user.id), "").strip()
+            #msgSTR = message.content.replace("<@{}> ".format(self.user.id), "").strip()
+            msgSTR = re.sub("<@\d+>\s?", "", message.content).strip()
             logging.debug("人類說：{}".format(msgSTR))
             if msgSTR == "ping":
                 replySTR = "pong"
@@ -69,15 +74,15 @@ class BotClient(discord.Client):
                     timeDIFF = datetime.now() - self.mscDICT[message.author.id]["updatetime"]
                     #有講過話，但與上次差超過 5 分鐘(視為沒有講過話，刷新template)
                     if timeDIFF.total_seconds() >= 300:
-                        self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
+                        self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
                         replySTR = "嗨嗨，我們好像見過面，但卓騰的隱私政策不允許我記得你的資料，抱歉！" #可以自修改回應內容
                     #有講過話，而且還沒超過5分鐘就又跟我 hello (就繼續上次的對話)
                     else:
-                        replySTR = self.mscDICT[message.author.id]["latestQuest"]
+                        replySTR = self.mscDICT[str(message.author.id)+":"+str(message.author)]["latestQuest"]
                 #沒有講過話(給他一個新的template)
                 else:
-                    self.mscDICT[message.author.id] = self.resetMSCwith(message.author.id)
-                    replySTR = msgSTR.title()
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
+                    replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解小朋友的語言發展狀況。請問小朋友現在幾歲呢？"
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
@@ -85,7 +90,8 @@ class BotClient(discord.Client):
                 resultDICT = getLokiResult(msgSTR)
                 logging.debug("######\nLoki 處理結果如下：")
                 logging.debug(resultDICT)
-                replySTR = resultDICT["response"]
+                replySTR = resultDICT["response"][0]
+            pprint(self.mscDICT)
             await message.reply(replySTR)
 
 
