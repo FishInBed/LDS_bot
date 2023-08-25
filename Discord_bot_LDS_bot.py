@@ -8,7 +8,15 @@ import re
 from datetime import datetime
 from pprint import pprint
 
-from Under_1 import runLoki
+from A_background.A_background import execLoki as background_execLoki
+from B_environment.B_environment import execLoki as environment_execLoki
+from C_behavior.Under_1.Under_1 import execLoki as under1_execLoki
+from C_behavior.Above_1.Above_1 import execLoki as above1_execLoki
+from C_behavior.Above_2.Above_2 import execLoki as above2_execLoki
+from C_behavior.Above_3.Above_3 import execLoki as above3_execLoki
+from C_behavior.Above_4.Above_4 import execLoki as above4_execLoki
+from C_behavior.Above_5.Above_5 import execLoki as above5_execLoki
+from C_behavior.Above_6.Above_6 import execLoki as above6_execLoki
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -16,11 +24,29 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
-def getLokiResult(inputSTR):
+def getLokiResult(context, inputSTR, filterList=[]):
     punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
     inputLIST = punctuationPat.sub("\n", inputSTR).split("\n")
-    filterLIST = []
-    resultDICT = runLoki(inputLIST, filterLIST)
+    filterLIST = filterList
+    if context == "background":
+        resultDICT = background_execLoki(inputLIST, filterLIST)
+    elif context == "environment":
+        resultDICT = environment_execLoki(inputLIST, filterLIST)
+    elif context == "under1":
+        resultDICT = under1_execLoki(inputLIST, filterLIST)
+    elif context == "above1":
+        resultDICT = above1_execLoki(inputLIST, filterLIST)
+    elif context == "above2":
+        resultDICT = above2_execLoki(inputLIST, filterLIST)
+    elif context == "above3":
+        resultDICT = above3_execLoki(inputLIST, filterLIST)
+    elif context == "above4":
+        resultDICT = above4_execLoki(inputLIST, filterLIST)
+    elif context == "above5":
+        resultDICT = above5_execLoki(inputLIST, filterLIST)
+    else:
+        resultDICT = above6_execLoki(inputLIST, filterLIST)
+
     logging.debug("Loki Result => {}".format(resultDICT))
     return resultDICT
 
@@ -38,12 +64,43 @@ class BotClient(discord.Client):
         # ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
                              "latestQuest": "",
-                             "age":None, 
-                             "gender":None,
-                             "sibling":None,
-                             "3c":None
+                             "A_background":{
+                                 "age_year":"None",
+                                 "age_month":"None", 
+                                 "gender":"None",
+                                 "ten_month":"None",
+                                 "weight":"None",
+                                 "congenital_disease":"None",
+                                 "hospitalized":"None",
+                                 "gentic_disease":"None",
+                             },
+                             "B_environment":{
+                                 "sibling":"None",
+                                 "carer":"None",
+                                 "school":"None",
+                                 "3c":"None"                                 
+                             },
+                             "C_behavior":{
+                                 "q1":"None",
+                                 "q2":"None",
+                                 "q3":"None",
+                                 "q4":"None",
+                                 "q5":"None",
+                                 "q6":"None",
+                                 "q7":"None",
+                                 "q8":"None",
+                                 "q9":"None",
+                                 "q10":"None",
+                                 "q11":"None",
+                                 "q12":"None",
+                                 "q13":"None",
+                                 "q14":"None"
+                             },
+                             "a":False,
+                             "b":False,
+                             "c":False
         }
-        self.mscDICT = { #userid:templateDICT
+        self.mscDICT = { "userid":self.templateDICT
         }
         # ####################################################################################
         print('Logged on as {} with id {}'.format(self.user, self.user.id))
@@ -75,19 +132,20 @@ class BotClient(discord.Client):
                     #有講過話，但與上次差超過 5 分鐘(視為沒有講過話，刷新template)
                     if timeDIFF.total_seconds() >= 300:
                         self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
-                        replySTR = "嗨嗨，我們好像見過面，但卓騰的隱私政策不允許我記得你的資料，抱歉！" #可以自修改回應內容
+                        replySTR = "嗨嗨，我們好像見過面，但其實我的記憶力跟金魚差不了多少，所以要重新開始問一次喔～" #可以自修改回應內容
                     #有講過話，而且還沒超過5分鐘就又跟我 hello (就繼續上次的對話)
                     else:
                         replySTR = self.mscDICT[str(message.author.id)+":"+str(message.author)]["latestQuest"]
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
-                    replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解小朋友的語言發展狀況。請問小朋友現在幾歲呢？"
+                    replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解孩子的語言發展狀況。在此之前須要先知道一下孩子的基本訊息，請問他現在幾歲呢？"
 
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
-                resultDICT = getLokiResult(msgSTR)
+                if "None" in self.mscDICT[str(message.author.id)+":"+str(message.author)]["A_background"].values():
+                    resultDICT = getLokiResult()
                 logging.debug("######\nLoki 處理結果如下：")
                 logging.debug(resultDICT)
                 replySTR = resultDICT["response"][0]
