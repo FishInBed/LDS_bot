@@ -66,14 +66,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那如果有東西或是玩具掉了，孩子會左顧右盼去找它嗎？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[小孩][很]喜歡跟人玩":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那如果有東西或是玩具掉了，孩子會左顧右盼去找它嗎？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
