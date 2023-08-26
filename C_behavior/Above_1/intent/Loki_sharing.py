@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
@@ -73,21 +74,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[只]看過[一兩][次]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
@@ -115,7 +119,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
@@ -136,28 +141,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "好像沒有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "很少":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "很少見":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "是這樣子呀...那在沒有大人的任何手勢或動作下，孩子是否可以聽懂日常生活中常用的簡單短句呢？例如：媽媽抱抱、喝ㄋㄟㄋㄟ、給我、洗澡了？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass

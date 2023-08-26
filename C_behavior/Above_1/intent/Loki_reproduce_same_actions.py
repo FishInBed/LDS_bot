@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[一直]做[一樣]的動作":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -73,35 +74,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會][一直]重複動作":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會][一直]重覆動作":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -115,42 +121,48 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像沒有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "很少":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "很少見":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，您的孩子會不會把自己喜歡的物品與他人分享呢？例如：會拿玩具給大人看？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
