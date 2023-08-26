@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
@@ -73,7 +74,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
@@ -87,28 +89,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "很多":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "很少":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那接下來想問問當孩子與熟悉的家人相處時，可不可以短暫注視大人呢？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass

@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
@@ -73,21 +74,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[只]看過[一兩][次]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
@@ -101,7 +105,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
@@ -122,7 +127,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外想知道的是...當您與孩子面對面時，孩子會不會注視您的臉，而且會覺得有趣好玩嗎？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass

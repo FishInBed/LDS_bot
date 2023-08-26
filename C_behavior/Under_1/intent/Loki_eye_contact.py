@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -73,21 +74,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[小孩][不太]看人":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -101,14 +105,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -122,7 +128,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "很少見":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass

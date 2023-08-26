@@ -52,7 +52,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -73,42 +74,48 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[只]看過[一兩][次]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[小孩]沒[興趣]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
@@ -122,14 +129,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不喜歡跟[大人]玩":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -150,14 +159,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不跟[大人]玩":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "並不[會]每次":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
@@ -171,14 +182,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "很少見":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問一下，就算是您或其他家人在跟孩子玩的時候，孩子多半是安靜無聲的嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
