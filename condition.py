@@ -139,7 +139,8 @@ def give_advice(context, age, final_data):
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
     return result
 
-def condition_control(data_dict, context, msgSTR):
+def condition_control(dicts, context, msgSTR):
+    data_dict = dicts
     question_amount = {
         "under1":13,
         "above1":7,
@@ -168,13 +169,11 @@ def condition_control(data_dict, context, msgSTR):
         
         # 資料寫入字典
         for key in resultDICT.keys():
-            if key != "response":
-                data_dict[context][key] = resultDICT[key][0]
-        data_dict["response"] = resultDICT["response"][0]
+            data_dict[context][key] = resultDICT[key][0]
         
         # 確認 Part A 資料是否收集完畢
-        if len(get_key_from_value(self.mscDICT[data_dict.keys()[0]][context], "None")) == 0:
-            data_dict[data_dict.keys()[0]]["a"] = True
+        if len(get_key_from_value(data_dict[context], "None")) == 0:
+            data_dict["a"] = True
 
     # Part B 處理
     elif context == "environment":
@@ -189,13 +188,11 @@ def condition_control(data_dict, context, msgSTR):
         
         # 資料寫入字典
         for key in resultDICT.keys():
-            if key != "response":
-                data_dict[data_dict.keys()[0]][context][key] = resultDICT[key][0]
-        data_dict["response"] = resultDICT["response"][0]
+            data_dict[context][key] = resultDICT[key][0]
             
         # 確認 Part B 資料是否收集完畢
-        if len(get_key_from_value(data_dict[data_dict.keys()[0]][context], "None")) == 0:
-            data_dict[data_dict.keys()[0]]["b"] = True
+        if len(get_key_from_value(data_dict[context], "None")) == 0:
+            data_dict["b"] = True
     
     # Part C 處理
     else:
@@ -208,12 +205,11 @@ def condition_control(data_dict, context, msgSTR):
 
         # 資料寫入字典
         for key in resultDICT.keys():
-            if key != "response":
-                data_dict[data_dict.keys()[0]][context][key] = resultDICT[key][0]
+            data_dict[key] = resultDICT[key][0]
         
-        if len(get_key_from_value(data_dict[data_dict.keys()[0]][context], "None")) == 13-amount:
-            data_dict["response"] = give_advice(context, data_dict[data_dict.keys()[0]]["background"]["age"], data_dict[data_dict.keys()[0]])
-            data_dict[data_dict.keys()[0]]["c"] = True
+        if len(get_key_from_value(data_dict[context], "None")) == 13-amount:
+            data_dict["response"] = give_advice(context, data_dict["background"]["age"], data_dict)
+            data_dict["c"] = True
         else:
             data_dict["response"] = resultDICT["response"][0]
 
