@@ -20,7 +20,7 @@ from ArticutAPI import Articut
 import json
 import os
 
-account_info = json.load(open(os.path.join(os.path.dirname(__file__), "../account.info"), encoding="utf-8"))
+account_info = json.load(open("account.info"))
 articut = Articut(account_info["username"], account_info["api_key"])
 DEBUG_age = True
 CHATBOT_MODE = True

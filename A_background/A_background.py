@@ -67,9 +67,9 @@ except:
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
+    accountInfo = json.load(open("account.info"))
     USERNAME = accountInfo["username"]
-    LOKI_KEY = accountInfo["loki_key"]
+    LOKI_KEY = accountInfo["loki_key_background"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -324,13 +324,13 @@ if __name__ == "__main__":
     # testIntent()
 
     # 測試其它句子
-    filterLIST = ["genetic_disease"]
+    filterLIST = ["age"]
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     # 設定參考資料
     refDICT = {
         #"key": []
     }
     # resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("親戚有自閉", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki("1歲", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
     # resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
     print(resultDICT)
