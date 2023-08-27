@@ -17,11 +17,18 @@ from C_behavior.Above_3.Above_3 import execLoki as above3_execLoki
 from C_behavior.Above_4.Above_4 import execLoki as above4_execLoki
 from C_behavior.Above_5.Above_5 import execLoki as above5_execLoki
 from C_behavior.Above_6.Above_6 import execLoki as above6_execLoki
+from condition import condition_control
+from condition import give_advice
 
 logging.basicConfig(level=logging.DEBUG)
 
 
-
+def get_key_from_value(dict, val):
+    for key, value in dict.items():
+        resultList = []
+        if val == value:
+            resultList.append(key)
+    return resultList 
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
 def getLokiResult(context, inputSTR, filterList=[]):
@@ -64,23 +71,18 @@ class BotClient(discord.Client):
         # ################### Multi-Session Conversation :設定多輪對話資訊 ###################
         self.templateDICT = {"updatetime" : None,
                              "latestQuest": "",
-                             "A_background":{
-                                 "age_year":"None",
-                                 "age_month":"None", 
-                                 "gender":"None",
+                             "background":{
+                                 "age":"None",
                                  "ten_month":"None",
                                  "weight":"None",
                                  "congenital_disease":"None",
-                                 "hospitalized":"None",
                                  "gentic_disease":"None",
                              },
-                             "B_environment":{
-                                 "sibling":"None",
-                                 "carer":"None",
+                             "environment":{
                                  "school":"None",
                                  "3c":"None"                                 
                              },
-                             "C_behavior":{
+                             "behavior":{
                                  "q1":"None",
                                  "q2":"None",
                                  "q3":"None",
@@ -93,8 +95,7 @@ class BotClient(discord.Client):
                                  "q10":"None",
                                  "q11":"None",
                                  "q12":"None",
-                                 "q13":"None",
-                                 "q14":"None"
+                                 "q13":"None"
                              },
                              "a":False,
                              "b":False,
@@ -140,15 +141,25 @@ class BotClient(discord.Client):
                 else:
                     self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
                     replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解孩子的語言發展狀況。在此之前須要先知道一下孩子的基本訊息，請問他現在幾歲呢？"
-
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
-                if "None" in self.mscDICT[str(message.author.id)+":"+str(message.author)]["A_background"].values():
-                    resultDICT = getLokiResult()
+                data_dict = self.mscDICT[str(message.author.id)+":"+str(message.author)]
+                
+                if data_dict["a"] == False:
+                    replySTR = condition_control("background")
+                elif data_dict["b"] == False:
+                    replySTR = condition_control("environment")
+                elif data_dict["c"] == False:
+                    age = data_dict["background"]["age"]
+                    if age // 12 == 0:    
+                        target_context = "under1"
+                    else:
+                        target_context = "above" + str(age//12)
+                    replySTR = condition_control(target_context)
+                
                 logging.debug("######\nLoki 處理結果如下：")
-                logging.debug(resultDICT)
-                replySTR = resultDICT["response"][0]
+                # logging.debug(resultDICT)
             pprint(self.mscDICT)
             await message.reply(replySTR)
 
