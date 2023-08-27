@@ -38,8 +38,8 @@ def getLokiResult(context, inputSTR, filterList=[]):
     return resultDICT
 
 def get_key_from_value(dict, val):
+    resultList = []
     for key, value in dict.items():
-        resultList = []
         if val == value:
             resultList.append(key)
     return resultList 
