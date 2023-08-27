@@ -220,7 +220,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "沒聽過":
         if CHATBOT_MODE:
             resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
-            resultDICT["q10"] = 
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
