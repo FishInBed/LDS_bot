@@ -19,16 +19,10 @@ from C_behavior.Above_5.Above_5 import execLoki as above5_execLoki
 from C_behavior.Above_6.Above_6 import execLoki as above6_execLoki
 from condition import condition_control
 from condition import give_advice
+from condition import get_key_from_value
 
 logging.basicConfig(level=logging.DEBUG)
 
-
-def get_key_from_value(dict, val):
-    for key, value in dict.items():
-        resultList = []
-        if val == value:
-            resultList.append(key)
-    return resultList 
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
 def getLokiResult(context, inputSTR, filterList=[]):

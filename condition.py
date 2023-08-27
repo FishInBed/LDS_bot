@@ -1,3 +1,10 @@
+def get_key_from_value(dict, val):
+    for key, value in dict.items():
+        resultList = []
+        if val == value:
+            resultList.append(key)
+    return resultList 
+
 def give_advice(context, age):
     target_age = age
     final_data = self.mscDICT[str(message.author.id)+":"+str(message.author)]
