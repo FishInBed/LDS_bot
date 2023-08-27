@@ -16,14 +16,13 @@
 """
 
 from random import sample
+from ArticutAPI import Articut
 import json
 import os
 import re
-from ArticutAPI import Articut
 
 account_info = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
 articut = Articut(account_info["username"], account_info["api_key"])
-
 DEBUG_weight = True
 CHATBOT_MODE = True
 
@@ -57,9 +56,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[3000公克]":
         if CHATBOT_MODE:
-            split_num = re.sub("公?[克斤]|[Kk]?[Gg]", "", args[0])
             split_measure = re.search("公?[克斤]|[Kk]?[Gg]", args[0])
-            num = articut(split_num, level = "lv3")["number"][split_num]
+            num = articut.parse(args[0], level="lv3")["number"][args[0]]
             if split_measure in ["公斤", "斤", "KG", "Kg", "kg", "kG"]:
                 weight = num*1000
             else:
@@ -68,7 +66,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
                 resultDICT["weight"] = False
                 resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
             else:
-                resultDICT["weight"] = False
+                resultDICT["weight"] = True
                 resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
         else:
             # write your code here

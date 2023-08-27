@@ -169,7 +169,7 @@ def condition_control(dicts, context, msgSTR):
         
         # 資料寫入字典
         for key in resultDICT.keys():
-            data_dict[context][key] = resultDICT[key][0]
+            data_dict[context][key] = resultDICT[key]
         
         # 確認 Part A 資料是否收集完畢
         if len(get_key_from_value(data_dict[context], "None")) == 0:
@@ -198,7 +198,7 @@ def condition_control(dicts, context, msgSTR):
     else:
         # 檢查目前提問進展
         amount = question_amount[context]
-        waiting_question = get_key_from_value(data_dict[context], "None")
+        waiting_question = get_key_from_value(data_dict["behavior"], "None")
 
         # 偵測 intent
         resultDICT = getLokiResult(context, msgSTR, [waiting_question[0], "yes_no"])
@@ -207,11 +207,11 @@ def condition_control(dicts, context, msgSTR):
         for key in resultDICT.keys():
             data_dict[key] = resultDICT[key][0]
         
-        if len(get_key_from_value(data_dict[context], "None")) == 13-amount:
-            data_dict["response"] = give_advice(context, data_dict["background"]["age"], data_dict)
+        if len(get_key_from_value(data_dict["behavior"], "None")) == 13-amount:
+            data_dict["behavior"]["response"] = give_advice(context, data_dict["background"]["age"], data_dict)
             data_dict["c"] = True
         else:
-            data_dict["response"] = resultDICT["response"][0]
+            data_dict["response"] = resultDICT["response"]
 
     return data_dict
 

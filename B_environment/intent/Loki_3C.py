@@ -20,7 +20,7 @@ import json
 import os
 
 DEBUG_3C = True
-CHATBOT_MODE = False
+CHATBOT_MODE = True
 
 userDefinedDICT = {}
 # try:
