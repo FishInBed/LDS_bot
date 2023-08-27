@@ -49,14 +49,10 @@ import math
 import os
 import re
 try:
-    from intent import Loki_siblings
-    from intent import Loki_carer
     from intent import Loki_yes_no
     from intent import Loki_school
     from intent import Loki_3C
 except:
-    from .intent import Loki_siblings
-    from .intent import Loki_carer
     from .intent import Loki_yes_no
     from .intent import Loki_school
     from .intent import Loki_3C
@@ -189,14 +185,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
         for index, key in enumerate(inputLIST):
             lokiResultDICT = {}
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # siblings
-                if lokiRst.getIntent(index, resultIndex) == "siblings":
-                    lokiResultDICT = Loki_siblings.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # carer
-                if lokiRst.getIntent(index, resultIndex) == "carer":
-                    lokiResultDICT = Loki_carer.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # yes_no
                 if lokiRst.getIntent(index, resultIndex) == "yes_no":
                     lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -281,18 +269,6 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # siblings
-    print("[TEST] siblings")
-    inputLIST = ['獨生子','哥哥跟姐姐各一個','一個哥哥跟一個哥哥跟一個哥哥跟一個哥哥']
-    testLoki(inputLIST, ['siblings'])
-    print("")
-
-    # carer
-    print("[TEST] carer")
-    inputLIST = ['保母','媽媽']
-    testLoki(inputLIST, ['carer'])
-    print("")
-
     # yes_no
     print("[TEST] yes_no")
     inputLIST = ['有','沒有']
