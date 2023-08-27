@@ -1,0 +1,238 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "會": {
+            "id": "95cc971c-4d0e-46d5-907c-f5f9400f7a2a",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不多": {
+            "id": "e59b7746-44ef-4435-8b91-03b25c881afb",
+            "argument": [
+                {
+                    "pos": "MODIFIER",
+                    "text": "不多",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不會": {
+            "id": "185f2dbe-d65e-4e0e-b7ba-9e0940662b4d",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "偶爾": {
+            "id": "3784d7ce-b322-4e75-80b1-43d7b1c1756e",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "偶爾",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "很少": {
+            "id": "19464741-4376-42c6-ba04-a03715b251be",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "很少",
+                    "checked": false,
+                    "checkbox": true
+                }
+            ]
+        },
+        "不太會": {
+            "id": "063c1e5d-00d3-416d-b451-517e80fc7a95",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_degreeHead",
+                    "text": "太",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不太行": {
+            "id": "c48da7b6-f507-4c81-8942-33d9b1f2c5bc",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "DegreeP",
+                    "text": "太行",
+                    "checked": false,
+                    "checkbox": true
+                }
+            ]
+        },
+        "會但不多": {
+            "id": "f4178fa3-cbd6-46b1-bea1-8c91c92f058c",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_inter",
+                    "text": "但",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "不多",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "有些可以": {
+            "id": "ff286bd1-a124-4fa4-89d1-3929303a46b4",
+            "argument": [
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "具有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "兼有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "存有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "帶有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "懷有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "持有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "擁有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有了",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有著",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "保留",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "含有",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有同",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "有",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_classifier",
+                    "text": "些",
+                    "checked": true,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

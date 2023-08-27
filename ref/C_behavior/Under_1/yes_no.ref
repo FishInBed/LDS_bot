@@ -1,0 +1,113 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ]
+    },
+    "utterance": {
+        "對": {
+            "id": "5f7db88b-3bb6-4693-a9a8-f3114953b30d",
+            "argument": [
+                {
+                    "pos": "MODIFIER",
+                    "text": "對",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "是": {
+            "id": "28ac2f13-1e7c-45d4-a15c-2a24b63ba285",
+            "argument": [
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "會": {
+            "id": "fe2fc07e-9d7b-4a78-950e-9db0a810f991",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不是": {
+            "id": "66aeceb1-652c-493a-84b1-8a66130660af",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不會": {
+            "id": "aafbafe5-c377-46d3-a3b3-c13fc93b1bf6",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "可以": {
+            "id": "0bcaa871-18bc-4bc9-acd9-277ef8cd208a",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不可以": {
+            "id": "28927796-b0ad-4a23-aa62-9dfe21101246",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

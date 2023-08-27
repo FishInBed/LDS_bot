@@ -1,0 +1,519 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "會": {
+            "id": "c4c3bdbd-e453-4f50-b108-32cdbe6e8ab2",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不常": {
+            "id": "e342969c-0009-416a-bce0-c95b748b4e99",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "不常",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不會": {
+            "id": "0ce097d9-3d25-4f9b-a33a-887a2d257e2b",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不行": {
+            "id": "3cb95ac4-7ec7-4f7f-8c65-adc7602e3419",
+            "argument": [
+                {
+                    "pos": "MODIFIER",
+                    "text": "不行",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "偶爾": {
+            "id": "924f41f4-0c55-499b-bac2-87d555c9ddf9",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "偶爾",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "可以": {
+            "id": "2db594fd-9b8c-40bb-a031-d32d820dbf10",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "很少": {
+            "id": "803010ba-ea70-4096-a9a3-cb93a4f79c81",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "很少",
+                    "checked": false,
+                    "checkbox": true
+                }
+            ]
+        },
+        "不太會": {
+            "id": "70ea31fd-0538-4176-aade-326a4d6dc90b",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_degreeHead",
+                    "text": "太",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "會錯亂": {
+            "id": "c86061f1-d41c-49c9-a4bd-b783b85e3f26",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "失常",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "崩潰",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "亢奮",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "崩壞",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "萎靡",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "錯置",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "緊繃",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "昏沉",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "失調",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "扭曲",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "錯亂",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "有時候": {
+            "id": "dd91fb76-ce0b-4a4e-b999-58789ad1550e",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "有時候",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "沒辦法": {
+            "id": "b6e3f83a-7e61-4022-91a0-b17f262cf929",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "沒",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_nouny",
+                    "text": "辦法",
+                    "checked": false,
+                    "checkbox": true
+                }
+            ]
+        },
+        "還可以": {
+            "id": "b6ed2f0a-82a6-41f1-9ce2-32ccb15feac1",
+            "argument": [
+                {
+                    "pos": "MODIFIER",
+                    "text": "還可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "你我不分": {
+            "id": "710cb6d0-3685-480d-ab76-7b2744b1a5a1",
+            "argument": [
+                {
+                    "pos": "ENTITY_pronoun",
+                    "text": "你",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_pronoun",
+                    "text": "我",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "分成",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "劃分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "細分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "共分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "略分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "概分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "粗分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "分作",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "區分",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "下分",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "分",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "好像不會": {
+            "id": "0d685c3d-3c4a-4074-a180-6c488b944664",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "好像",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "好像可以": {
+            "id": "713d4bff-4f69-4784-9876-4e36f4a31d15",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "好像",
+                    "checked": true,
+                    "checkbox": true
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "可以",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "搞不清楚": {
+            "id": "efcacb3c-7f0e-495d-83de-b2fa2af9ef76",
+            "argument": [
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "亂搞",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞出",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞得",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "吵",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞到",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞成",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "幹了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "得做",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "弄",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "想著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "幹",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "想",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "搞",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "清楚",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "有時會搞錯": {
+            "id": "e198d00f-af45-4f2e-bc28-ca5d87f07644",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "有時",
+                    "checked": true,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "失錯",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "弄錯",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "錯失",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "唸錯",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞砸",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "惹怒",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "搞混",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "記不住",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "抓不到",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "說錯",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "看不懂",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "寫錯",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "搞錯",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

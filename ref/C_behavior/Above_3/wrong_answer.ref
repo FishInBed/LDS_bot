@@ -1,0 +1,223 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {},
+    "utterance": {
+        "對": {
+            "id": "b6db6470-c75c-46e3-a1ac-7a08f711db63",
+            "argument": [
+                {
+                    "pos": "MODIFIER",
+                    "text": "對",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "會": {
+            "id": "6bc02533-2c11-4aab-9518-8ca0f82ba808",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不常": {
+            "id": "34b8066e-6cca-4942-bf35-29ddc754d31e",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "不常",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "不會": {
+            "id": "fe3b1b2f-87ab-4bcf-9ce3-4914be35ac91",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "偶爾": {
+            "id": "f9a3d17f-a5c0-4695-af65-11636798afce",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "偶爾",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "常常": {
+            "id": "51babda4-25ec-4d23-bcfe-fef5a18ce765",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "常常",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "很少": {
+            "id": "2bf05d4f-cb15-4ed8-a612-431765326b06",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "很少",
+                    "checked": false,
+                    "checkbox": true
+                }
+            ]
+        },
+        "不太會": {
+            "id": "33a0ec48-9baa-4017-a433-fa3c687464fd",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_degreeHead",
+                    "text": "太",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "有時候": {
+            "id": "133a8813-fe7d-49ae-8856-699a83a8bb80",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "有時候",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "好像不會": {
+            "id": "00305db0-f44c-4596-98df-efb1df733f65",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "好像",
+                    "checked": false,
+                    "checkbox": true
+                },
+                {
+                    "pos": "FUNC_negation",
+                    "text": "不",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "很常這樣": {
+            "id": "4947fafc-6b1c-41e6-9aad-b1b5388781e4",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "很常",
+                    "checked": true,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_DetPhrase",
+                    "text": "這樣",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "會但不常": {
+            "id": "995ada68-deb9-4879-a793-6a781cba0db7",
+            "argument": [
+                {
+                    "pos": "MODAL",
+                    "text": "會",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_inter",
+                    "text": "但",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "TIME_justtime",
+                    "text": "不常",
+                    "checked": true,
+                    "checkbox": false
+                }
+            ]
+        },
+        "一直都是這樣": {
+            "id": "644854a0-a06e-4978-a717-6e57619632f6",
+            "argument": [
+                {
+                    "pos": "TIME_justtime",
+                    "text": "一直",
+                    "checked": true,
+                    "checkbox": false
+                },
+                {
+                    "pos": "QUANTIFIER",
+                    "text": "都",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_DetPhrase",
+                    "text": "這樣",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
