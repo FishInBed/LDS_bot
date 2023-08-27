@@ -50,22 +50,18 @@ import os
 import re
 try:
     from intent import Loki_age
-    from intent import Loki_gender
     from intent import Loki_ten_month
     from intent import Loki_weight
     from intent import Loki_congenital_disease
     from intent import Loki_genetic_disease
-    from intent import Loki_hospitalized
     from intent import Loki_yes_no
 
 except:
     from .intent import Loki_age
-    from .intent import Loki_gender
     from .intent import Loki_ten_month
     from .intent import Loki_weight
     from .intent import Loki_congenital_disease
     from .intent import Loki_genetic_disease
-    from .intent import Loki_hospitalized
     from .intent import Loki_yes_no
 
 
@@ -200,10 +196,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "age":
                     lokiResultDICT = Loki_age.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # gender
-                if lokiRst.getIntent(index, resultIndex) == "gender":
-                    lokiResultDICT = Loki_gender.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # ten_month
                 if lokiRst.getIntent(index, resultIndex) == "ten_month":
                     lokiResultDICT = Loki_ten_month.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -219,10 +211,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # genetic_disease
                 if lokiRst.getIntent(index, resultIndex) == "genetic_disease":
                     lokiResultDICT = Loki_genetic_disease.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # hospitalized
-                if lokiRst.getIntent(index, resultIndex) == "hospitalized":
-                    resultDICT = Loki_hospitalized.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
                 # yes_no
                 if lokiRst.getIntent(index, resultIndex) == "yes_no":
@@ -304,12 +292,6 @@ def testIntent():
     print("[TEST] age")
     inputLIST = ['1歲','1足歲','虛歲1歲','1歲2個月','1足歲2個月']
     testLoki(inputLIST, ['age'])
-    print("")
-
-    # gender
-    print("[TEST] gender")
-    inputLIST = ['兒子','女生']
-    testLoki(inputLIST, ['gender'])
     print("")
 
     # ten_month
