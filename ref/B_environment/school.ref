@@ -1,0 +1,32 @@
+{
+    "language": "zh-tw",
+    "type": "basic",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ]
+    },
+    "utterance": {
+        "幼兒園": {
+            "id": "37661304-7644-46f1-88bc-f30c1e6ce2be",
+            "argument": [
+                {
+                    "pos": "UserDefined",
+                    "text": "幼兒園",
+                    "checked": true,
+                    "checkbox": true
+                }
+            ]
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}

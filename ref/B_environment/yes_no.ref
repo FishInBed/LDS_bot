@@ -1,0 +1,35 @@
+{
+    "language": "zh-tw",
+    "type": "advance",
+    "version": {
+        "atk": "v265",
+        "intent": "1.0"
+    },
+    "user_defined": {
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ]
+    },
+    "utterance": {
+        "有": {
+            "id": "0ef3c1b2-4939-4067-9c07-13f8493debe8",
+            "pos": "<ACTION_verb>有</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP|AUX|MODIFIER|ModifierP)>有|是|對</(ACTION_verb|VerbP|AUX|MODIFIER|ModifierP)>(<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)>)?"
+        },
+        "沒有": {
+            "id": "68852e76-f4ee-4964-a6e4-1b6e616682d5",
+            "pos": "<FUNC_negation>沒有</FUNC_negation>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation>"
+        }
+    },
+    "alias": {},
+    "prompt": {},
+    "document": []
+}
