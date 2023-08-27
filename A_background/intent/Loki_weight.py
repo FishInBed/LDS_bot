@@ -64,8 +64,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
                 weight = num*1000
             else:
                 weight = num
-            if weight < 3000:
-                resultDICT["response"] = getResponse(utterance, args)
+            if weight < 2500:
+                resultDICT["weight"] = False
+                resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
+            else:
+                resultDICT["weight"] = False
+                resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
         else:
             # write your code here
             pass

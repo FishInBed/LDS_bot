@@ -56,6 +56,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
@@ -64,6 +65,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[2] in disease:
                 resultDICT["cogenital_disease"] = args[2]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
@@ -72,6 +74,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
@@ -80,6 +83,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
@@ -88,6 +92,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
@@ -96,6 +101,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass

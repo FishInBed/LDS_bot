@@ -52,7 +52,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[幼兒園]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if ("幼兒園" in inputSTR or "幼稚園" in inputSTR or "托嬰中心" in inputSTR) and "不" not in inputSTR and "沒" not in inputSTR:
+                resultDICT["school"] = True
+                resultDICT["response"] = "那麼孩子是否每日使用3C產品(包括：手機、平版、電腦、電視)總時間超過2小時呢?"
+            else:
+                resultDICT["school"] = False
+                resultDICT["response"] = "那麼孩子是否每日使用3C產品(包括：手機、平版、電腦、電視)總時間超過2小時呢?"
         else:
             # write your code here
             pass

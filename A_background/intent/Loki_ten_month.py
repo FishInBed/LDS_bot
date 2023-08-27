@@ -52,6 +52,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "不是早產":
         if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
             resultDICT["ten_month"] = True
         else:
             # write your code here
@@ -59,6 +60,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "是足月":
         if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
             resultDICT["ten_month"] = True
         else:
             # write your code here
@@ -66,6 +68,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "有早產":
         if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
             resultDICT["ten_month"] = False
         else:
             # write your code here
@@ -73,6 +76,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒有足月":
         if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
             resultDICT["ten_month"] = False
         else:
             # write your code here
