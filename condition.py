@@ -1,3 +1,5 @@
+from Discord_bot_LDS_bot import getLokiResult
+
 def get_key_from_value(dict, val):
     for key, value in dict.items():
         resultList = []
@@ -5,9 +7,8 @@ def get_key_from_value(dict, val):
             resultList.append(key)
     return resultList 
 
-def give_advice(context, age):
+def give_advice(context, age, final_data):
     target_age = age
-    final_data = self.mscDICT[str(message.author.id)+":"+str(message.author)]
     accpetance = len(get_key_from_value(final_data[context], True))
     if target_age//12 == 0:
         if accpetance >= 10:
@@ -99,8 +100,9 @@ def give_advice(context, age):
                 result = "您可以再觀察一到兩個月，若孩子的語言表現無明顯變化則建議您或照顧者可帶孩子至醫療院所接受完整評估。"
         else :
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
+    return result
 
-def condition_control(context):
+def condition_control(data_dict, context, msgSTR):
     question_amount = {
         "under1":13,
         "above1":7,
@@ -130,12 +132,12 @@ def condition_control(context):
         # 資料寫入字典
         for key in resultDICT.keys():
             if key != "response":
-                self.mscDICT[str(message.author.id)+":"+str(message.author)][context][key] = resultDICT[key][0]
+                self.mscDICT[data_dict.keys()[0]][context][key] = resultDICT[key][0]
         replySTR = resultDICT["response"][0]
         
         # 確認 Part A 資料是否收集完畢
-        if len(get_key_from_value(self.mscDICT[str(message.author.id)+":"+str(message.author)][context], "None")) == 0:
-            self.mscDICT[str(message.author.id)+":"+str(message.author)]["a"] = True
+        if len(get_key_from_value(self.mscDICT[data_dict.keys()[0]][context], "None")) == 0:
+            self.mscDICT[data_dict.keys()[0]]["a"] = True
 
     # Part B 處理
     elif context == "environment":
@@ -151,12 +153,12 @@ def condition_control(context):
         # 資料寫入字典
         for key in resultDICT.keys():
             if key != "response":
-                self.mscDICT[str(message.author.id)+":"+str(message.author)][context][key] = resultDICT[key][0]
+                self.mscDICT[data_dict.keys()[0]][context][key] = resultDICT[key][0]
         replySTR = resultDICT["response"][0]
             
         # 確認 Part B 資料是否收集完畢
-        if len(get_key_from_value(self.mscDICT[str(message.author.id)+":"+str(message.author)][context], "None")) == 0:
-            self.mscDICT[str(message.author.id)+":"+str(message.author)]["b"] = True
+        if len(get_key_from_value(self.mscDICT[data_dict.keys()[0]][context], "None")) == 0:
+            self.mscDICT[data_dict.keys()[0]]["b"] = True
     
     # Part C 處理
     else:
@@ -170,11 +172,11 @@ def condition_control(context):
         # 資料寫入字典
         for key in resultDICT.keys():
             if key != "response":
-                self.mscDICT[str(message.author.id)+":"+str(message.author)][context][key] = resultDICT[key][0]
+                self.mscDICT[data_dict.keys()[0]][context][key] = resultDICT[key][0]
         
-        if len(get_key_from_value(self.mscDICT[str(message.author.id)+":"+str(message.author)][context], "None")) == 13-amount:
-            replySTR = give_advice(context, self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"]["age"])
-            self.mscDICT[str(message.author.id)+":"+str(message.author)]["c"] = True
+        if len(get_key_from_value(self.mscDICT[data_dict.keys()[0]][context], "None")) == 13-amount:
+            replySTR = give_advice(context, self.mscDICT[data_dict.keys()[0]]["background"]["age"], self.mscDICT[data_dict.keys()[0]])
+            self.mscDICT[data_dict.keys()[0]]["c"] = True
         else:
             replySTR = resultDICT["response"][0]
 

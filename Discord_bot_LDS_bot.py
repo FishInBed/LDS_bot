@@ -141,16 +141,16 @@ class BotClient(discord.Client):
                 data_dict = self.mscDICT[str(message.author.id)+":"+str(message.author)]
                 
                 if data_dict["a"] == False:
-                    replySTR = condition_control("background")
+                    replySTR = condition_control(data_dict, "background", msgSTR)
                 elif data_dict["b"] == False:
-                    replySTR = condition_control("environment")
+                    replySTR = condition_control(data_dict, "environment", msgSTR)
                 elif data_dict["c"] == False:
                     age = data_dict["background"]["age"]
                     if age // 12 == 0:    
                         target_context = "under1"
                     else:
                         target_context = "above" + str(age//12)
-                    replySTR = condition_control(target_context)
+                    replySTR = condition_control(data_dict, target_context, msgSTR)
                 
                 logging.debug("######\nLoki 處理結果如下：")
                 # logging.debug(resultDICT)
