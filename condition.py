@@ -1,5 +1,3 @@
-from Discord_bot_LDS_bot import getLokiResult
-
 def get_key_from_value(dict, val):
     for key, value in dict.items():
         resultList = []
