@@ -1,3 +1,42 @@
+import logging
+import re
+from A_background.A_background import execLoki as background_execLoki
+from B_environment.B_environment import execLoki as environment_execLoki
+from C_behavior.Under_1.Under_1 import execLoki as under1_execLoki
+from C_behavior.Above_1.Above_1 import execLoki as above1_execLoki
+from C_behavior.Above_2.Above_2 import execLoki as above2_execLoki
+from C_behavior.Above_3.Above_3 import execLoki as above3_execLoki
+from C_behavior.Above_4.Above_4 import execLoki as above4_execLoki
+from C_behavior.Above_5.Above_5 import execLoki as above5_execLoki
+from C_behavior.Above_6.Above_6 import execLoki as above6_execLoki
+
+punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
+def getLokiResult(context, inputSTR, filterList=[]):
+    punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
+    inputLIST = punctuationPat.sub("\n", inputSTR).split("\n")
+    filterLIST = filterList
+    if context == "background":
+        resultDICT = background_execLoki(inputLIST, filterLIST)
+    elif context == "environment":
+        resultDICT = environment_execLoki(inputLIST, filterLIST)
+    elif context == "under1":
+        resultDICT = under1_execLoki(inputLIST, filterLIST)
+    elif context == "above1":
+        resultDICT = above1_execLoki(inputLIST, filterLIST)
+    elif context == "above2":
+        resultDICT = above2_execLoki(inputLIST, filterLIST)
+    elif context == "above3":
+        resultDICT = above3_execLoki(inputLIST, filterLIST)
+    elif context == "above4":
+        resultDICT = above4_execLoki(inputLIST, filterLIST)
+    elif context == "above5":
+        resultDICT = above5_execLoki(inputLIST, filterLIST)
+    else:
+        resultDICT = above6_execLoki(inputLIST, filterLIST)
+
+    logging.debug("Loki Result => {}".format(resultDICT))
+    return resultDICT
+
 def get_key_from_value(dict, val):
     for key, value in dict.items():
         resultList = []
