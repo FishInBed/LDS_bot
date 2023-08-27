@@ -52,33 +52,37 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[好像]不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[對]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[常常][這樣]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[有時候]不聽":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "不[一樣]":
+    if utterance == "不[一定]":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -87,21 +91,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會][這樣]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "就是[這樣]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "是":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，在沒有任何的提示或示範下，孩子能不能正確指出圖片中的一項物品或照片中的一位人物呢？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass

@@ -73,21 +73,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[只]看過[一兩][次]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[只]聽過[一兩][次]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
@@ -108,28 +111,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[都][只]用指的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都]用叫的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都]用哭的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都]用指的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -143,7 +150,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -157,28 +165,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "不說話":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "並不[會]每次":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "好像沒有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -199,21 +211,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒聽過":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = 
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -227,7 +242,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "算有哦":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那...目前孩子是不是可說出至少十個語詞啊？例如：用「汪汪」指稱小狗、常用稱謂(媽媽、爸爸、阿嬤)、抱？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass

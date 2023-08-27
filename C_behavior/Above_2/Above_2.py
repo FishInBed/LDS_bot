@@ -49,31 +49,31 @@ import math
 import os
 import re
 try:
+    from intent import Loki_100_words
+    from intent import Loki_4_body_parts
+    from intent import Loki_two_steps_directions
+    from intent import Loki_reading_books
+    from intent import Loki_not_listen
     from intent import Loki_ten_words
     from intent import Loki_imitate_and_say
     from intent import Loki_gesture
     from intent import Loki_say_with_gestures
-    from intent import Loki_100_words
     from intent import Loki_combined_words
     from intent import Loki_point_pictures
-    from intent import Loki_4_body_parts
     from intent import Loki_imitate_and_act
-    from intent import Loki_two_steps_directions
-    from intent import Loki_not_listen
-    from intent import Loki_reading_books
 except:
+    from .intent import Loki_100_words
+    from .intent import Loki_4_body_parts
+    from .intent import Loki_two_steps_directions
+    from .intent import Loki_reading_books
+    from .intent import Loki_not_listen
     from .intent import Loki_ten_words
     from .intent import Loki_imitate_and_say
     from .intent import Loki_gesture
     from .intent import Loki_say_with_gestures
-    from .intent import Loki_100_words
     from .intent import Loki_combined_words
     from .intent import Loki_point_pictures
-    from .intent import Loki_4_body_parts
     from .intent import Loki_imitate_and_act
-    from .intent import Loki_two_steps_directions
-    from .intent import Loki_not_listen
-    from .intent import Loki_reading_books
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -203,6 +203,26 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
         for index, key in enumerate(inputLIST):
             lokiResultDICT = {}
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
+                # 100_words
+                if lokiRst.getIntent(index, resultIndex) == "100_words":
+                    lokiResultDICT = Loki_100_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # 4_body_parts
+                if lokiRst.getIntent(index, resultIndex) == "4_body_parts":
+                    lokiResultDICT = Loki_4_body_parts.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # two_steps_directions
+                if lokiRst.getIntent(index, resultIndex) == "two_steps_directions":
+                    lokiResultDICT = Loki_two_steps_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # reading_books
+                if lokiRst.getIntent(index, resultIndex) == "reading_books":
+                    lokiResultDICT = Loki_reading_books.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # not_listen
+                if lokiRst.getIntent(index, resultIndex) == "not_listen":
+                    lokiResultDICT = Loki_not_listen.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # ten_words
                 if lokiRst.getIntent(index, resultIndex) == "ten_words":
                     lokiResultDICT = Loki_ten_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -219,10 +239,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "say_with_gestures":
                     lokiResultDICT = Loki_say_with_gestures.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # 100_words
-                if lokiRst.getIntent(index, resultIndex) == "100_words":
-                    lokiResultDICT = Loki_100_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # combined_words
                 if lokiRst.getIntent(index, resultIndex) == "combined_words":
                     lokiResultDICT = Loki_combined_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -231,25 +247,9 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "point_pictures":
                     lokiResultDICT = Loki_point_pictures.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # 4_body_parts
-                if lokiRst.getIntent(index, resultIndex) == "4_body_parts":
-                    lokiResultDICT = Loki_4_body_parts.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # imitate_and_act
                 if lokiRst.getIntent(index, resultIndex) == "imitate_and_act":
                     lokiResultDICT = Loki_imitate_and_act.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # two_steps_directions
-                if lokiRst.getIntent(index, resultIndex) == "two_steps_directions":
-                    lokiResultDICT = Loki_two_steps_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # not_listen
-                if lokiRst.getIntent(index, resultIndex) == "not_listen":
-                    lokiResultDICT = Loki_not_listen.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # reading_books
-                if lokiRst.getIntent(index, resultIndex) == "reading_books":
-                    lokiResultDICT = Loki_reading_books.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -325,6 +325,36 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
+    # 100_words
+    print("[TEST] 100_words")
+    inputLIST = ['會','不常','不會','不行','可以','沒有','不太會','不太行','不說話','好像有','沒聽過','沒辦法','火星語','算有哦','不太確定','好像不會','好像可以','好像沒有','都用哭的','應該有超過','會但不愛講','會但不會說','還不會說話','都只用指的','只會出個聲音','只聽過一兩次','可以但不愛說','可以但不愛講','會但不到100個','有說但聽不懂','可以但不到100個','可以但沒那麼多','會但不到一百個','沒聽過小孩說話','可以但不到一百個']
+    testLoki(inputLIST, ['100_words'])
+    print("")
+
+    # 4_body_parts
+    print("[TEST] 4_body_parts")
+    inputLIST = ['會','不會','不行','可以','不太會','沒辦法','看心情','算有哦','都可以','好像不會','好像可以','好像沒有','會但不多','可以但不多','沒什麼反應','會但不到4個','會但不到四個','可以但不到4個','可以但不到四個']
+    testLoki(inputLIST, ['4_body_parts'])
+    print("")
+
+    # two_steps_directions
+    print("[TEST] two_steps_directions")
+    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很少','不太會','有時候','都可以','不太確定','好像不會','好像可以','好像沒有','會但不多','可以但不多','沒什麼反應']
+    testLoki(inputLIST, ['two_steps_directions'])
+    print("")
+
+    # reading_books
+    print("[TEST] reading_books")
+    inputLIST = ['會','不常','不會','不行','偶爾','可以','咬書','很少','撕書','不太會','有時候','沒辦法','看心情','都可以','好像不會','好像可以','好像沒有','會把書丟掉','會把書用壞']
+    testLoki(inputLIST, ['reading_books'])
+    print("")
+
+    # not_listen
+    print("[TEST] not_listen")
+    inputLIST = ['對','是','不一定','看心情','不會這樣','好像不會','就是這樣','常常這樣','很常這樣','有時候不聽']
+    testLoki(inputLIST, ['not_listen'])
+    print("")
+
     # ten_words
     print("[TEST] ten_words")
     inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太會','有時候','沒辦法','看心情','算有哦','還可以','都可以','不太確定','好像沒有','會但不多','都用叫的','都用哭的','可以但不多','拉大人去拿','還不會說話','會但不到10個','只聽過一兩次','會但不到十個','有說但聽不懂','可以但不到10個','有而且超過10個','不說話都用指的','可以但不到十個','可以但沒那麼多','有而且超過十個','沒聽過小孩說話']
@@ -349,12 +379,6 @@ def testIntent():
     testLoki(inputLIST, ['say_with_gestures'])
     print("")
 
-    # 100_words
-    print("[TEST] 100_words")
-    inputLIST = ['會','不常','不會','不行','可以','沒有','不太會','不太行','不說話','好像有','沒聽過','沒辦法','火星語','算有哦','不太確定','好像不會','好像可以','好像沒有','都用哭的','應該有超過','會但不愛講','會但不會說','還不會說話','都只用指的','只會出個聲音','只聽過一兩次','可以但不愛說','可以但不愛講','會但不到100個','有說但聽不懂','可以但不到100個','可以但沒那麼多','會但不到一百個','沒聽過小孩說話','可以但不到一百個']
-    testLoki(inputLIST, ['100_words'])
-    print("")
-
     # combined_words
     print("[TEST] combined_words")
     inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很多','很少','沒有','不太會','不太行','不說話','好像有','有時候','沒聽過','沒辦法','看心情','算有哦','還可以','都可以','不太確定','不常這樣','好像不會','好像可以','好像沒有','很常這樣','會但不多','會但不常','可以但不多','會但不愛說','會但不愛講','都說很短的','都講很短的','只聽過一兩次','可以但不愛說','可以但不愛講','有說但聽不懂']
@@ -367,34 +391,10 @@ def testIntent():
     testLoki(inputLIST, ['point_pictures'])
     print("")
 
-    # 4_body_parts
-    print("[TEST] 4_body_parts")
-    inputLIST = ['會','不會','不行','可以','不太會','沒辦法','看心情','算有哦','都可以','好像不會','好像可以','好像沒有','會但不多','可以但不多','沒什麼反應','會但不到4個','會但不到四個','可以但不到4個','可以但不到四個']
-    testLoki(inputLIST, ['4_body_parts'])
-    print("")
-
     # imitate_and_act
     print("[TEST] imitate_and_act")
     inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很少','不太會','不太行','有時候','沒辦法','看心情','算有哦','還可以','都可以','不太確定','不常這樣','好像不會','好像可以','好像沒有','很常這樣','會但不多','會但不常','可以但不多','小孩沒興趣','只看過一兩次','可以但沒那麼多種']
     testLoki(inputLIST, ['imitate_and_act'])
-    print("")
-
-    # two_steps_directions
-    print("[TEST] two_steps_directions")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很少','不太會','有時候','都可以','不太確定','好像不會','好像可以','好像沒有','會但不多','可以但不多','沒什麼反應']
-    testLoki(inputLIST, ['two_steps_directions'])
-    print("")
-
-    # not_listen
-    print("[TEST] not_listen")
-    inputLIST = ['對','是','不一樣','看心情','不會這樣','好像不會','就是這樣','常常這樣','很常這樣','有時候不聽']
-    testLoki(inputLIST, ['not_listen'])
-    print("")
-
-    # reading_books
-    print("[TEST] reading_books")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','咬書','很少','撕書','不太會','有時候','沒辦法','看心情','都可以','好像不會','好像可以','好像沒有','會把書丟掉','會把書用壞']
-    testLoki(inputLIST, ['reading_books'])
     print("")
 
 
@@ -412,6 +412,6 @@ if __name__ == "__main__":
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
     #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
     #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    inputLIST = "會"
+    inputLIST = "看心情"
     resultDICT = execLoki(inputLIST)
     print(resultDICT)
