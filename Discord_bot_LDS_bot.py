@@ -54,7 +54,8 @@ class BotClient(discord.Client):
                              },
                              "a":False,
                              "b":False,
-                             "c":False
+                             "c":False,
+                             "response":""
         }
         self.mscDICT = { "userid":self.templateDICT
         }
