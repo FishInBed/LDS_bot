@@ -50,36 +50,37 @@ import os
 import re
 try:
     from intent import Loki_hundreds_word
+    from intent import Loki_wrong_answer
+    from intent import Loki_pronouns
+    from intent import Loki_complete_snetences
     from intent import Loki_articualtion
     from intent import Loki_answer_with_sentences
     from intent import Loki_wh_questions
-    from intent import Loki_pronouns
     from intent import Loki_sentence_repetition
-    from intent import Loki_conplete_snetences
     from intent import Loki_function_for_objects
     from intent import Loki_matching
     from intent import Loki_know_color
     from intent import Loki_compare
-    from intent import Loki_wrong_answer
 except:
     from .intent import Loki_hundreds_word
+    from .intent import Loki_wrong_answer
+    from .intent import Loki_pronouns
+    from .intent import Loki_complete_snetences
     from .intent import Loki_articualtion
     from .intent import Loki_answer_with_sentences
     from .intent import Loki_wh_questions
-    from .intent import Loki_pronouns
     from .intent import Loki_sentence_repetition
-    from .intent import Loki_conplete_snetences
     from .intent import Loki_function_for_objects
     from .intent import Loki_matching
     from .intent import Loki_know_color
     from .intent import Loki_compare
-    from .intent import Loki_wrong_answer
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
-    LOKI_KEY = accountInfo["loki_key_above3"]
+    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
+    USERNAME = accountInfo["username"]
+    LOKI_KEY = accountInfo["loki_key"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -206,6 +207,18 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "hundreds_word":
                     lokiResultDICT = Loki_hundreds_word.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
+                # wrong_answer
+                if lokiRst.getIntent(index, resultIndex) == "wrong_answer":
+                    lokiResultDICT = Loki_wrong_answer.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # pronouns
+                if lokiRst.getIntent(index, resultIndex) == "pronouns":
+                    lokiResultDICT = Loki_pronouns.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # complete_snetences
+                if lokiRst.getIntent(index, resultIndex) == "complete_snetences":
+                    lokiResultDICT = Loki_complete_snetences.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # articualtion
                 if lokiRst.getIntent(index, resultIndex) == "articualtion":
                     lokiResultDICT = Loki_articualtion.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -218,17 +231,9 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "wh_questions":
                     lokiResultDICT = Loki_wh_questions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # pronouns
-                if lokiRst.getIntent(index, resultIndex) == "pronouns":
-                    lokiResultDICT = Loki_pronouns.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # sentence_repetition
                 if lokiRst.getIntent(index, resultIndex) == "sentence_repetition":
                     lokiResultDICT = Loki_sentence_repetition.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # conplete_snetences
-                if lokiRst.getIntent(index, resultIndex) == "conplete_snetences":
-                    lokiResultDICT = Loki_conplete_snetences.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # function_for_objects
                 if lokiRst.getIntent(index, resultIndex) == "function_for_objects":
@@ -245,10 +250,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # compare
                 if lokiRst.getIntent(index, resultIndex) == "compare":
                     lokiResultDICT = Loki_compare.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # wrong_answer
-                if lokiRst.getIntent(index, resultIndex) == "wrong_answer":
-                    lokiResultDICT = Loki_wrong_answer.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -330,6 +331,24 @@ def testIntent():
     testLoki(inputLIST, ['hundreds_word'])
     print("")
 
+    # wrong_answer
+    print("[TEST] wrong_answer")
+    inputLIST = ['對','會','不常','不會','偶爾','常常','很少','不太會','有時候','好像不會','很常這樣','會但不常','一直都是這樣']
+    testLoki(inputLIST, ['wrong_answer'])
+    print("")
+
+    # pronouns
+    print("[TEST] pronouns")
+    inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太會','會錯亂','有時候','沒辦法','還可以','你我不分','好像不會','好像可以','搞不清楚','有時會搞錯']
+    testLoki(inputLIST, ['pronouns'])
+    print("")
+
+    # complete_snetences
+    print("[TEST] complete_snetences")
+    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','不太會','不太行','有時候','沒辦法','算有哦','不常這樣','好像可以','很常這樣','會但不多','講不完整','可以但不多','會但不愛說','會但不愛講','都說很短的','都講很短的','可以但不愛說','可以但不愛講','有說但聽不懂']
+    testLoki(inputLIST, ['complete_snetences'])
+    print("")
+
     # articualtion
     print("[TEST] articualtion")
     inputLIST = ['對','是','不會','偶爾','沒錯','不太會','有時候','好像沒有','很常這樣','發音不標準','說得不清楚']
@@ -348,22 +367,10 @@ def testIntent():
     testLoki(inputLIST, ['wh_questions'])
     print("")
 
-    # pronouns
-    print("[TEST] pronouns")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太會','會錯亂','有時候','沒辦法','還可以','你我不分','好像不會','好像可以','搞不清楚','有時會搞錯']
-    testLoki(inputLIST, ['pronouns'])
-    print("")
-
     # sentence_repetition
     print("[TEST] sentence_repetition")
     inputLIST = ['對','會','不常','不會','偶爾','常常','不太會','好像有','很少見','有時候','不常這樣','好像不會','很常這樣']
     testLoki(inputLIST, ['sentence_repetition'])
-    print("")
-
-    # conplete_snetences
-    print("[TEST] conplete_snetences")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','不太會','不太行','有時候','沒辦法','算有哦','不常這樣','好像可以','很常這樣','會但不多','講不完整','可以但不多','會但不愛說','會但不愛講','都說很短的','都講很短的','可以但不愛說','可以但不愛講','有說但聽不懂']
-    testLoki(inputLIST, ['conplete_snetences'])
     print("")
 
     # function_for_objects
@@ -390,16 +397,10 @@ def testIntent():
     testLoki(inputLIST, ['compare'])
     print("")
 
-    # wrong_answer
-    print("[TEST] wrong_answer")
-    inputLIST = ['對','會','不常','不會','偶爾','常常','很少','不太會','有時候','好像不會','很常這樣','會但不常','一直都是這樣']
-    testLoki(inputLIST, ['wrong_answer'])
-    print("")
-
 
 if __name__ == "__main__":
     # 測試所有意圖
-    testIntent()
+    #testIntent()
 
     # 測試其它句子
     filterLIST = []
@@ -408,6 +409,9 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    inputLIST = "不太確定"
+    resultDICT = execLoki(inputLIST)
+    print(resultDICT)

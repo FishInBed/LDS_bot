@@ -57,51 +57,58 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[對]":
+    if utterance == "[不常][這樣]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[很常][這樣]":
+    if utterance == "[對]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "接著想了解一下...孩子現在能不能主動地說出至少一種的疑問句呀？例如：是誰? 那是什麼?"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass

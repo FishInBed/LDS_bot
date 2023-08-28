@@ -59,56 +59,64 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[你][我]不分":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[好像][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[好像]不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]錯亂":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[有時][會]搞錯":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
@@ -129,14 +137,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "搞不[清楚]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass

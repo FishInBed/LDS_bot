@@ -52,35 +52,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[都][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -101,14 +106,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "好像[可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -122,7 +129,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，想請問您的孩子現在是不是已經可正確且完整說出幾百個語詞了呢？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass

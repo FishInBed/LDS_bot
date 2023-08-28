@@ -52,28 +52,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[都][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
@@ -94,35 +98,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "分不出來":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "好像[可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = False
         else:
             # write your code here
             pass
 
     if utterance == "算有哦":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
+            resultDICT["q7"] = True
         else:
             # write your code here
             pass
