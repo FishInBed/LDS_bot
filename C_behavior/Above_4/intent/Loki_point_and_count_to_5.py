@@ -59,56 +59,64 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[應該]有超過":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[會]但不到[五個]":
+    if utterance == "[會]但不到[5個]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都][只]用指的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
@@ -129,14 +137,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "好像[可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好像不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
@@ -150,7 +160,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
