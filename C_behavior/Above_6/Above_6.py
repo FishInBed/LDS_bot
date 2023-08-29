@@ -49,36 +49,36 @@ import math
 import os
 import re
 try:
-    from intent import Loki_describe_3_or_4_pictures
-    from intent import Loki_can_not_follow_directions
-    from intent import Loki_basic_knowledge
     from intent import Loki_say_relative_words
-    from intent import Loki_point_and_count_to_13
-    from intent import Loki_count_to_30
-    from intent import Loki_cause_effect
-    from intent import Loki_self_talking
     from intent import Loki_complete_sentences
     from intent import Loki_disfluent
+    from intent import Loki_describe_3_or_4_pictures
+    from intent import Loki_point_and_count_to_13
+    from intent import Loki_self_talking
     from intent import Loki_articulation
+    from intent import Loki_basic_knowledge
+    from intent import Loki_can_not_follow_directions
+    from intent import Loki_cause_effect
+    from intent import Loki_count_to_30
 except:
-    from .intent import Loki_describe_3_or_4_pictures
-    from .intent import Loki_can_not_follow_directions
-    from .intent import Loki_basic_knowledge
     from .intent import Loki_say_relative_words
-    from .intent import Loki_point_and_count_to_13
-    from .intent import Loki_count_to_30
-    from .intent import Loki_cause_effect
-    from .intent import Loki_self_talking
     from .intent import Loki_complete_sentences
     from .intent import Loki_disfluent
+    from .intent import Loki_describe_3_or_4_pictures
+    from .intent import Loki_point_and_count_to_13
+    from .intent import Loki_self_talking
     from .intent import Loki_articulation
+    from .intent import Loki_basic_knowledge
+    from .intent import Loki_can_not_follow_directions
+    from .intent import Loki_cause_effect
+    from .intent import Loki_count_to_30
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
+    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
     USERNAME = accountInfo["username"]
-    LOKI_KEY = accountInfo["loki_key_above6"]
+    LOKI_KEY = accountInfo["loki_key"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -201,37 +201,9 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
         for index, key in enumerate(inputLIST):
             lokiResultDICT = {}
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
-                # describe_3_or_4_pictures
-                if lokiRst.getIntent(index, resultIndex) == "describe_3_or_4_pictures":
-                    lokiResultDICT = Loki_describe_3_or_4_pictures.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # can_not_follow_directions
-                if lokiRst.getIntent(index, resultIndex) == "can_not_follow_directions":
-                    lokiResultDICT = Loki_can_not_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # basic_knowledge
-                if lokiRst.getIntent(index, resultIndex) == "basic_knowledge":
-                    lokiResultDICT = Loki_basic_knowledge.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # say_relative_words
                 if lokiRst.getIntent(index, resultIndex) == "say_relative_words":
                     lokiResultDICT = Loki_say_relative_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # point_and_count_to_13
-                if lokiRst.getIntent(index, resultIndex) == "point_and_count_to_13":
-                    lokiResultDICT = Loki_point_and_count_to_13.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # count_to_30
-                if lokiRst.getIntent(index, resultIndex) == "count_to_30":
-                    lokiResultDICT = Loki_count_to_30.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # cause_effect
-                if lokiRst.getIntent(index, resultIndex) == "cause_effect":
-                    lokiResultDICT = Loki_cause_effect.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # self_talking
-                if lokiRst.getIntent(index, resultIndex) == "self_talking":
-                    lokiResultDICT = Loki_self_talking.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # complete_sentences
                 if lokiRst.getIntent(index, resultIndex) == "complete_sentences":
@@ -241,9 +213,37 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "disfluent":
                     lokiResultDICT = Loki_disfluent.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
+                # describe_3_or_4_pictures
+                if lokiRst.getIntent(index, resultIndex) == "describe_3_or_4_pictures":
+                    lokiResultDICT = Loki_describe_3_or_4_pictures.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # point_and_count_to_13
+                if lokiRst.getIntent(index, resultIndex) == "point_and_count_to_13":
+                    lokiResultDICT = Loki_point_and_count_to_13.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # self_talking
+                if lokiRst.getIntent(index, resultIndex) == "self_talking":
+                    lokiResultDICT = Loki_self_talking.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # articulation
                 if lokiRst.getIntent(index, resultIndex) == "articulation":
                     lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # basic_knowledge
+                if lokiRst.getIntent(index, resultIndex) == "basic_knowledge":
+                    lokiResultDICT = Loki_basic_knowledge.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # can_not_follow_directions
+                if lokiRst.getIntent(index, resultIndex) == "can_not_follow_directions":
+                    lokiResultDICT = Loki_can_not_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # cause_effect
+                if lokiRst.getIntent(index, resultIndex) == "cause_effect":
+                    lokiResultDICT = Loki_cause_effect.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # count_to_30
+                if lokiRst.getIntent(index, resultIndex) == "count_to_30":
+                    lokiResultDICT = Loki_count_to_30.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -319,52 +319,10 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # describe_3_or_4_pictures
-    print("[TEST] describe_3_or_4_pictures")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','不太會','不太行','有時候','沒辦法','看心情','講不完整','會跳來跳去','會斷斷續續的']
-    testLoki(inputLIST, ['describe_3_or_4_pictures'])
-    print("")
-
-    # can_not_follow_directions
-    print("[TEST] can_not_follow_directions")
-    inputLIST = ['對','不常','不會','偶爾','沒錯','不一定','不太會','好像是','有時候','沒辦法','看心情','都可以做到','好像都聽不懂','都不知道要做什麼']
-    testLoki(inputLIST, ['can_not_follow_directions'])
-    print("")
-
-    # basic_knowledge
-    print("[TEST] basic_knowledge")
-    inputLIST = ['會','不會','不行','偶爾','不太會','沒辦法','看心情','有些可以','沒什麼反應','要看是什麼問題']
-    testLoki(inputLIST, ['basic_knowledge'])
-    print("")
-
     # say_relative_words
     print("[TEST] say_relative_words")
     inputLIST = ['會','不多','不會','偶爾','很少','不太會','不太行','會但不多','有些可以']
     testLoki(inputLIST, ['say_relative_words'])
-    print("")
-
-    # point_and_count_to_13
-    print("[TEST] point_and_count_to_13")
-    inputLIST = ['會','不會','可以','不太會','不太行','不完整','沒問題','沒辦法','跳著唸','只會幾個','跳來跳去','都用指的']
-    testLoki(inputLIST, ['point_and_count_to_13'])
-    print("")
-
-    # count_to_30
-    print("[TEST] count_to_30")
-    inputLIST = ['會','不會','不行','錯亂','不太會','不完整','唸不完','數不完','沒辦法','跳著唸','有些可以','跳來跳去']
-    testLoki(inputLIST, ['count_to_30'])
-    print("")
-
-    # cause_effect
-    print("[TEST] cause_effect")
-    inputLIST = ['會','不會','不行','不太會','有時候','沒辦法','還不懂','不太確定','有些可以','還不理解']
-    testLoki(inputLIST, ['cause_effect'])
-    print("")
-
-    # self_talking
-    print("[TEST] self_talking")
-    inputLIST = ['對','會','不常','不會','偶爾','很少','沒錯','不太會','有時候','火星語','看心情','一直都是','會一直重覆']
-    testLoki(inputLIST, ['self_talking'])
     print("")
 
     # complete_sentences
@@ -379,10 +337,52 @@ def testIntent():
     testLoki(inputLIST, ['disfluent'])
     print("")
 
+    # describe_3_or_4_pictures
+    print("[TEST] describe_3_or_4_pictures")
+    inputLIST = ['會','不常','不會','不行','偶爾','可以','不太會','不太行','有時候','沒辦法','看心情','講不完整','會跳來跳去','會斷斷續續的']
+    testLoki(inputLIST, ['describe_3_or_4_pictures'])
+    print("")
+
+    # point_and_count_to_13
+    print("[TEST] point_and_count_to_13")
+    inputLIST = ['會','不會','可以','不太會','不太行','不完整','沒問題','沒辦法','跳著唸','只會幾個','跳來跳去','都用指的']
+    testLoki(inputLIST, ['point_and_count_to_13'])
+    print("")
+
+    # self_talking
+    print("[TEST] self_talking")
+    inputLIST = ['對','會','不常','不會','偶爾','很少','沒錯','不太會','有時候','火星語','看心情','一直都是','會一直重覆']
+    testLoki(inputLIST, ['self_talking'])
+    print("")
+
     # articulation
     print("[TEST] articulation")
     inputLIST = ['會','不多','不常','不會','偶爾','很少','不太會','有時候','看跟誰說話','有幾個字會說不清楚']
     testLoki(inputLIST, ['articulation'])
+    print("")
+
+    # basic_knowledge
+    print("[TEST] basic_knowledge")
+    inputLIST = ['會','不會','不行','偶爾','不太會','沒辦法','看心情','有些可以','沒什麼反應','要看是什麼問題']
+    testLoki(inputLIST, ['basic_knowledge'])
+    print("")
+
+    # can_not_follow_directions
+    print("[TEST] can_not_follow_directions")
+    inputLIST = ['對','不常','不會','偶爾','沒錯','不一定','不太會','好像是','有時候','沒辦法','看心情','都可以做到','好像都聽不懂','都不知道要做什麼']
+    testLoki(inputLIST, ['can_not_follow_directions'])
+    print("")
+
+    # cause_effect
+    print("[TEST] cause_effect")
+    inputLIST = ['會','不會','不行','不太會','有時候','沒辦法','還不懂','不太確定','有些可以','還不理解']
+    testLoki(inputLIST, ['cause_effect'])
+    print("")
+
+    # count_to_30
+    print("[TEST] count_to_30")
+    inputLIST = ['會','不會','不行','錯亂','不太會','不完整','唸不完','數不完','沒辦法','跳著唸','有些可以','跳來跳去']
+    testLoki(inputLIST, ['count_to_30'])
     print("")
 
 
@@ -397,6 +397,9 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    inputLIST = "不會"
+    resultDICT = execLoki(inputLIST)
+    print(resultDICT)

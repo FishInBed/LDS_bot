@@ -52,35 +52,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[只][會]幾[個]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[都]用指的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[完整]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
@@ -101,28 +106,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒問題":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "跳來跳去":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass
 
     if utterance == "跳著唸":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
+            resultDICT["q9"] = False
         else:
             # write your code here
             pass

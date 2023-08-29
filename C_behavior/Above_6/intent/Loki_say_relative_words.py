@@ -59,28 +59,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
+            resultDICT["q10"] = False
         else:
             # write your code here
             pass
@@ -108,7 +112,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "有[些][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
+            resultDICT["q10"] = True
         else:
             # write your code here
             pass

@@ -52,49 +52,56 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[數]不完":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[完整]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "唸不完":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
@@ -108,28 +115,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "跳來跳去":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "跳著唸":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "錯亂":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了，想問問您孩子現階段是可以用句子描述三到四張的連續圖卡了嗎？"
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass

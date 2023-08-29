@@ -59,28 +59,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不行]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[有時候]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -94,28 +98,32 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "有[些][可以]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = True
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
 
     if utterance == "還不懂":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
 
     if utterance == "還不理解":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass

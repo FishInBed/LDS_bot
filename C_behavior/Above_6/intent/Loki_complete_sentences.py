@@ -66,35 +66,40 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[可以]但不愛說":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[會]但[不多]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[都]講很短的":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -108,7 +113,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "太長的話就不行了":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = True
         else:
             # write your code here
             pass
@@ -122,7 +128,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "有說但聽不懂":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -143,7 +150,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "講不[完整]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "想請問關於數數字的部分...孩子已可以從一數到三十了嗎？"
+            resultDICT["q5"] = False
         else:
             # write your code here
             pass

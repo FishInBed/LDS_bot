@@ -52,70 +52,80 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[對]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[都][可以]做到":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "[都]不知道要做什麼":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不[一定]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不太[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "好[像都]聽不懂":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "好像是":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "沒[錯]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
 
     if utterance == "沒辦法":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass

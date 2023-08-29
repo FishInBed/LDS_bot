@@ -66,14 +66,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "了解...另外想問一下您的孩子是否可理解並回應基本常識呢？例如：一隻手有幾根手指、貓咪有幾隻腳、汽車有幾個輪子？"
+            resultDICT["q1"] = False
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "了解...另外想問一下您的孩子是否可理解並回應基本常識呢？例如：一隻手有幾根手指、貓咪有幾隻腳、汽車有幾個輪子？"
+            resultDICT["q1"] = True
         else:
             # write your code here
             pass
@@ -87,14 +89,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "很少":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "了解...另外想問一下您的孩子是否可理解並回應基本常識呢？例如：一隻手有幾根手指、貓咪有幾隻腳、汽車有幾個輪子？"
+            resultDICT["q1"] = True
         else:
             # write your code here
             pass
 
     if utterance == "有幾[個][字][會]說不[清楚]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "了解...另外想問一下您的孩子是否可理解並回應基本常識呢？例如：一隻手有幾根手指、貓咪有幾隻腳、汽車有幾個輪子？"
+            resultDICT["q1"] = False
         else:
             # write your code here
             pass
