@@ -50,27 +50,27 @@ import os
 import re
 try:
     from intent import Loki_self_talking
-    from intent import Loki_articulation
     from intent import Loki_describe_story_or_things
     from intent import Loki_disfluent
-    from intent import Loki_can_not_follow_directions
     from intent import Loki_7_digits
+    from intent import Loki_articulation
+    from intent import Loki_can_not_follow_directions
     from intent import Loki_say_4_colors
 except:
     from .intent import Loki_self_talking
-    from .intent import Loki_articulation
     from .intent import Loki_describe_story_or_things
     from .intent import Loki_disfluent
-    from .intent import Loki_can_not_follow_directions
     from .intent import Loki_7_digits
+    from .intent import Loki_articulation
+    from .intent import Loki_can_not_follow_directions
     from .intent import Loki_say_4_colors
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
+    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
     USERNAME = accountInfo["username"]
-    LOKI_KEY = accountInfo["loki_key_above5"]
+    LOKI_KEY = accountInfo["loki_key"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -197,10 +197,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "self_talking":
                     lokiResultDICT = Loki_self_talking.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # articulation
-                if lokiRst.getIntent(index, resultIndex) == "articulation":
-                    lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # describe_story_or_things
                 if lokiRst.getIntent(index, resultIndex) == "describe_story_or_things":
                     lokiResultDICT = Loki_describe_story_or_things.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -209,13 +205,17 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "disfluent":
                     lokiResultDICT = Loki_disfluent.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # can_not_follow_directions
-                if lokiRst.getIntent(index, resultIndex) == "can_not_follow_directions":
-                    lokiResultDICT = Loki_can_not_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # 7_digits
                 if lokiRst.getIntent(index, resultIndex) == "7_digits":
                     lokiResultDICT = Loki_7_digits.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # articulation
+                if lokiRst.getIntent(index, resultIndex) == "articulation":
+                    lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # can_not_follow_directions
+                if lokiRst.getIntent(index, resultIndex) == "can_not_follow_directions":
+                    lokiResultDICT = Loki_can_not_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # say_4_colors
                 if lokiRst.getIntent(index, resultIndex) == "say_4_colors":
@@ -301,12 +301,6 @@ def testIntent():
     testLoki(inputLIST, ['self_talking'])
     print("")
 
-    # articulation
-    print("[TEST] articulation")
-    inputLIST = ['不會','偶爾','常常','不太會','有時候','很常這樣','大家都聽得懂','有幾個字會說不清楚']
-    testLoki(inputLIST, ['articulation'])
-    print("")
-
     # describe_story_or_things
     print("[TEST] describe_story_or_things")
     inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太行','有時候','沒聽過','沒辦法','看心情','講不完整','會但不愛講','會跳來跳去','要看說什麼','都說很短的','都講很短的','有說但聽不懂']
@@ -319,16 +313,22 @@ def testIntent():
     testLoki(inputLIST, ['disfluent'])
     print("")
 
-    # can_not_follow_directions
-    print("[TEST] can_not_follow_directions")
-    inputLIST = ['不會','偶爾','常常','很少','沒錯','不太會','有時候']
-    testLoki(inputLIST, ['can_not_follow_directions'])
-    print("")
-
     # 7_digits
     print("[TEST] 7_digits")
     inputLIST = ['不會','偶爾','唸錯','不可以','不太行','跳著唸','不到7個','好像可以','數字混淆','沒那麼多','應該有超過']
     testLoki(inputLIST, ['7_digits'])
+    print("")
+
+    # articulation
+    print("[TEST] articulation")
+    inputLIST = ['不會','偶爾','常常','不太會','有時候','很常這樣','大家都聽得懂','有幾個字會說不清楚']
+    testLoki(inputLIST, ['articulation'])
+    print("")
+
+    # can_not_follow_directions
+    print("[TEST] can_not_follow_directions")
+    inputLIST = ['不會','偶爾','常常','很少','沒錯','不太會','有時候']
+    testLoki(inputLIST, ['can_not_follow_directions'])
     print("")
 
     # say_4_colors
@@ -349,6 +349,9 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
+    inputLIST = "火星語"
+    resultDICT = execLoki(inputLIST)
+    print(resultDICT)

@@ -52,14 +52,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了...您的孩子可以向他人描述發生在自己身上的事情嗎？例如：分享在學校發生的事？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
 
     if utterance == "不[會]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了...您的孩子可以向他人描述發生在自己身上的事情嗎？例如：分享在學校發生的事？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass
@@ -80,7 +82,8 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "沒[錯]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "對了...您的孩子可以向他人描述發生在自己身上的事情嗎？例如：分享在學校發生的事？"
+            resultDICT["q3"] = False
         else:
             # write your code here
             pass
