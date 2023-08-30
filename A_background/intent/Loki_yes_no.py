@@ -52,35 +52,35 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "對":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
 
     if utterance == "有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
 
     if utterance == "沒有":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["yes_no"] = False
         else:
             # write your code here
             pass
 
     if utterance == "否":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["yes_no"] = False
         else:
             # write your code here
             pass
 
     if utterance == "對啊":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
