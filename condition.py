@@ -169,8 +169,10 @@ def condition_control(dicts, context, msgSTR):
         
         # 資料寫入字典
         for key in resultDICT.keys():
-            data_dict[context][key] = resultDICT[key]
+            data_dict[context][key] = resultDICT[key][0]
         
+#TODO: 補跟yes_no交叉比對的判斷式
+
         # 確認 Part A 資料是否收集完畢
         if len(get_key_from_value(data_dict[context], "None")) == 0:
             data_dict["a"] = True
@@ -185,7 +187,9 @@ def condition_control(dicts, context, msgSTR):
             resultDICT = getLokiResult(context, msgSTR, ["school", "yes_no"])
         elif len(waiting_question) == 1:
             resultDICT = getLokiResult(context, msgSTR, ["3C", "yes_no"])
-        
+
+#TODO: 補跟yes_no交叉比對的判斷式
+
         # 資料寫入字典
         for key in resultDICT.keys():
             data_dict[context][key] = resultDICT[key][0]
@@ -203,6 +207,8 @@ def condition_control(dicts, context, msgSTR):
         # 偵測 intent
         resultDICT = getLokiResult(context, msgSTR, [waiting_question[0], "yes_no"])
 
+#TODO: 補跟yes_no交叉比對的判斷式
+
         # 資料寫入字典
         for key in resultDICT.keys():
             data_dict[key] = resultDICT[key][0]
@@ -212,6 +218,10 @@ def condition_control(dicts, context, msgSTR):
             data_dict["c"] = True
         else:
             data_dict["response"] = resultDICT["response"]
+
+        # 判斷對話是否結束，如果結束就給建議
+        if data_dict["c"] == True:
+            data_dict["response"] = give_advice(data_dict["background"]["age"], data_dict)
 
     return data_dict
 
