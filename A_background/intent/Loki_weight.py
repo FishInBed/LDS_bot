@@ -72,4 +72,25 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
+    if utterance == "3000":
+        if CHATBOT_MODE:
+            num = articut.parse(args[0], level="lv3")["number"][args[0]]
+            if len(re.search(r"\d\.\d+", args[0])) == 0:
+                if num < 2500:
+                    resultDICT["weight"] = False
+                    resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
+                else:
+                    resultDICT["weight"] = True
+                    resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
+            else:
+                if num*1000 < 2500:
+                    resultDICT["weight"] = False
+                    resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
+                else:
+                    resultDICT["weight"] = True
+                    resultDICT["response"] = "那孩子出生後有沒有被診斷出什麼先天性或後天性疾病呢？"
+        else:
+            # write your code here
+            pass
+
     return resultDICT
