@@ -55,6 +55,7 @@ try:
     from intent import Loki_congenital_disease
     from intent import Loki_genetic_disease
     from intent import Loki_yes_no
+    from intent import Loki_recheck
 
 except:
     from .intent import Loki_age
@@ -63,6 +64,7 @@ except:
     from .intent import Loki_congenital_disease
     from .intent import Loki_genetic_disease
     from .intent import Loki_yes_no
+    from .intent import Loki_recheck
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -216,6 +218,10 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "yes_no":
                     lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
 
+                # recheck
+                if lokiRst.getIntent(index, resultIndex) == "recheck":
+                    lokiResultDICT = Loki_recheck.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
                 if k not in resultDICT:
@@ -324,13 +330,13 @@ if __name__ == "__main__":
     # testIntent()
 
     # 測試其它句子
-    filterLIST = ["congenital_disease"]
+    filterLIST = ["ten_month"]
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     # 設定參考資料
     refDICT = {
         #"key": []
     }
     # resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("有唐氏症", filterLIST=filterLIST, splitLIST=splitLIST) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki("是足月", filterLIST=filterLIST, splitLIST=splitLIST) # output => {"key": ["今天天氣", "後天氣象"]}
     # resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
     print(resultDICT)
