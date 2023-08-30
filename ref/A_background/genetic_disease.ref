@@ -16,12 +16,6 @@
             "智能不足",
             "精神疾病"
         ],
-        "child_ner": [
-            "兒子",
-            "女兒",
-            "女孩",
-            "男孩"
-        ],
         "month_age": [
             "個月"
         ],
@@ -30,6 +24,9 @@
             "小胖威利症",
             "唇裂",
             "腭裂",
+            "顎裂",
+            "唇顎裂",
+            "唇腭裂",
             "小兒症",
             "聽損",
             "甲狀腺功能低下",
@@ -49,24 +46,211 @@
             "幼稚園",
             "托兒所",
             "托嬰中心"
-        ],
-        "child_sympton": [
-            "發高燒",
-            "確診"
-        ],
-        "hospitalize_history": [
-            "住院"
         ]
     },
     "utterance": {
-        "自閉": {
-            "id": "299cc415-c7df-4393-b449-5d834a2d3bc8",
+        "是自閉": {
+            "id": "60a92d9a-c442-4fdb-a732-1cc03d8b0385",
             "argument": [
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                },
                 {
                     "pos": "UserDefined",
                     "text": "自閉",
                     "checked": true,
                     "checkbox": true
+                }
+            ]
+        },
+        "有自閉": {
+            "id": "a28cc8c4-38c4-460c-ba15-a50f87771c0f",
+            "argument": [
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "具有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "兼有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "存有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "帶有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "懷有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "持有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "擁有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有了",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有著",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "保留",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "有同",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "含有",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "有",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "UserDefined",
+                    "text": "自閉",
+                    "checked": true,
+                    "checkbox": true
+                }
+            ]
+        },
+        "爸爸有": {
+            "id": "f526c728-d3b1-4424-87eb-7770b5f9e39d",
+            "argument": [
+                {
+                    "pos": "ENTITY_pronoun",
+                    "text": "爸爸",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "具有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "兼有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "存有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "帶有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "懷有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "持有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "擁有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有了",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有著",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "保留",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "含有",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有同",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "有",
+                    "checked": false,
+                    "checkbox": false
                 }
             ]
         },
@@ -76,6 +260,29 @@
                 {
                     "pos": "ENTITY_pronoun",
                     "text": "爸爸",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "UserDefined",
+                    "text": "自閉",
+                    "checked": true,
+                    "checkbox": true
+                }
+            ]
+        },
+        "爸爸是自閉": {
+            "id": "844c26f4-c55a-4fe6-ba38-41a1d6630a1c",
+            "argument": [
+                {
+                    "pos": "ENTITY_pronoun",
+                    "text": "爸爸",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "AUX",
+                    "text": "是",
                     "checked": false,
                     "checkbox": false
                 },

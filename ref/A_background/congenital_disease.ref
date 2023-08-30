@@ -16,12 +16,6 @@
             "智能不足",
             "精神疾病"
         ],
-        "child_ner": [
-            "兒子",
-            "女兒",
-            "女孩",
-            "男孩"
-        ],
         "month_age": [
             "個月"
         ],
@@ -30,6 +24,9 @@
             "小胖威利症",
             "唇裂",
             "腭裂",
+            "顎裂",
+            "唇顎裂",
+            "唇腭裂",
             "小兒症",
             "聽損",
             "甲狀腺功能低下",
@@ -49,19 +46,129 @@
             "幼稚園",
             "托兒所",
             "托嬰中心"
-        ],
-        "child_sympton": [
-            "發高燒",
-            "確診"
-        ],
-        "hospitalize_history": [
-            "住院"
         ]
     },
     "utterance": {
-        "唇顎裂": {
-            "id": "0d3fd057-835e-4138-83db-71a387627b6e",
+        "是唇顎裂": {
+            "id": "368ab39d-75be-49ac-a532-7d4738d898dc",
             "argument": [
+                {
+                    "pos": "AUX",
+                    "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "UserDefined",
+                    "text": "唇顎裂",
+                    "checked": true,
+                    "checkbox": true
+                }
+            ]
+        },
+        "有唇顎裂": {
+            "id": "e439fb9b-19fe-4163-a57c-154e9c2751ef",
+            "argument": [
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "具有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "兼有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "存有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "帶有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "懷有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "持有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "擁有",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有了",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "有著",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "保留",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "有同",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "含有",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "存在",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "有",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_nouny",
+                    "text": "唇顎裂",
+                    "checked": true,
+                    "checkbox": true
+                }
+            ]
+        },
+        "確診唇顎裂": {
+            "id": "c57ccfd8-4d45-4554-8db8-58e5f3c41cfc",
+            "argument": [
+                {
+                    "pos": "UserDefined",
+                    "text": "確診",
+                    "checked": true,
+                    "checkbox": true
+                },
                 {
                     "pos": "ENTITY_oov",
                     "text": "唇顎裂",
@@ -102,22 +209,7 @@
                             "checked": false
                         },
                         {
-                            "text": "納生",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "去世",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "出身",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "過世",
+                            "text": "病逝",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -127,12 +219,17 @@
                             "checked": false
                         },
                         {
-                            "text": "降生",
+                            "text": "去世",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "病逝",
+                            "text": "過世",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "納生",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -142,12 +239,22 @@
                             "checked": false
                         },
                         {
-                            "text": "勒生",
+                            "text": "降生",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
                             "text": "逝世",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "出身",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "勒生",
                             "level": "word2vec",
                             "checked": false
                         }
@@ -170,519 +277,80 @@
                 }
             ]
         },
-        "我兒子有唇顎裂": {
-            "id": "4871a36d-3b25-45d4-9622-fe2d43b81b23",
-            "argument": [
-                {
-                    "pos": "ENTITY_pronoun",
-                    "text": "我",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "UserDefined",
-                    "text": "兒子",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "唇顎裂",
-                    "checked": true,
-                    "checkbox": true
-                }
-            ]
-        },
-        "出生就確診唇顎裂": {
-            "id": "016802af-c563-4da1-a926-1defd1317a91",
+        "診斷為唇顎裂": {
+            "id": "344e0a21-c5ed-4b24-9070-ca719b9aff3d",
             "argument": [
                 {
                     "pos": "ACTION_verb",
                     "lexy": [
                         {
-                            "text": "發生",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "來到",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "到來",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "到達",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "抵達",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "納生",
+                            "text": "確診",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "去世",
+                            "text": "罹患",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "出身",
+                            "text": "罹患了",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "過世",
+                            "text": "迫交",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "病故",
+                            "text": "患了",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "降生",
+                            "text": "治療過",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "病逝",
+                            "text": "疑患",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "下葬",
+                            "text": "剝離",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "勒生",
+                            "text": "患",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "逝世",
+                            "text": "診治",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "治療",
                             "level": "word2vec",
                             "checked": false
                         }
                     ],
-                    "text": "出生",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "就",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "UserDefined",
-                    "text": "確診",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ENTITY_oov",
-                    "text": "唇顎裂",
-                    "checked": true,
-                    "checkbox": true
-                }
-            ]
-        },
-        "我家小孩有唇顎裂": {
-            "id": "9b68ed63-9db4-44cf-a550-3dff977b64b9",
-            "argument": [
-                {
-                    "pos": "ENTITY_possessive",
-                    "text": "我",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_noun",
-                    "text": "家",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "小孩",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "唇顎裂",
-                    "checked": true,
-                    "checkbox": true
-                }
-            ]
-        },
-        "出生就被診斷有唇顎裂": {
-            "id": "8078d956-9702-43c9-bf22-b8a765deed8b",
-            "argument": [
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "發生",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "來到",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "到來",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "到達",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "抵達",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "病逝",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "病故",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "去世",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "過世",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "納生",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "下葬",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "降生",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "逝世",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "出身",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "勒生",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "出生",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "就",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_lightVerb",
-                    "text": "被",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
                     "text": "診斷",
                     "checked": false,
-                    "checkbox": true
+                    "checkbox": false
                 },
                 {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
+                    "pos": "AUX",
+                    "text": "為",
                     "checked": false,
                     "checkbox": false
                 },
                 {
-                    "pos": "ENTITY_nouny",
+                    "pos": "UserDefined",
                     "text": "唇顎裂",
                     "checked": true,
                     "checkbox": true
