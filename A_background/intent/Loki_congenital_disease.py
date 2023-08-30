@@ -52,56 +52,45 @@ disease = ["唐氏症", "小胖威利症", "唇裂", "腭裂", "顎裂", "唇腭
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[唇顎裂]":
-        if CHATBOT_MODE:
-            if args[0] in disease:
-                resultDICT["cogenital_disease"] = args[0]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[我][兒子]有[唇顎裂]":
-        if CHATBOT_MODE:
-            if args[2] in disease:
-                resultDICT["cogenital_disease"] = args[2]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
-        else:
-            # write your code here
-            pass
-
+    
     if utterance == "出生就[腦出血]":
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
+                resultDICT["response"] = "好的，接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
+
+    if utterance == "[確診][唇顎裂]":
+        if CHATBOT_MODE:
+            if args[0] in disease:
+                resultDICT["cogenital_disease"] = args[0]
+                resultDICT["response"] = "好的，接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
 
-    if utterance == "出生就確診[唇顎裂]":
+    if utterance == "是[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
+                resultDICT["response"] = "好的，接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
 
-    if utterance == "出生就被診斷有[唇顎裂]":
+    if utterance == "有[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
+                resultDICT["response"] = "好的，接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
 
-    if utterance == "我家小孩有[唇顎裂]":
+    if utterance == "診斷為[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
                 resultDICT["cogenital_disease"] = args[0]
-                resultDICT["response"] = "接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
+                resultDICT["response"] = "好的，接下來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
         else:
             # write your code here
             pass
