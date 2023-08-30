@@ -55,15 +55,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[爸爸][自閉]":
         if CHATBOT_MODE:
-            if args[1] in disease and args[0] != "":
+            if args[1] in disease and args[0] != "親戚":
                 if args[0] in relative:
                     resultDICT["genetic_disease"] = True
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
                 else:
                     resultDICT["genetic_disease"] = False
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
-            elif args[1] in disease and args[0] == "":
-                resultDICT["genetic_disease"] = args[1]
+            elif args[1] in disease and args[0] == "親戚":
+                resultDICT["half"] = True
                 resultDICT["response"] = "有{}的是孩子的哪位親戚呢？".format(args[1])
             else:
                 resultDICT["genetic_disease"] = False
@@ -74,15 +74,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[爸爸]有[自閉]":
         if CHATBOT_MODE:
-            if args[1] in disease and args[0] != "":
+            if args[1] in disease and args[0] != "親戚":
                 if args[0] in relative:
                     resultDICT["genetic_disease"] = True
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
                 else:
                     resultDICT["genetic_disease"] = False
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
-            elif args[1] in disease and args[0] == "":
-                resultDICT["genetic_disease"] = args[1]
+            elif args[1] in disease and args[0] == "親戚":
+                resultDICT["half"] = True
                 resultDICT["response"] = "有{}的是孩子的哪位親戚呢？".format(args[1])
             else:
                 resultDICT["genetic_disease"] = False
@@ -93,15 +93,15 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[爸爸]是[自閉]":
         if CHATBOT_MODE:
-            if args[1] in disease and args[0] != "":
+            if args[1] in disease and args[0] != "親戚":
                 if args[0] in relative:
                     resultDICT["genetic_disease"] = True
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
                 else:
                     resultDICT["genetic_disease"] = False
                     resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
-            elif args[1] in disease and args[0] == "":
-                resultDICT["genetic_disease"] = args[1]
+            elif args[1] in disease and args[0] == "親戚":
+                resultDICT["half"] = True
                 resultDICT["response"] = "有{}的是孩子的哪位親戚呢？".format(args[1])
             else:
                 resultDICT["genetic_disease"] = False
@@ -113,7 +113,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[爸爸]有":
         if CHATBOT_MODE:
             if args[0] in relative:
-                resultDICT["genetic_disease"] = 1/2
+                resultDICT["half"] = True
                 resultDICT["response"] = "那{}是有什麼樣的遺傳性疾病呢?"
             else:
                 resultDICT["genetic_disease"] = False
@@ -125,10 +125,10 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "是[自閉]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["genetic_disease"] = 1/2
+                resultDICT["half"] = True
                 resultDICT["response"] = "那是孩子的哪位親戚有這個遺傳性疾病呢？"
             else:
-                resultDICT["genetic_disease"] = False
+                resultDICT["half"] = True
                 resultDICT["response"] = "好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?"
         else:
             # write your code here
@@ -137,7 +137,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "有[自閉]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["genetic_disease"] = 1/2
+                resultDICT["half"] = True
                 resultDICT["response"] = "那是孩子的哪位親戚有這個遺傳性疾病呢？"
             else:
                 resultDICT["genetic_disease"] = False
