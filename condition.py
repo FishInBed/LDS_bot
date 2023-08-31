@@ -11,7 +11,7 @@ from C_behavior.Above_5.Above_5 import execLoki as above5_execLoki
 from C_behavior.Above_6.Above_6 import execLoki as above6_execLoki
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
-def getLokiResult(context, inputSTR, filterList=[]):
+def operateLoki(context, inputSTR, filterList=[]):
     punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
     inputLIST = punctuationPat.sub("\n", inputSTR).split("\n")
     filterLIST = filterList
@@ -171,23 +171,23 @@ def condition_control(dicts, context, msgSTR):
         
         # 偵測 intent
         if "half" in data_dict[context].keys():
-            resultDICT = getLokiResult(context, msgSTR, ["recheck"])
+            resultDICT = operateLoki(context, msgSTR, ["recheck"])
             data_dict.pop("half")
         else:
             if len(waiting_question) == 5:
-                resultDICT = getLokiResult(context, msgSTR, ["age"])
+                resultDICT = operateLoki(context, msgSTR, ["age"])
             elif len(waiting_question) == 4:
-                resultDICT = getLokiResult(context, msgSTR, ["ten_month"])
+                resultDICT = operateLoki(context, msgSTR, ["ten_month"])
             elif len(waiting_question) == 3:
-                resultDICT = getLokiResult(context, msgSTR, ["weight"])
+                resultDICT = operateLoki(context, msgSTR, ["weight"])
             elif len(waiting_question) == 2:
-                resultDICT = getLokiResult(context, msgSTR, ["congenital_disease", "yes_no"])
+                resultDICT = operateLoki(context, msgSTR, ["congenital_disease", "yes_no"])
                 if "yes_no" in resultDICT.keys() and "congenital_disease" not in resultDICT.keys():
                     resultDICT["congenital_disease"] = resultDICT["yes_no"]
                     resultDICT["response"] = ["了解，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"]
                     resultDICT.pop("yes_no")
             elif len(waiting_question) == 1:
-                resultDICT = getLokiResult(context, msgSTR, ["genetic_disease", "yes_no"])
+                resultDICT = operateLoki(context, msgSTR, ["genetic_disease", "yes_no"])
                 if "yes_no" in resultDICT.keys() and "genetic_disease" not in resultDICT.keys():
                     if resultDICT["yes_no"] == False:
                         resultDICT["gentic_disease"] = False
@@ -198,7 +198,7 @@ def condition_control(dicts, context, msgSTR):
                         resultDICT.pop("yes_no")
         
         # 資料寫入字典
-        if "response" in data_dict.keys():
+        if "response" in data_dict[context].keys():
             data_dict[context].pop("response")
             for key in resultDICT.keys():
                 data_dict[context][key] = resultDICT[key][0]
@@ -219,20 +219,18 @@ def condition_control(dicts, context, msgSTR):
 
         # 偵測 intent
         if len(waiting_question) == 2:
-            resultDICT = getLokiResult(context, msgSTR, ["school", "yes_no"])
+            resultDICT = operateLoki(context, msgSTR, ["school", "yes_no"])
             if "yes_no" in resultDICT.keys() and "school" not in resultDICT.keys():
                 resultDICT["school"] = resultDICT["yes_no"]
                 resultDICT["response"] = ["那麼孩子每天使用3C產品(包括：手機、平版、電腦、電視)的總時間有超過2小時嗎?"]
                 resultDICT.pop("yes_no")
 
         elif len(waiting_question) == 1:
-            resultDICT = getLokiResult(context, msgSTR, ["3C", "yes_no"])
+            resultDICT = operateLoki(context, msgSTR, ["3C", "yes_no"])
             if "yes_no" in resultDICT.keys() and "3c" not in resultDICT.keys():
                 resultDICT["3c"] = resultDICT["yes_no"]
                 resultDICT["response"] = ["好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作更深入的了解囉。"]
                 resultDICT.pop("yes_no")
-
-#TODO: 補跟yes_no交叉比對的判斷式
 
         # 資料寫入字典
         for key in resultDICT.keys():
@@ -242,7 +240,7 @@ def condition_control(dicts, context, msgSTR):
         if len(get_key_from_value(data_dict[context], "None")) == 0:
             data_dict["b"] = True
         if data_dict["b"] == True:
-            age = data_dict["background"]["age"]
+            age = data_dict["background"]["age"] // 12
             if age == 0:
                 data_dict[context]["response"] =data_dict[context]["response"] + "\n" + meta_data["under1"]["q1"]
             else:
@@ -256,17 +254,15 @@ def condition_control(dicts, context, msgSTR):
         waiting_question = get_key_from_value(data_dict["behavior"], "None")
 
         # 偵測 intent
-        resultDICT = getLokiResult(context, msgSTR, ["yes_no", waiting_question[0]])
+        resultDICT = operateLoki(context, msgSTR, ["yes_no", waiting_question[0]])
 
         # 資料寫入字典
         for key in resultDICT.keys():
-            data_dict[key] = resultDICT[key][0]
+            data_dict[context][key] = resultDICT[key][0]
         
         if len(get_key_from_value(data_dict["behavior"], "None")) == 13-amount:
             data_dict["behavior"]["response"] = give_advice(context, data_dict["background"]["age"], data_dict)
             data_dict["c"] = True
-        else:
-            data_dict["response"] = resultDICT["response"]
 
         # 判斷對話是否結束，如果結束就給建議
         if data_dict["c"] == True:
@@ -274,5 +270,34 @@ def condition_control(dicts, context, msgSTR):
 
     return data_dict
 
-
+if __name__ == "__main__":
+    dicts = {'a': False,
+            'b': False,
+            'background': {'age': 29,
+                            'congenital_disease': 'None',
+                            'gentic_disease': 'None',
+                            'response': '2歲5個月啊。\n'
+                                        '那麼孩子出生時是否足月呢？',
+                            'ten_month': "None",
+                            'weight': 'None'},
+            'behavior': {'q1': 'None',
+                        'q10': 'None',
+                        'q11': 'None',
+                        'q12': 'None',
+                        'q13': 'None',
+                        'q2': 'None',
+                        'q3': 'None',
+                        'q4': 'None',
+                        'q5': 'None',
+                        'q6': 'None',
+                        'q7': 'None',
+                        'q8': 'None',
+                        'q9': 'None'},
+            'c': False,
+            'environment': {'3c': 'None',
+                            'school': 'None'}} #弄個測試用的回傳字典
+    context = "background"
+    msgSTR = "是早產"
+    resultDICT = condition_control(dicts, context, msgSTR)
+    print(resultDICT)
     
