@@ -11,73 +11,12 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "d8b5a2b2-1cc3-41f0-816b-6d2ef050409a",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不多": {
             "id": "aa2238c2-8b48-4512-82e9-1f929f2002f5",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不常": {
-            "id": "f8af5a6a-4979-4bc4-bb05-1bf3a93bdc1d",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "0649e6ec-598b-45c2-9049-712e9b2857cf",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "415cd229-7022-4ff5-b994-38c0734ca145",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "eeffc01d-8723-4d83-97b2-4094ede8c0d3",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -102,17 +41,6 @@
                     "text": "很少",
                     "checked": false,
                     "checkbox": true
-                }
-            ]
-        },
-        "總是": {
-            "id": "99f4ae11-5351-4a8f-b0af-4f849f10f53c",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "總是",
-                    "checked": true,
-                    "checkbox": false
                 }
             ]
         },
@@ -221,17 +149,6 @@
                     ],
                     "text": "見",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "156ea6b7-82b4-4c4e-a83b-306b939ac1b8",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -882,29 +799,6 @@
                 {
                     "pos": "ENTITY_DetPhrase",
                     "text": "每次",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不多": {
-            "id": "03970442-f194-43d0-ae41-2874230eb951",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
                     "checked": false,
                     "checkbox": false
                 }

@@ -11,56 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "a4886b47-551b-48c1-bfd7-57d03c2d27f9",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不常": {
-            "id": "c48da383-78ba-4605-8b3d-3c8dc84a12dc",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "e5abf8da-cdbe-4012-9000-0e53fa76f8bc",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "0993a915-211e-4cb5-8ca9-0da940f0086e",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "46aff88b-1d4c-4da3-b2ad-acdd4437ce8b",
             "argument": [
@@ -80,17 +30,6 @@
                     "text": "很少",
                     "checked": false,
                     "checkbox": true
-                }
-            ]
-        },
-        "總是": {
-            "id": "46172918-da15-4e60-9a51-9f864fa91441",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "總是",
-                    "checked": true,
-                    "checkbox": false
                 }
             ]
         },
@@ -199,17 +138,6 @@
                     ],
                     "text": "見",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "e2452f35-8162-4714-a550-11a84ea30593",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -544,87 +472,6 @@
                         }
                     ],
                     "text": "重複",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "動作",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "會一直重覆動作": {
-            "id": "82a14d25-0b21-4eb0-9e04-ad885320ecad",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "一直",
-                    "checked": true,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "重複",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "重復",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "重複著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "反復",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "造句",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "省略",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "插入",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "遞迴",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "翻動",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "倒帶",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "重覆",
                     "checked": false,
                     "checkbox": false
                 },

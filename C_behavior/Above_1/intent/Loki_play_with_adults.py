@@ -50,17 +50,9 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定": # TODO:
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -89,10 +81,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[會]":
+    if utterance == "[常常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = True
+            if "不常" in inputSTR:
+                resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
+                resultDICT["q4"] = False
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
+                resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -113,17 +109,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[一定]": # TODO:
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -136,14 +124,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不太[會]": # TODO:
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "不太理人": # TODO:
+    if utterance == "不太理人": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -174,7 +162,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒[什麼]反應": # TODO:
+    if utterance == "沒[什麼]反應": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -189,21 +177,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "看[心情]": # TODO:
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "看人": # TODO:
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "看玩什麼": # TODO:
+    if utterance == "看玩什麼": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:

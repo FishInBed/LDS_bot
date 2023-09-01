@@ -50,27 +50,29 @@ import os
 import re
 try:
     from intent import Loki_play_with_adults
-    from intent import Loki_reproduce_same_actions
     from intent import Loki_express_needs
     from intent import Loki_sharing
-    from intent import Loki_understand_short_sentences
     from intent import Loki_imitate_actions
+    from intent import Loki_understand_short_sentences
+    from intent import Loki_reproduce_same_actions
     from intent import Loki_follow_directions
+    from intent import Loki_yes_no
 except:
     from .intent import Loki_play_with_adults
-    from .intent import Loki_reproduce_same_actions
     from .intent import Loki_express_needs
     from .intent import Loki_sharing
-    from .intent import Loki_understand_short_sentences
     from .intent import Loki_imitate_actions
+    from .intent import Loki_understand_short_sentences
+    from .intent import Loki_reproduce_same_actions
     from .intent import Loki_follow_directions
+    from .intent import Loki_yes_no
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
+    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
     USERNAME = accountInfo["username"]
-    LOKI_KEY = accountInfo["loki_key_above1"]
+    LOKI_KEY = accountInfo["loki_key"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -197,10 +199,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "play_with_adults":
                     lokiResultDICT = Loki_play_with_adults.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # reproduce_same_actions
-                if lokiRst.getIntent(index, resultIndex) == "reproduce_same_actions":
-                    lokiResultDICT = Loki_reproduce_same_actions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # express_needs
                 if lokiRst.getIntent(index, resultIndex) == "express_needs":
                     lokiResultDICT = Loki_express_needs.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -209,17 +207,25 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "sharing":
                     lokiResultDICT = Loki_sharing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # understand_short_sentences
-                if lokiRst.getIntent(index, resultIndex) == "understand_short_sentences":
-                    lokiResultDICT = Loki_understand_short_sentences.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # imitate_actions
                 if lokiRst.getIntent(index, resultIndex) == "imitate_actions":
                     lokiResultDICT = Loki_imitate_actions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
+                # understand_short_sentences
+                if lokiRst.getIntent(index, resultIndex) == "understand_short_sentences":
+                    lokiResultDICT = Loki_understand_short_sentences.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # reproduce_same_actions
+                if lokiRst.getIntent(index, resultIndex) == "reproduce_same_actions":
+                    lokiResultDICT = Loki_reproduce_same_actions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # follow_directions
                 if lokiRst.getIntent(index, resultIndex) == "follow_directions":
                     lokiResultDICT = Loki_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # yes_no
+                if lokiRst.getIntent(index, resultIndex) == "yes_no":
+                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -297,50 +303,56 @@ def testLoki(inputLIST, filterLIST):
 def testIntent():
     # play_with_adults
     print("[TEST] play_with_adults")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','看人','總是','不一定','不太會','有時候','沒辦法','看心情','不太理人','不太確定','會但不多','會但不常','看玩什麼','不跟大人玩','並不會每次','可以但不多','沒什麼反應','只看過一兩次','不喜歡跟大人玩','小孩很喜歡跟人玩','小孩不喜歡別人碰他']
+    inputLIST = ['不行','常常','不一定','不太會','沒辦法','看心情','不太理人','不太確定','會但不多','會但不常','看玩什麼','不跟大人玩','並不會每次','沒什麼反應','只看過一兩次','不喜歡跟大人玩','小孩很喜歡跟人玩','小孩不喜歡別人碰他']
     testLoki(inputLIST, ['play_with_adults'])
-    print("")
-
-    # reproduce_same_actions
-    print("[TEST] reproduce_same_actions")
-    inputLIST = ['會','不常','不會','偶爾','常常','很少','總是','不一定','不太會','很少見','有時候','不太確定','好像不會','好像沒有','會但不多','會但不常','會一直重複動作','會一直重覆動作','一直做一樣的動作']
-    testLoki(inputLIST, ['reproduce_same_actions'])
     print("")
 
     # express_needs
     print("[TEST] express_needs")
-    inputLIST = ['會','不多','不常','不會','偶爾','可以','常常','很少','總是','不一定','不太會','很少見','有時候','看心情','不太確定','好像不會','好像沒有','會但不多','會但不常','都用哭的','並不會每次','可以但不多','沒什麼反應','一直做一樣的動作']
+    inputLIST = ['不多','常常','很少','不一定','不太會','很少見','看心情','不太確定','好像不會','好像沒有','會但不多','會但不常','都用哭的','並不會每次','沒什麼反應','一直做一樣的動作']
     testLoki(inputLIST, ['express_needs'])
     print("")
 
     # sharing
     print("[TEST] sharing")
-    inputLIST = ['會','不多','不常','不會','偶爾','可以','常常','很少','看人','總是','不一定','不太會','很少見','有時候','看心情','不太理人','不太確定','好像不會','好像沒有','拿著不放','會但不常','都只是拿著','都拿在手裡','只看過一兩次']
+    inputLIST = ['不多','常常','很少','不一定','不太會','很少見','看心情','不太理人','不太確定','好像不會','好像沒有','拿著不放','會但不常','都只是拿著','都拿在手裡','只看過一兩次']
     testLoki(inputLIST, ['sharing'])
-    print("")
-
-    # understand_short_sentences
-    print("[TEST] understand_short_sentences")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','很少','總是','不一定','不太會','有時候','沒辦法','看心情','還可以','都可以','不太理人','不太確定','好像不會','好像沒有','會但不多','會但不常','可以但不多','沒什麼反應']
-    testLoki(inputLIST, ['understand_short_sentences'])
     print("")
 
     # imitate_actions
     print("[TEST] imitate_actions")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很少','總是','不一定','不太會','有時候','沒辦法','看心情','還可以','都可以','不太理人','不太確定','好像不會','好像沒有','會但不多','會但不常','可以但不多','沒什麼反應','只看過一兩次','玩自己的不理人']
+    inputLIST = ['不行','常常','很少','不一定','不太會','沒辦法','看心情','都可以','不太理人','不太確定','好像不會','好像沒有','會但不多','會但不常','沒什麼反應','只看過一兩次','玩自己的不理人']
     testLoki(inputLIST, ['imitate_actions'])
+    print("")
+
+    # understand_short_sentences
+    print("[TEST] understand_short_sentences")
+    inputLIST = ['常常','很少','不一定','不太會','沒辦法','看心情','還可以','都可以','不太理人','不太確定','好像不會','好像沒有','會但不常','可以但不多','沒什麼反應']
+    testLoki(inputLIST, ['understand_short_sentences'])
+    print("")
+
+    # reproduce_same_actions
+    print("[TEST] reproduce_same_actions")
+    inputLIST = ['常常','很少','不一定','不太會','很少見','不太確定','好像不會','好像沒有','會但不多','會但不常','會一直重複動作','一直做一樣的動作']
+    testLoki(inputLIST, ['reproduce_same_actions'])
     print("")
 
     # follow_directions
     print("[TEST] follow_directions")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','很少','不一定','不太會','不理人','有時候','沒辦法','看心情','還可以','都可以','不太理人','不太確定','好像不會','好像沒有','會但不多','並不會每次','可以但不多']
+    inputLIST = ['不行','常常','很少','不一定','不太會','不理人','沒辦法','看心情','都可以','不太理人','不太確定','好像不會','好像沒有','並不會每次','可以但不多']
     testLoki(inputLIST, ['follow_directions'])
+    print("")
+
+    # yes_no
+    print("[TEST] yes_no")
+    inputLIST = ['否','對','有','可以','對啊','沒有','不可以']
+    testLoki(inputLIST, ['yes_no'])
     print("")
 
 
 if __name__ == "__main__":
     # 測試所有意圖
-    # testIntent()
+    testIntent()
 
     # 測試其它句子
     filterLIST = []
@@ -349,9 +361,6 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    inputLIST = "不常"
-    resultDICT = execLoki(inputLIST, filterLIST=["express_needs"])
-    print(resultDICT)    
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
