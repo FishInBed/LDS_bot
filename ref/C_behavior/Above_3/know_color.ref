@@ -7,51 +7,12 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "5c548c54-ad2d-48f3-9c9b-e4f973c40ea3",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "c8e98e9f-9047-4ebd-8d65-6f916d2aa00f",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "6f4d59f5-bc17-4fd9-a00e-122ad6c8bf45",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "96008c0b-4ef9-46be-b31e-24324c6d4f50",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }

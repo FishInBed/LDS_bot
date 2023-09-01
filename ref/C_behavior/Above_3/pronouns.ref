@@ -7,17 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "c4c3bdbd-e453-4f50-b108-32cdbe6e8ab2",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "e342969c-0009-416a-bce0-c95b748b4e99",
             "argument": [
@@ -29,51 +18,12 @@
                 }
             ]
         },
-        "不會": {
-            "id": "0ce097d9-3d25-4f9b-a33a-887a2d257e2b",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "3cb95ac4-7ec7-4f7f-8c65-adc7602e3419",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "924f41f4-0c55-499b-bac2-87d555c9ddf9",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "2db594fd-9b8c-40bb-a031-d32d820dbf10",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -182,17 +132,6 @@
                 }
             ]
         },
-        "有時候": {
-            "id": "dd91fb76-ce0b-4a4e-b999-58789ad1550e",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "沒辦法": {
             "id": "b6e3f83a-7e61-4022-91a0-b17f262cf929",
             "argument": [
@@ -207,17 +146,6 @@
                     "text": "辦法",
                     "checked": false,
                     "checkbox": true
-                }
-            ]
-        },
-        "還可以": {
-            "id": "b6ed2f0a-82a6-41f1-9ce2-32ccb15feac1",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "還可以",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },

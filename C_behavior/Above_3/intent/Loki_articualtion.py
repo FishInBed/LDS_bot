@@ -50,14 +50,6 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[偶爾]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[好像]沒有":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
@@ -76,21 +68,25 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[很常][這樣]":
         if CHATBOT_MODE:
+            if "不" in inputSTR:
+                resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
+                resultDICT["q2"] = True
+            elif "很" in inputSTR:
+                resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
+                resultDICT["q2"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[有時候]":
+        if CHATBOT_MODE:
             resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
             resultDICT["q2"] = False
         else:
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那請問一下，您的孩子現在可以理解大和小或多和少的概念了嗎？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:

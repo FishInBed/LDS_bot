@@ -216,11 +216,11 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
 
                 # yes_no
                 if lokiRst.getIntent(index, resultIndex) == "yes_no":
-                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT, refDICT)
 
                 # recheck
                 if lokiRst.getIntent(index, resultIndex) == "recheck":
-                    lokiResultDICT = Loki_recheck.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT)
+                    lokiResultDICT = Loki_recheck.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), resultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:

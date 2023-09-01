@@ -50,7 +50,7 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -73,14 +73,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那關於說話的部分呢...您的孩子已經可以說出完整的短句(例如：我要喝水)了嗎？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[都][可以]":
         if CHATBOT_MODE:
             resultDICT["response"] = "那關於說話的部分呢...您的孩子已經可以說出完整的短句(例如：我要喝水)了嗎？"
@@ -89,22 +81,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那關於說話的部分呢...您的孩子已經可以說出完整的短句(例如：我要喝水)了嗎？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "不太行":
+    if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -119,10 +103,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "好像不[會]":
+    if utterance == "好像不[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
-            resultDICT["response"] = "那關於說話的部分呢...您的孩子已經可以說出完整的短句(例如：我要喝水)了嗎？"
-            resultDICT["q3"] = False
+            resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass

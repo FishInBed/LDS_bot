@@ -58,14 +58,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
-            resultDICT["q7"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[都][可以]":
         if CHATBOT_MODE:
             resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
@@ -74,22 +66,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "對了～您孩子是不是可以正確完成圖片的配對活動呢？例如：在數張圖片中找到兩張一樣的？"
-            resultDICT["q7"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "不太行":
+    if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:

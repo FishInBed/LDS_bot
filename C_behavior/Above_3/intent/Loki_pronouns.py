@@ -52,7 +52,11 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if "不常" in inputSTR: #去reply裡面抓引導用問題
+                resultDICT["response"] = getResponse(utterance, args)
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+                resultDICT["q9"] = True
         else:
             # write your code here
             pass
@@ -89,14 +93,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[會]錯亂":
         if CHATBOT_MODE:
             resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
@@ -113,24 +109,20 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "很少":
+    if utterance == "很少": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if "多" in inputSTR:
+                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+                resultDICT["q9"] = True
+            elif "少" in inputSTR: #去reply裡面抓引導用問題
+                resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass

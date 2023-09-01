@@ -29,34 +29,6 @@
                 }
             ]
         },
-        "不會": {
-            "id": "516ae056-84bd-4c38-8b3b-44bd861324fd",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "d05d83d5-1efd-448d-8e95-0e86eb0531bc",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "沒錯": {
             "id": "66c0c915-1285-40f9-9560-94253d302251",
             "argument": [

@@ -7,17 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "af59f144-4d29-4b26-86e3-95c8063d579e",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "a91b4548-b97a-4b89-a048-3b47d8ba0684",
             "argument": [
@@ -29,51 +18,12 @@
                 }
             ]
         },
-        "不會": {
-            "id": "e84aa43a-ed1e-4bde-8f60-197c4eeb7161",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "118685ac-3e42-47d9-b2f6-7d299171011c",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "90fbb40e-1318-4568-91be-fe1648da7874",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "d6757ec8-e115-435e-921a-afdc66fb4725",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }

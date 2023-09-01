@@ -7,34 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "b9ea5823-5240-4021-9455-d4b593fc4807",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "81f81476-5c24-482a-8f51-bde575cbb22a",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "eb07f46d-19e5-4165-b6ae-76c8222e4d5e",
             "argument": [
@@ -53,17 +25,6 @@
                     "pos": "TIME_justtime",
                     "text": "偶爾",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "d044ae72-6090-4300-be05-b19aeba47062",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
                     "checkbox": false
                 }
             ]
@@ -508,35 +469,6 @@
                 {
                     "pos": "MODAL",
                     "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "還不太會": {
-            "id": "58b89c47-0707-47f3-8197-d2af00cda486",
-            "argument": [
-                {
-                    "pos": "FUNC_inner",
-                    "text": "還",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_degreeHead",
-                    "text": "太",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
                     "checked": false,
                     "checkbox": false
                 }
