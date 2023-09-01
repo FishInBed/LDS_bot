@@ -11,34 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "3d881a86-857a-4011-8f6a-908bbdb21c5f",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "4b19557e-5edd-41ae-b304-b47f5cd1488d",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "4678ee14-a517-4d7b-a675-57fd2f0eb21f",
             "argument": [
@@ -50,24 +22,13 @@
                 }
             ]
         },
-        "偶爾": {
-            "id": "e3c518e0-2492-42c0-9f09-216660748daa",
+        "常常": {
+            "id": "b0008277-7f7f-4cbc-86bf-d9f9851639a9",
             "argument": [
                 {
                     "pos": "TIME_justtime",
-                    "text": "偶爾",
+                    "text": "常常",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "eb65b7e9-1106-46b1-a8e0-d2475032250c",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
                     "checkbox": false
                 }
             ]
@@ -409,17 +370,6 @@
                     "text": "心情",
                     "checked": true,
                     "checkbox": true
-                }
-            ]
-        },
-        "還可以": {
-            "id": "0814a1c3-ba2f-452f-a6d5-62eabde9fd09",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "還可以",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },

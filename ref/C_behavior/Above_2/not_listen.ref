@@ -11,23 +11,18 @@
         ]
     },
     "utterance": {
-        "對": {
-            "id": "60325787-892d-4965-9210-f90f768ac694",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "是": {
-            "id": "20855ddf-2281-478a-8525-7675b32bae50",
+        "是的": {
+            "id": "761bb807-a488-41ad-9ee2-81138fe77010",
             "argument": [
                 {
                     "pos": "AUX",
                     "text": "是",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_inner",
+                    "text": "的",
                     "checked": false,
                     "checkbox": false
                 }
@@ -308,23 +303,6 @@
                 {
                     "pos": "TIME_justtime",
                     "text": "常常",
-                    "checked": true,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_DetPhrase",
-                    "text": "這樣",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "很常這樣": {
-            "id": "b82b9c56-fc36-4184-9f66-220425422501",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "很常",
                     "checked": true,
                     "checkbox": false
                 },

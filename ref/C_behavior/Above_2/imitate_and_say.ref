@@ -11,84 +11,12 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "4198a2bb-9916-4f80-a52f-d7b3c9e203d4",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不多": {
-            "id": "ed6224f3-d5c3-4b13-b805-fd7a57517e12",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不常": {
-            "id": "8735ead6-b966-46f3-8b3e-4cb5012843b8",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "b33ad34a-b61c-4daa-aeb5-452eee5a35d0",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "5f62bdb5-9d44-474b-992e-dbd164a4e7f4",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "2322d5bd-c96e-414c-9836-dda60fd9cefa",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "bae90f5f-bed8-486b-b30e-6ee22373bd50",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -117,7 +45,7 @@
             ]
         },
         "沒有": {
-            "id": "13a9da57-9079-4a59-badd-ce8bf7d8597b",
+            "id": "ae7c8f57-88e2-43f0-87ff-fa57c7a0eb03",
             "argument": [
                 {
                     "pos": "FUNC_negation",
@@ -163,17 +91,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "e122ea72-9f14-4bbc-aa1d-9cacdaa65bec",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -665,17 +582,6 @@
                 }
             ]
         },
-        "還可以": {
-            "id": "729e968c-632e-441b-a64b-9087a069f3e9",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "還可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "都可以": {
             "id": "e74d776d-5133-45d4-9a0f-5b2ccb62277b",
             "argument": [
@@ -1155,29 +1061,6 @@
                 {
                     "pos": "ENTITY_DetPhrase",
                     "text": "每次",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不多": {
-            "id": "045c3512-1070-4a48-8df2-c6d917856774",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
                     "checked": false,
                     "checkbox": false
                 }

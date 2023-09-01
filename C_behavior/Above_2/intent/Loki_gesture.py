@@ -58,25 +58,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[不多]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
-            resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -85,6 +69,18 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
             resultDICT["q4"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[常常]":
+        if CHATBOT_MODE:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
+                resultDICT["q4"] = True
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
+                resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -105,17 +101,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[一定]":
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
-            resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -146,8 +134,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "很少":
         if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
-            resultDICT["q4"] = True
+            if "多" in inputSTR:
+                resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
+                resultDICT["q4"] = False
+            elif "少" in inputSTR:
+                resultDICT["response"] = "另外，想請問您是否看過孩子模仿大人做家事的樣子或模仿器具使用的動作呀？例如：孩子做出好像在擦桌子的動作、或像是在收東西的樣子？"
+                resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -160,7 +152,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "看[心情]":
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
