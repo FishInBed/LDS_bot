@@ -22,45 +22,6 @@
                 }
             ]
         },
-        "會": {
-            "id": "a4d7f893-f2fa-4893-8a0d-542ddb11016e",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不常": {
-            "id": "c29b99de-dda5-47fe-a911-ba1fea472ad6",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "80881b48-c14b-4089-b8c6-b9a04e6f4dfb",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "635d98fd-bc39-497f-a96f-b727ee1beabe",
             "argument": [
@@ -72,45 +33,12 @@
                 }
             ]
         },
-        "偶爾": {
-            "id": "d386ac65-fd6b-4cc9-9f08-5b98aa2559b1",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "64ea2bf6-b5ce-471c-8ff6-3ad6b0a6f658",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "f4ab8aa6-ee0b-4450-90d3-dd50b8a6b2b4",
             "argument": [
                 {
                     "pos": "TIME_justtime",
                     "text": "常常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "總是": {
-            "id": "5698b22c-bccb-4121-bd67-0b262aa984f6",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "總是",
                     "checked": true,
                     "checkbox": false
                 }
@@ -152,17 +80,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "ab062d05-5472-4075-b07d-d6a32b37d511",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

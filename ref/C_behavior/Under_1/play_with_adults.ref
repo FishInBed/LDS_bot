@@ -11,84 +11,12 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "5a2199d5-0683-43e2-b99e-0973e278a089",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不多": {
             "id": "21956c38-34bf-4ae0-9cd1-5f44edc797e5",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不常": {
-            "id": "747d5c3d-dbe1-4259-bdc8-b849660e2100",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "5a576bcb-d700-43ff-8dfc-33ae171b966e",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不行": {
-            "id": "39fbe1a9-d9b2-4bf2-8efe-08e19be6dd97",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "3a0e0b13-a64c-4fc8-ae8f-ed547a66e67b",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "13e1926d-457c-4e26-95ad-844c5657652b",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -113,206 +41,6 @@
                     "text": "很少",
                     "checked": false,
                     "checkbox": true
-                }
-            ]
-        },
-        "看人": {
-            "id": "3539827d-f341-4b19-b537-8c642205a559",
-            "argument": [
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "探看",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "收看",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "看守",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "看戲",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "看望",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "看護",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "看顧",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "觀看",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "光顧",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "探望",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "探視",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "探訪",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "收視",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "注視",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "盯住",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "省親",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "瞭望",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "觀望",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "觀賞",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "訪問",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "訪談",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "走動",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "走訪",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "迫視",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "造訪",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "逼視",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "看了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "瞧",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "想看",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看來",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看起",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "看",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_noun",
-                    "text": "人",
-                    "checked": true,
-                    "checkbox": true
-                }
-            ]
-        },
-        "總是": {
-            "id": "c03d908c-f38d-48ea-ad63-bbcd60988b46",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "總是",
-                    "checked": true,
-                    "checkbox": false
                 }
             ]
         },
@@ -421,17 +149,6 @@
                     ],
                     "text": "見",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "1e0a5ffe-9d03-4292-833e-0ec645b642e9",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -1190,29 +907,6 @@
                 {
                     "pos": "ENTITY_DetPhrase",
                     "text": "每次",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不多": {
-            "id": "1b06492a-e9e9-4637-a744-2b7c096dbeff",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
                     "checked": false,
                     "checkbox": false
                 }

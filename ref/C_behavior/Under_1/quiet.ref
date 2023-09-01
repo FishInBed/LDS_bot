@@ -11,17 +11,6 @@
         ]
     },
     "utterance": {
-        "對": {
-            "id": "1a186efc-4c9c-4132-a3b9-6c9430a80c36",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "是啊": {
             "id": "a6d62d46-0158-490c-b76d-8c0783135c07",
             "argument": [
@@ -51,23 +40,6 @@
                 {
                     "pos": "MODIFIER",
                     "text": "錯",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "還好": {
-            "id": "4c7651ec-f861-4615-ac78-70cb36b014f2",
-            "argument": [
-                {
-                    "pos": "FUNC_inner",
-                    "text": "還",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "好",
                     "checked": false,
                     "checkbox": false
                 }
@@ -267,7 +239,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很安靜",
-                    "checked": true,
+                    "checked": false,
                     "checkbox": true
                 }
             ]

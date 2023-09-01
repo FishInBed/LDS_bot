@@ -11,17 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "14541c66-c01c-4671-a7bd-e8a5eca55bb9",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不多": {
             "id": "8d853ed5-6392-4fb3-b677-a579f4dd5f47",
             "argument": [
@@ -44,62 +33,12 @@
                 }
             ]
         },
-        "不會": {
-            "id": "ccd22a30-2efb-4f6e-9d77-529b634e3131",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "f811512d-f643-446d-b637-53be3eeeed1c",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "常常": {
-            "id": "896fa757-d468-435c-996d-b8bf82807c21",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "常常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "很多": {
             "id": "e4f4e812-15dc-479f-ae44-e6591746bc1a",
             "argument": [
                 {
                     "pos": "DegreeP",
                     "text": "很多",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "很少": {
-            "id": "9d533ce1-f3a3-4504-b7aa-57b2bdc1c385",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "很少",
                     "checked": false,
                     "checkbox": true
                 }
@@ -141,17 +80,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "502cf100-e960-4d7f-be30-f88f056576ab",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

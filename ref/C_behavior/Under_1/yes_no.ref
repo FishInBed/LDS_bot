@@ -1,6 +1,6 @@
 {
     "language": "zh-tw",
-    "type": "basic",
+    "type": "advance",
     "version": {
         "atk": "v265",
         "intent": "1.0"
@@ -11,100 +11,49 @@
         ]
     },
     "utterance": {
+        "否": {
+            "id": "515e301a-c3ac-4f43-9c6c-59932cc00601",
+            "pos": "<ENTITY_oov>否</ENTITY_oov>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>否</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
         "對": {
-            "id": "5f7db88b-3bb6-4693-a9a8-f3114953b30d",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
+            "id": "1178019e-b854-41b0-b9db-765f68939f3c",
+            "pos": "<MODIFIER>對</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?|<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)><CLAUSE_particle>[^<]+</CLAUSE_particle>"
         },
-        "是": {
-            "id": "28ac2f13-1e7c-45d4-a15c-2a24b63ba285",
-            "argument": [
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會": {
-            "id": "fe2fc07e-9d7b-4a78-950e-9db0a810f991",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不是": {
-            "id": "66aeceb1-652c-493a-84b1-8a66130660af",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "aafbafe5-c377-46d3-a3b3-c13fc93b1bf6",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
+        "有": {
+            "id": "71efe655-8e2a-4e70-806e-8e779e3b0314",
+            "pos": "<ACTION_verb>有</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)>|<AUX>[^<]+</AUX>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
         },
         "可以": {
-            "id": "0bcaa871-18bc-4bc9-acd9-277ef8cd208a",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
+            "id": "1b0217d7-01f1-4da3-a36c-f18f51491356",
+            "pos": "<MODAL>可以</MODAL>",
+            "lexy": [],
+            "pattern": "<MODAL>[^<]+</MODAL>|<CLAUSE_particle>[^<]+</CLAUSE_particle>"
+        },
+        "對啊": {
+            "id": "e9aef220-5100-45a0-bb98-95605b20fe4b",
+            "pos": "<FUNC_inner>對</FUNC_inner><CLAUSE_particle>啊</CLAUSE_particle>",
+            "lexy": [],
+            "pattern": "<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)><CLAUSE_particle>[^<]+</CLAUSE_particle>"
+        },
+        "沒有": {
+            "id": "3f4b0509-dd8e-4600-b411-76ad2a5ee044",
+            "pos": "<FUNC_negation>沒有</FUNC_negation>",
+            "lexy": [],
+            "pattern": "(<(MODIFIER|ModifierP)>不對</(MODIFIER|ModifierP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?)|<FUNC_negation>[^<]+</FUNC_negation>(<AUX>[^<]+</AUX>)?(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
         },
         "不可以": {
-            "id": "28927796-b0ad-4a23-aa62-9dfe21101246",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
+            "id": "5b34bff6-162e-4938-a0b4-e5d82613abcd",
+            "pos": "<FUNC_negation>不</FUNC_negation><MODAL>可以</MODAL>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation><MODAL>[^<]+</MODAL>|<CLAUSE_particle>[^<]+</CLAUSE_particle>"
         }
     },
     "alias": {},

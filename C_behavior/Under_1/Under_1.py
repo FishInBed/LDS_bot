@@ -49,42 +49,42 @@ import math
 import os
 import re
 try:
+    from intent import Loki_quiet
+    from intent import Loki_find_dropped_objects
+    from intent import Loki_play_with_adults
+    from intent import Loki_family_and_stangers
     from intent import Loki_yes_no
     from intent import Loki_play_sounds
+    from intent import Loki_cooing
     from intent import Loki_combined_sounds
     from intent import Loki_look_at_face
-    from intent import Loki_understand_no
     from intent import Loki_laughing
     from intent import Loki_different_sounds
     from intent import Loki_eye_contact
-    from intent import Loki_quiet
-    from intent import Loki_cooing
-    from intent import Loki_find_dropped_objects
-    from intent import Loki_play_with_adults
     from intent import Loki_understand_their_own_name
-    from intent import Loki_family_and_stangers
+    from intent import Loki_understand_no
 except:
+    from .intent import Loki_quiet
+    from .intent import Loki_find_dropped_objects
+    from .intent import Loki_play_with_adults
+    from .intent import Loki_family_and_stangers
     from .intent import Loki_yes_no
     from .intent import Loki_play_sounds
+    from .intent import Loki_cooing
     from .intent import Loki_combined_sounds
     from .intent import Loki_look_at_face
-    from .intent import Loki_understand_no
     from .intent import Loki_laughing
     from .intent import Loki_different_sounds
     from .intent import Loki_eye_contact
-    from .intent import Loki_quiet
-    from .intent import Loki_cooing
-    from .intent import Loki_find_dropped_objects
-    from .intent import Loki_play_with_adults
     from .intent import Loki_understand_their_own_name
-    from .intent import Loki_family_and_stangers
+    from .intent import Loki_understand_no
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
 try:
-    accountInfo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "account.info"), encoding="utf-8"))
+    accountInfo = json.load(open(os.path.join(os.path.dirname(__file__), "account.info"), encoding="utf-8"))
     USERNAME = accountInfo["username"]
-    LOKI_KEY = accountInfo["loki_key_under1"]
+    LOKI_KEY = accountInfo["loki_key"]
 except Exception as e:
     print("[ERROR] AccountInfo => {}".format(str(e)))
     USERNAME = ""
@@ -207,6 +207,22 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
         for index, key in enumerate(inputLIST):
             lokiResultDICT = {}
             for resultIndex in range(0, lokiRst.getLokiLen(index)):
+                # quiet
+                if lokiRst.getIntent(index, resultIndex) == "quiet":
+                    lokiResultDICT = Loki_quiet.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # find_dropped_objects
+                if lokiRst.getIntent(index, resultIndex) == "find_dropped_objects":
+                    lokiResultDICT = Loki_find_dropped_objects.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # play_with_adults
+                if lokiRst.getIntent(index, resultIndex) == "play_with_adults":
+                    lokiResultDICT = Loki_play_with_adults.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # family_and_stangers
+                if lokiRst.getIntent(index, resultIndex) == "family_and_stangers":
+                    lokiResultDICT = Loki_family_and_stangers.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # yes_no
                 if lokiRst.getIntent(index, resultIndex) == "yes_no":
                     lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -215,6 +231,10 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "play_sounds":
                     lokiResultDICT = Loki_play_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
+                # cooing
+                if lokiRst.getIntent(index, resultIndex) == "cooing":
+                    lokiResultDICT = Loki_cooing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # combined_sounds
                 if lokiRst.getIntent(index, resultIndex) == "combined_sounds":
                     lokiResultDICT = Loki_combined_sounds.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -222,10 +242,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # look_at_face
                 if lokiRst.getIntent(index, resultIndex) == "look_at_face":
                     lokiResultDICT = Loki_look_at_face.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # understand_no
-                if lokiRst.getIntent(index, resultIndex) == "understand_no":
-                    lokiResultDICT = Loki_understand_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
                 # laughing
                 if lokiRst.getIntent(index, resultIndex) == "laughing":
@@ -239,29 +255,13 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "eye_contact":
                     lokiResultDICT = Loki_eye_contact.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # quiet
-                if lokiRst.getIntent(index, resultIndex) == "quiet":
-                    lokiResultDICT = Loki_quiet.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # cooing
-                if lokiRst.getIntent(index, resultIndex) == "cooing":
-                    lokiResultDICT = Loki_cooing.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # find_dropped_objects
-                if lokiRst.getIntent(index, resultIndex) == "find_dropped_objects":
-                    lokiResultDICT = Loki_find_dropped_objects.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # play_with_adults
-                if lokiRst.getIntent(index, resultIndex) == "play_with_adults":
-                    lokiResultDICT = Loki_play_with_adults.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # understand_their_own_name
                 if lokiRst.getIntent(index, resultIndex) == "understand_their_own_name":
                     lokiResultDICT = Loki_understand_their_own_name.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # family_and_stangers
-                if lokiRst.getIntent(index, resultIndex) == "family_and_stangers":
-                    lokiResultDICT = Loki_family_and_stangers.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+                # understand_no
+                if lokiRst.getIntent(index, resultIndex) == "understand_no":
+                    lokiResultDICT = Loki_understand_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -337,88 +337,88 @@ def testLoki(inputLIST, filterLIST):
         print(resultDICT["msg"])
 
 def testIntent():
-    # yes_no
-    print("[TEST] yes_no")
-    inputLIST = ['對','是','會','不是','不會','可以','不可以']
-    testLoki(inputLIST, ['yes_no'])
-    print("")
-
-    # play_sounds
-    print("[TEST] play_sounds")
-    inputLIST = ['會','不多','不常','不會','偶爾','常常','很多','很少','不一定','不太會','有時候','看心情','不太確定','會但聲音都很像','不太會而且聲音很少','會但聲音沒什麼變化']
-    testLoki(inputLIST, ['play_sounds'])
-    print("")
-
-    # combined_sounds
-    print("[TEST] combined_sounds")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很多','很少','不一定','不太會','很少見','有時候','沒聽過','沒辦法','看心情','不太確定','會但不多','可以但不多','只聽過一兩次','可以但沒那麼多種']
-    testLoki(inputLIST, ['combined_sounds'])
-    print("")
-
-    # look_at_face
-    print("[TEST] look_at_face")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','只看過一兩次']
-    testLoki(inputLIST, ['look_at_face'])
-    print("")
-
-    # understand_no
-    print("[TEST] understand_no")
-    inputLIST = ['是','會','不常','不會','不行','偶爾','可以','常常','總是','不一定','不太會','有時候','看心情','不太理人','不太確定','會但不多','會但不常','並不會每次','沒什麼反應','玩自己的不理人','玩自己的沒反應']
-    testLoki(inputLIST, ['understand_no'])
-    print("")
-
-    # laughing
-    print("[TEST] laughing")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','看人','總是','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','會但不常','可以但不常','只看過一兩次']
-    testLoki(inputLIST, ['laughing'])
-    print("")
-
-    # different_sounds
-    print("[TEST] different_sounds")
-    inputLIST = ['會','不多','不常','不會','偶爾','常常','很多','很少','不一定','不太會','有時候','看心情','不太確定']
-    testLoki(inputLIST, ['different_sounds'])
-    print("")
-
-    # eye_contact
-    print("[TEST] eye_contact")
-    inputLIST = ['會','不多','不常','不會','偶爾','可以','常常','很少','看人','不一定','不太會','很少見','有時候','看心情','不太確定','會但不常','小孩不太看人']
-    testLoki(inputLIST, ['eye_contact'])
-    print("")
-
     # quiet
     print("[TEST] quiet")
-    inputLIST = ['對','是啊','沒錯','還好','是不會','對不太有聲音','不會哦他都很吵','對一般都很安靜']
+    inputLIST = ['是啊','沒錯','是不會','對不太有聲音','不會哦他都很吵','對一般都很安靜']
     testLoki(inputLIST, ['quiet'])
-    print("")
-
-    # cooing
-    print("[TEST] cooing")
-    inputLIST = ['會','不多','不常','不會','偶爾','可以','常常','很多','很少','不太會','有時候','沒聽過','沒辦法','看心情','不太確定','會但不多','可以但不多','只聽過一兩次']
-    testLoki(inputLIST, ['cooing'])
     print("")
 
     # find_dropped_objects
     print("[TEST] find_dropped_objects")
-    inputLIST = ['會','不常','不會','偶爾','可以','常常','很少','總是','不一定','不太會','很少見','有時候','看心情','不太確定','會但不常','並不會每次','要看是什麼','只看過一兩次','要看是什麼樣的東西']
+    inputLIST = ['常常','很少','不一定','不太會','很少見','看心情','不太確定','會但不常','並不會每次','要看是什麼','只看過一兩次','要看是什麼樣的東西']
     testLoki(inputLIST, ['find_dropped_objects'])
     print("")
 
     # play_with_adults
     print("[TEST] play_with_adults")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','常常','很少','看人','總是','不一定','不太會','很少見','有時候','沒辦法','看心情','不太理人','不太看人','不太確定','會但不多','會但不常','不跟大人玩','並不會每次','可以但不多','小孩沒興趣','只看過一兩次','不喜歡跟大人玩']
+    inputLIST = ['不多','常常','很少','不一定','不太會','很少見','沒辦法','看心情','不太理人','不太看人','不太確定','會但不多','會但不常','不跟大人玩','並不會每次','小孩沒興趣','只看過一兩次','不喜歡跟大人玩']
     testLoki(inputLIST, ['play_with_adults'])
-    print("")
-
-    # understand_their_own_name
-    print("[TEST] understand_their_own_name")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','很少','總是','不一定','不太會','不理人','很少見','有時候','沒辦法','看心情','不太確定','會但不常','並不會每次','可以但不常','沒什麼反應','只看過一兩次','小孩不太理人']
-    testLoki(inputLIST, ['understand_their_own_name'])
     print("")
 
     # family_and_stangers
     print("[TEST] family_and_stangers")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','常常','總是','不一定','不太會','很少見','有時候','沒辦法','看心情','不太確定','分不出來','小孩很害羞','小孩很怕生','沒什麼反應','小孩不太理人','小孩很喜歡跟人玩','小孩不喜歡別人碰他']
+    inputLIST = ['不行','常常','不一定','不太會','很少見','沒辦法','看心情','不太確定','分不出來','小孩很害羞','小孩很怕生','沒什麼反應','小孩不太理人','小孩很喜歡跟人玩','小孩不喜歡別人碰他']
     testLoki(inputLIST, ['family_and_stangers'])
+    print("")
+
+    # yes_no
+    print("[TEST] yes_no")
+    inputLIST = ['否','對','有','可以','對啊','沒有','不可以']
+    testLoki(inputLIST, ['yes_no'])
+    print("")
+
+    # play_sounds
+    print("[TEST] play_sounds")
+    inputLIST = ['不多','常常','很多','不一定','不太會','看心情','不太確定','會但聲音都很像','不太會而且聲音很少','會但聲音沒什麼變化']
+    testLoki(inputLIST, ['play_sounds'])
+    print("")
+
+    # cooing
+    print("[TEST] cooing")
+    inputLIST = ['不多','常常','很多','不太會','沒聽過','沒辦法','看心情','不太確定','會但不多','只聽過一兩次']
+    testLoki(inputLIST, ['cooing'])
+    print("")
+
+    # combined_sounds
+    print("[TEST] combined_sounds")
+    inputLIST = ['不多','常常','很多','不一定','不太會','沒聽過','沒辦法','看心情','不太確定','會但不多','只聽過一兩次','可以但沒那麼多種']
+    testLoki(inputLIST, ['combined_sounds'])
+    print("")
+
+    # look_at_face
+    print("[TEST] look_at_face")
+    inputLIST = ['不多','常常','看人','不一定','不太會','很少見','沒辦法','不太確定','會但不常','只看過一兩次']
+    testLoki(inputLIST, ['look_at_face'])
+    print("")
+
+    # laughing
+    print("[TEST] laughing")
+    inputLIST = ['不多','常常','不一定','不太會','很少見','沒辦法','看心情','不太確定','只看過一兩次']
+    testLoki(inputLIST, ['laughing'])
+    print("")
+
+    # different_sounds
+    print("[TEST] different_sounds")
+    inputLIST = ['不多','不常','很多','不一定','不太會','看心情','不太確定']
+    testLoki(inputLIST, ['different_sounds'])
+    print("")
+
+    # eye_contact
+    print("[TEST] eye_contact")
+    inputLIST = ['不多','常常','很少','不一定','不太會','很少見','看心情','不太確定','會但不常','小孩不太看人']
+    testLoki(inputLIST, ['eye_contact'])
+    print("")
+
+    # understand_their_own_name
+    print("[TEST] understand_their_own_name")
+    inputLIST = ['不行','常常','很少','不一定','不太會','不理人','沒辦法','看心情','不太確定','會但不常','並不會每次','沒什麼反應','只看過一兩次','小孩不太理人']
+    testLoki(inputLIST, ['understand_their_own_name'])
+    print("")
+
+    # understand_no
+    print("[TEST] understand_no")
+    inputLIST = ['是','不行','常常','不一定','不太會','看心情','不太理人','不太確定','會但不多','會但不常','並不會每次','沒什麼反應','玩自己的不理人','玩自己的沒反應']
+    testLoki(inputLIST, ['understand_no'])
     print("")
 
 
@@ -433,9 +433,6 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    inputLIST = "不太確定"
-    resultDICT = execLoki(inputLIST)
-    print(resultDICT)    
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}

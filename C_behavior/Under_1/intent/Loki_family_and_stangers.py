@@ -50,17 +50,9 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = False
         else:
             # write your code here
             pass
@@ -81,28 +73,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[小孩][很]害羞":
+    if utterance == "[小孩][很]害羞": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "[小孩][很]怕生":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[小孩]不太理人":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]":
+    if utterance == "[小孩][很]怕生": 
         if CHATBOT_MODE:
             resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
             resultDICT["q5"] = True
@@ -110,22 +88,33 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[一定]":
+    if utterance == "[小孩]不太理人": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "不[會]":
+    if utterance == "[常常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = False
+            if "常常" in inputSTR:
+                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
+                resultDICT["q5"] = True
+            elif "不常" in inputSTR:
+                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
+                resultDICT["q5"] = False
         else:
             # write your code here
             pass
 
-    if utterance == "不太[會]":
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            # write your code here
+            pass
+
+    if utterance == "不太[會]": 
         if CHATBOT_MODE:
             resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
             resultDICT["q5"] = False
@@ -141,7 +130,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "小孩不喜歡[別人]碰[他]":
+    if utterance == "小孩不喜歡[別人]碰[他]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -156,10 +145,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒[什麼]反應":
+    if utterance == "沒[什麼]反應": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
-            resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = False
+            resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
@@ -172,7 +160,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "看[心情]":
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
