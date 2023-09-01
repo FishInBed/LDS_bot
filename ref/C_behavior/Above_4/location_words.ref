@@ -11,34 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "f8e59dfb-df76-4bac-8210-65106d268704",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "69fa9ead-eb4f-481d-a5c1-708004fb56b8",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "f2583009-b88b-479b-a54d-d4f2c6825907",
             "argument": [
@@ -57,17 +29,6 @@
                     "pos": "TIME_justtime",
                     "text": "偶爾",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "21c761f0-1185-4861-a5dc-eb8e63ab8b40",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
                     "checkbox": false
                 }
             ]
@@ -126,17 +87,6 @@
                     "text": "太行",
                     "checked": false,
                     "checkbox": true
-                }
-            ]
-        },
-        "有時候": {
-            "id": "9dc70353-7b94-4646-b698-28e240ee6e7a",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
-                    "checkbox": false
                 }
             ]
         },
@@ -460,7 +410,7 @@
                 {
                     "pos": "ENTITY_nouny",
                     "text": "心情",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -661,35 +611,6 @@
                     "pos": "TIME_justtime",
                     "text": "不常",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "還不太會": {
-            "id": "eab059d7-4cfe-4654-b5c7-6460b57e3a23",
-            "argument": [
-                {
-                    "pos": "FUNC_inner",
-                    "text": "還",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_degreeHead",
-                    "text": "太",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
                     "checkbox": false
                 }
             ]

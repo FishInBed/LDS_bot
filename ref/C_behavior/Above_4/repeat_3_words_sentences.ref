@@ -11,17 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "b467fbb4-42f6-4f19-8a2d-c92b9b9655cf",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "2496708b-5c18-4292-a5bc-d87b59ccc816",
             "argument": [
@@ -33,51 +22,12 @@
                 }
             ]
         },
-        "不會": {
-            "id": "d326a9a4-6573-4f97-bc48-6d70602fee28",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "34c89476-6844-46be-bb24-d1a641a22c5d",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "adf11c19-49f4-4193-87e3-544fd7913919",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "913e8188-85fb-4e93-8178-4d9443aa091e",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -401,17 +351,6 @@
                     ],
                     "text": "說話",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "0a4ce035-5afc-4e6d-b544-b2cd5af15917",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -902,6 +841,265 @@
                 }
             ]
         },
+        "停一下再講": {
+            "id": "17b2af01-8887-4950-a040-9b25fb13b54e",
+            "argument": [
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "停下",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停下來",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停住",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停息",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停歇",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停止",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "停留",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "終止",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "停靠",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "停車",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "開走",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "撞毀",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "停滿",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "拋錨",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "停泊",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "停到",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "停放",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "停",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ENTITY_num",
+                    "text": "一",
+                    "checked": false,
+                    "checkbox": true
+                },
+                {
+                    "pos": "ENTITY_oov",
+                    "text": "下",
+                    "checked": false,
+                    "checkbox": true
+                },
+                {
+                    "pos": "MODIFIER",
+                    "text": "再",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "主講",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "演講",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講學",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講授",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講習",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講話",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講課",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "講述",
+                            "level": "tier_1",
+                            "checked": false
+                        },
+                        {
+                            "text": "交涉",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "公演",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "報告",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "宣判",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "拼讀",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "演說",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "訓斥",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "談判",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "談到",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "辯護",
+                            "level": "tier_2",
+                            "checked": false
+                        },
+                        {
+                            "text": "講出",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "亂講",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "說話",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "說",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "聽得懂",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "講了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "講過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "說著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "說了",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "講",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
         "可以但不多": {
             "id": "68a4c4c6-8f2e-421e-9ae6-4c86fbc388ef",
             "argument": [
@@ -920,6 +1118,23 @@
                 {
                     "pos": "MODIFIER",
                     "text": "不多",
+                    "checked": false,
+                    "checkbox": false
+                }
+            ]
+        },
+        "斷斷續續的": {
+            "id": "3d92e6f3-143a-400d-89a7-b33356b8f802",
+            "argument": [
+                {
+                    "pos": "IDIOM",
+                    "text": "斷斷續續",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "FUNC_inner",
+                    "text": "的",
                     "checked": false,
                     "checkbox": false
                 }
@@ -1796,294 +2011,6 @@
                         }
                     ],
                     "text": "說",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會停一下再講": {
-            "id": "245764ff-f781-4e3f-b16e-2b4068789e13",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "停下",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停下來",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停住",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停息",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停歇",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停止",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "停留",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "終止",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "停滿",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "停車",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "撞毀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "停靠",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "停到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "停放",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "停泊",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "開走",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "拋錨",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "停",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_num",
-                    "text": "一",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ENTITY_oov",
-                    "text": "下",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "再",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "主講",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "演講",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講學",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講授",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講習",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講話",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講課",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "講述",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "交涉",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "公演",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "報告",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "宣判",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "拼讀",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "演說",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "訓斥",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "談判",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "談到",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "辯護",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "亂講",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說話",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "聽得懂",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講出",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "講",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會斷斷續續的": {
-            "id": "7c6ddf02-6ac7-4a75-9d95-e7074ce1d5ec",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "IDIOM",
-                    "text": "斷斷續續",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "的",
                     "checked": false,
                     "checkbox": false
                 }

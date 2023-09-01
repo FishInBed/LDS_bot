@@ -52,7 +52,11 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if "不常" in inputSTR: #去reply裡面抓引導用問題
+                resultDICT["response"] = getResponse(utterance, args)
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+                resultDICT["q6"] = True
         else:
             # write your code here
             pass
@@ -66,14 +70,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             pass
 
     if utterance == "[應該]有超過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]":
         if CHATBOT_MODE:
             resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
             resultDICT["q6"] = True
@@ -113,22 +109,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
-            resultDICT["q6"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
-    if utterance == "不太行":
+    if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -151,9 +139,13 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "很少":
+    if utterance == "很少": 
         if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
+            if "多" in inputSTR:
+                resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問在您或其他大人的示範下，孩子可以正確仿說至少三個語詞組成的句子(如：弟弟背起書包)嗎？"
+                resultDICT["q6"] = True
+            elif "少" in inputSTR: #去reply裡面抓引導用問題
+                resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass

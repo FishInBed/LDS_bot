@@ -50,24 +50,26 @@ import os
 import re
 try:
     from intent import Loki_play_alone
-    from intent import Loki_sentence_repetition
-    from intent import Loki_articulation
     from intent import Loki_say_color
     from intent import Loki_four_to_five_words_sentences
     from intent import Loki_function_of_4_objects
     from intent import Loki_point_and_count_to_5
     from intent import Loki_repeat_3_words_sentences
     from intent import Loki_location_words
+    from intent import Loki_yes_no
+    from intent import Loki_sentence_repetition
+    from intent import Loki_articulation
 except:
     from .intent import Loki_play_alone
-    from .intent import Loki_sentence_repetition
-    from .intent import Loki_articulation
     from .intent import Loki_say_color
     from .intent import Loki_four_to_five_words_sentences
     from .intent import Loki_function_of_4_objects
     from .intent import Loki_point_and_count_to_5
     from .intent import Loki_repeat_3_words_sentences
     from .intent import Loki_location_words
+    from .intent import Loki_yes_no
+    from .intent import Loki_sentence_repetition
+    from .intent import Loki_articulation
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -201,14 +203,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "play_alone":
                     lokiResultDICT = Loki_play_alone.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
-                # sentence_repetition
-                if lokiRst.getIntent(index, resultIndex) == "sentence_repetition":
-                    lokiResultDICT = Loki_sentence_repetition.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # articulation
-                if lokiRst.getIntent(index, resultIndex) == "articulation":
-                    lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
                 # say_color
                 if lokiRst.getIntent(index, resultIndex) == "say_color":
                     lokiResultDICT = Loki_say_color.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -232,6 +226,18 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # location_words
                 if lokiRst.getIntent(index, resultIndex) == "location_words":
                     lokiResultDICT = Loki_location_words.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # yes_no
+                if lokiRst.getIntent(index, resultIndex) == "yes_no":
+                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # sentence_repetition
+                if lokiRst.getIntent(index, resultIndex) == "sentence_repetition":
+                    lokiResultDICT = Loki_sentence_repetition.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # articulation
+                if lokiRst.getIntent(index, resultIndex) == "articulation":
+                    lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -309,56 +315,62 @@ def testLoki(inputLIST, filterLIST):
 def testIntent():
     # play_alone
     print("[TEST] play_alone")
-    inputLIST = ['對','不常','不會','偶爾','常常','總是','不太會','好像有','很少見','有時候','看心情','一直都是','不常這樣','好像不會','好像沒有','很常這樣','會但不常','不跟大人玩','小孩很怕生','小孩沒興趣','一直都是這樣','不喜歡跟大人玩','有聽學校老師說過','對都玩自己的不理人','從以前就不喜歡跟別人玩']
+    inputLIST = ['對','常常','不太會','好像有','很少見','看心情','一直都是','好像不會','好像沒有','很常這樣','會但不常','不跟大人玩','小孩很怕生','小孩沒興趣','一直都是這樣','不喜歡跟大人玩','有聽學校老師說過','對都玩自己的不理人','從以前就不喜歡跟別人玩']
     testLoki(inputLIST, ['play_alone'])
-    print("")
-
-    # sentence_repetition
-    print("[TEST] sentence_repetition")
-    inputLIST = ['對','會','不多','不常','不會','偶爾','很少','不太會','好像有','有時候','火星語','看心情','算有哦','一直都是','好像不會','好像沒有','很常這樣','會但不多','會但不常','會一直重覆','一直都是這樣']
-    testLoki(inputLIST, ['sentence_repetition'])
-    print("")
-
-    # articulation
-    print("[TEST] articulation")
-    inputLIST = ['對','會','不常','不會','偶爾','常常','很少','沒錯','不太會','有時候','一直都是','好像不會','很常這樣','會但不多','會但不常','大家都聽不懂','大家都聽得懂','有幾個字會說不清楚']
-    testLoki(inputLIST, ['articulation'])
     print("")
 
     # say_color
     print("[TEST] say_color")
-    inputLIST = ['會','不會','不行','偶爾','可以','錯亂','不太行','會說錯','沒聽過','沒辦法','都可以','好像不會','好像可以','會但不常','還不太會','應該有超過','會但不愛說','會搞錯顏色','顏色都錯亂','可以但不愛講','會說但發音不清楚']
+    inputLIST = ['不行','偶爾','錯亂','不太行','會說錯','沒聽過','沒辦法','都可以','好像不會','好像可以','會但不常','還不太會','應該有超過','會但不愛說','會搞錯顏色','顏色都錯亂','可以但不愛講','會說但發音不清楚']
     testLoki(inputLIST, ['say_color'])
     print("")
 
     # four_to_five_words_sentences
     print("[TEST] four_to_five_words_sentences")
-    inputLIST = ['對','會','不常','不會','不行','偶爾','可以','常常','很少','不太會','不太行','有時候','沒聽過','沒辦法','看心情','算有哦','還可以','都可以','不常這樣','好像沒有','會但不多','會但不常','講不完整','會但不愛說','會但不愛講','看跟誰說話','都說很短的','都講很短的','只聽過一兩次','有說但聽不懂','太長的話就不行了','會但都是說類似的','會但都是固定那幾句']
+    inputLIST = ['對','不常','不行','很少','不太會','不太行','沒聽過','沒辦法','看心情','算有哦','還可以','都可以','不常這樣','好像沒有','會但不多','會但不常','講不完整','會但不愛說','會但不愛講','看跟誰說話','都說很短的','都講很短的','只聽過一兩次','有說但聽不懂','太長的話就不行了','會但都是說類似的','會但都是固定那幾句']
     testLoki(inputLIST, ['four_to_five_words_sentences'])
     print("")
 
     # function_of_4_objects
     print("[TEST] function_of_4_objects")
-    inputLIST = ['會','不多','不常','不會','不行','偶爾','可以','很少','不太會','不太行','沒聽過','沒辦法','還可以','都可以','好像不會','好像可以','會但不多','可以但不多','會但不愛說','會但不愛講','會但不到4個','只聽過一兩次','可以但不愛說','可以但不愛講','會但不到四個','有而且超過4個','有而且超過四個','可以但沒那麼多種','要看是什麼樣的東西']
+    inputLIST = ['不常','不行','很少','不太會','不太行','沒聽過','沒辦法','還可以','都可以','好像不會','好像可以','可以但不多','會但不愛說','會但不愛講','會但不到4個','只聽過一兩次','有而且超過四個','可以但沒那麼多種','要看是什麼樣的東西']
     testLoki(inputLIST, ['function_of_4_objects'])
     print("")
 
     # point_and_count_to_5
     print("[TEST] point_and_count_to_5")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太會','不太行','有時候','沒辦法','都可以','好像不會','好像可以','會但不常','還不太會','應該有超過','都只用指的','會但不到5個','會但不到五個','可以但不到5個','可以但不到五個']
+    inputLIST = ['不常','不行','很少','不太會','不太行','沒辦法','都可以','好像不會','好像可以','會但不常','應該有超過','都只用指的','會但不到5個']
     testLoki(inputLIST, ['point_and_count_to_5'])
     print("")
 
     # repeat_3_words_sentences
     print("[TEST] repeat_3_words_sentences")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不一定','不太會','不太行','不說話','有時候','沒辦法','看心情','都可以','不到三個','會但不常','講不完整','可以但不多','會但不愛講','要看說什麼','都說很短的','都講很短的','可以但不愛說','會停一下再講','會斷斷續續的','有說但聽不懂','不能連在一起說','短的才有辦法說','長一點就不會講','太長的話就不行了']
+    inputLIST = ['不常','不行','很少','不一定','不太會','不太行','不說話','沒辦法','看心情','都可以','不到三個','會但不常','講不完整','停一下再講','可以但不多','斷斷續續的','會但不愛講','要看說什麼','都說很短的','都講很短的','可以但不愛說','有說但聽不懂','不能連在一起說','短的才有辦法說','長一點就不會講','太長的話就不行了']
     testLoki(inputLIST, ['repeat_3_words_sentences'])
     print("")
 
     # location_words
     print("[TEST] location_words")
-    inputLIST = ['會','不會','不行','偶爾','可以','不一定','不太會','不太行','有時候','沒聽過','沒辦法','看心情','只會幾個','好像不會','好像可以','搞不清楚','會但不多','會但不常','還不太會','會但不愛講','有時會搞錯']
+    inputLIST = ['不行','偶爾','不一定','不太會','不太行','沒聽過','沒辦法','看心情','只會幾個','好像不會','好像可以','搞不清楚','會但不多','會但不常','會但不愛講','有時會搞錯']
     testLoki(inputLIST, ['location_words'])
+    print("")
+
+    # yes_no
+    print("[TEST] yes_no")
+    inputLIST = ['否','對','有','可以','對啊','沒有','不可以']
+    testLoki(inputLIST, ['yes_no'])
+    print("")
+
+    # sentence_repetition
+    print("[TEST] sentence_repetition")
+    inputLIST = ['對','不常','很少','不太會','好像有','火星語','看心情','算有哦','一直都是','好像不會','好像沒有','很常這樣','會但不多','會但不常','會一直重覆','一直都是這樣']
+    testLoki(inputLIST, ['sentence_repetition'])
+    print("")
+
+    # articulation
+    print("[TEST] articulation")
+    inputLIST = ['對','不常','很少','沒錯','不太會','一直都是','好像不會','很常這樣','會但不多','會但不常','大家都聽不懂','大家都聽得懂','有幾個字會說不清楚']
+    testLoki(inputLIST, ['articulation'])
     print("")
 
 
@@ -373,9 +385,6 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    inputLIST = "不太確定"
-    resultDICT = execLoki(inputLIST)
-    print(resultDICT)
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
