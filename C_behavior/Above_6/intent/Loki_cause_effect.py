@@ -50,7 +50,7 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -65,14 +65,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[有時候]":
         if CHATBOT_MODE:
             resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
@@ -81,15 +73,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
@@ -104,10 +88,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒辦法":
+    if utterance == "沒[辦法]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
-            resultDICT["q4"] = False
+            if "辦法" in inputSTR:
+                resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+                resultDICT["q4"] = False
+            elif "問題" in inputSTR:
+                resultDICT["response"] = "另外，在日常生活中，孩子是不是可以使用完整句子來表達呢？"
+                resultDICT["q4"] = True
         else:
             # write your code here
             pass

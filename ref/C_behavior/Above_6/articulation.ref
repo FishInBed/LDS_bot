@@ -7,17 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "b06d9504-1a34-4b59-bc9a-d078c79b36a0",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不多": {
             "id": "fac1b1c3-e40e-4b6f-ad9c-32cdf50467ba",
             "argument": [
@@ -35,34 +24,6 @@
                 {
                     "pos": "TIME_justtime",
                     "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "03ba7f6e-e8d7-4e77-b40a-da35a8ba3904",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "0ca1ab4e-4611-4ae6-ab55-cf8ed7c63c88",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
                     "checked": true,
                     "checkbox": false
                 }
@@ -98,17 +59,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "eaabbc93-f5ab-4bd8-9cff-a2f2f9e43a6d",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

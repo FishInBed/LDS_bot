@@ -52,16 +52,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[對]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
-            resultDICT["q3"] = False
+            if "不常" in inputSTR:
+                resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+                resultDICT["q3"] = True
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
+                resultDICT["q3"] = False
         else:
             # write your code here
             pass
@@ -78,14 +74,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
             resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "如果您與孩子一起看書故事，孩子已經可以理解圖卡故事中的因果關係了嗎？例如：小孩滑倒是因為踩到地上的香蕉皮？"
-            resultDICT["q3"] = True
         else:
             # write your code here
             pass
@@ -130,7 +118,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "看[心情]":
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:

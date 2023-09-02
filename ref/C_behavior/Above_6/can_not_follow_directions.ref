@@ -7,51 +7,12 @@
     },
     "user_defined": {},
     "utterance": {
-        "對": {
-            "id": "e9db0dfe-3704-4ca2-b7f0-7ca2545ec93c",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "4a7e3b82-0595-4d33-b3f7-11165d416086",
             "argument": [
                 {
                     "pos": "TIME_justtime",
                     "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "8eabf0ca-6075-4360-880a-1b1dc028a79c",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "46fe037b-4c35-4ec5-8231-3b5082b51bcb",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
                     "checked": true,
                     "checkbox": false
                 }
@@ -69,23 +30,6 @@
                 {
                     "pos": "MODIFIER",
                     "text": "錯",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不一定": {
-            "id": "bde80f97-3914-49e1-bbb4-98f148903c1a",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "一定",
                     "checked": false,
                     "checkbox": false
                 }
@@ -127,17 +71,6 @@
                     "pos": "AUX",
                     "text": "是",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "1416e101-71ce-4076-a70e-b8f821ad8734",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

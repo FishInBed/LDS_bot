@@ -7,34 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "a561601b-f01c-44f9-a4c1-2c5f622bd0b1",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "ab754e23-6ad4-43e1-b304-4d065154655d",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "86d23753-8afe-4085-a018-da99186102e3",
             "argument": [
@@ -259,7 +231,7 @@
                 {
                     "pos": "ENTITY_nouny",
                     "text": "辦法",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]

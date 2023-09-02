@@ -18,51 +18,12 @@
                 }
             ]
         },
-        "會": {
-            "id": "966dd57d-f0fc-46ca-b323-0144c1b107b4",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "2fce68a8-2856-4d52-89d4-94857e0ad930",
             "argument": [
                 {
                     "pos": "TIME_justtime",
                     "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "7387e7cd-2c36-409d-9f98-34ceda0cd5ac",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "偶爾": {
-            "id": "f58610ea-38ac-41f7-8300-4072591ff660",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "偶爾",
                     "checked": true,
                     "checkbox": false
                 }
@@ -115,17 +76,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "9a10a0d1-fe90-4ea3-8c6b-f8b4af490482",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

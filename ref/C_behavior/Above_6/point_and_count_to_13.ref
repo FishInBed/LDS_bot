@@ -7,45 +7,6 @@
     },
     "user_defined": {},
     "utterance": {
-        "會": {
-            "id": "07d35740-49f1-4618-a18d-3402e59d1e3f",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不會": {
-            "id": "222401b0-972b-4fff-9c0c-a34384b9b76f",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "3fc022d5-7993-452d-957e-91a6d988fe53",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不太會": {
             "id": "55b0283d-76a0-4b68-903b-922bc5a843f6",
             "argument": [
@@ -115,24 +76,7 @@
                 {
                     "pos": "ENTITY_noun",
                     "text": "問題",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "d049729e-ce60-40ad-b038-a40174d36048",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
