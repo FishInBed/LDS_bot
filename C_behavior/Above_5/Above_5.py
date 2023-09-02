@@ -53,17 +53,19 @@ try:
     from intent import Loki_describe_story_or_things
     from intent import Loki_disfluent
     from intent import Loki_7_digits
+    from intent import Loki_say_4_colors
+    from intent import Loki_yes_no
     from intent import Loki_articulation
     from intent import Loki_can_not_follow_directions
-    from intent import Loki_say_4_colors
 except:
     from .intent import Loki_self_talking
     from .intent import Loki_describe_story_or_things
     from .intent import Loki_disfluent
     from .intent import Loki_7_digits
+    from .intent import Loki_say_4_colors
+    from .intent import Loki_yes_no
     from .intent import Loki_articulation
     from .intent import Loki_can_not_follow_directions
-    from .intent import Loki_say_4_colors
 
 
 LOKI_URL = "https://api.droidtown.co/Loki/BulkAPI/"
@@ -209,6 +211,14 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 if lokiRst.getIntent(index, resultIndex) == "7_digits":
                     lokiResultDICT = Loki_7_digits.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
+                # say_4_colors
+                if lokiRst.getIntent(index, resultIndex) == "say_4_colors":
+                    lokiResultDICT = Loki_say_4_colors.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
+                # yes_no
+                if lokiRst.getIntent(index, resultIndex) == "yes_no":
+                    lokiResultDICT = Loki_yes_no.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
+
                 # articulation
                 if lokiRst.getIntent(index, resultIndex) == "articulation":
                     lokiResultDICT = Loki_articulation.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
@@ -216,10 +226,6 @@ def runLoki(inputLIST, filterLIST=[], refDICT={}):
                 # can_not_follow_directions
                 if lokiRst.getIntent(index, resultIndex) == "can_not_follow_directions":
                     lokiResultDICT = Loki_can_not_follow_directions.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
-
-                # say_4_colors
-                if lokiRst.getIntent(index, resultIndex) == "say_4_colors":
-                    lokiResultDICT = Loki_say_4_colors.getResult(key, lokiRst.getUtterance(index, resultIndex), lokiRst.getArgs(index, resultIndex), lokiResultDICT, refDICT)
 
             # save lokiResultDICT to resultDICT
             for k in lokiResultDICT:
@@ -297,44 +303,50 @@ def testLoki(inputLIST, filterLIST):
 def testIntent():
     # self_talking
     print("[TEST] self_talking")
-    inputLIST = ['對','會','不常','不會','偶爾','很少','不一定','不太會','好像有','很少見','有時候','沒聽過','火星語','算有哦','一直都是','很常這樣','會但不多','會一直重覆','一直都是這樣','說一些別人聽不懂的']
+    inputLIST = ['對','不常','很少','不一定','不太會','好像有','很少見','沒聽過','火星語','算有哦','一直都是','很常這樣','會但不多','會一直重覆','一直都是這樣','說一些別人聽不懂的']
     testLoki(inputLIST, ['self_talking'])
     print("")
 
     # describe_story_or_things
     print("[TEST] describe_story_or_things")
-    inputLIST = ['會','不常','不會','不行','偶爾','可以','很少','不太行','有時候','沒聽過','沒辦法','看心情','講不完整','會但不愛講','會跳來跳去','要看說什麼','都說很短的','都講很短的','有說但聽不懂']
+    inputLIST = ['不常','不行','很少','不太行','沒聽過','沒辦法','看心情','講不完整','會但不愛講','會跳來跳去','要看說什麼','都說很短的','都講很短的','有說但聽不懂']
     testLoki(inputLIST, ['describe_story_or_things'])
     print("")
 
     # disfluent
     print("[TEST] disfluent")
-    inputLIST = ['會','不常','不會','偶爾','常常','很少見','有時候','沒聽過','看心情','好像沒有','斷斷續續的','緊張的時候會']
+    inputLIST = ['不常','很少見','沒聽過','看心情','好像沒有','斷斷續續的','緊張的時候會']
     testLoki(inputLIST, ['disfluent'])
     print("")
 
     # 7_digits
     print("[TEST] 7_digits")
-    inputLIST = ['不會','偶爾','唸錯','不可以','不太行','跳著唸','不到7個','好像可以','數字混淆','沒那麼多','應該有超過']
+    inputLIST = ['偶爾','唸錯','不太行','跳著唸','不到7個','好像可以','數字混淆','應該有超過']
     testLoki(inputLIST, ['7_digits'])
+    print("")
+
+    # say_4_colors
+    print("[TEST] say_4_colors")
+    inputLIST = ['不常','不行','很少','說錯','不太會','會但不到4個']
+    testLoki(inputLIST, ['say_4_colors'])
+    print("")
+
+    # yes_no
+    print("[TEST] yes_no")
+    inputLIST = ['否','對','有','可以','對啊','沒有','不可以']
+    testLoki(inputLIST, ['yes_no'])
     print("")
 
     # articulation
     print("[TEST] articulation")
-    inputLIST = ['不會','偶爾','常常','不太會','有時候','很常這樣','大家都聽得懂','有幾個字會說不清楚']
+    inputLIST = ['常常','不太會','很常這樣','大家都聽得懂','有幾個字會說不清楚']
     testLoki(inputLIST, ['articulation'])
     print("")
 
     # can_not_follow_directions
     print("[TEST] can_not_follow_directions")
-    inputLIST = ['不會','偶爾','常常','很少','沒錯','不太會','有時候']
+    inputLIST = ['常常','很少','沒錯','不太會']
     testLoki(inputLIST, ['can_not_follow_directions'])
-    print("")
-
-    # say_4_colors
-    print("[TEST] say_4_colors")
-    inputLIST = ['會','不多','不常','不會','不行','可以','很少','說錯','錯亂','不太會','有時候','會但不到4個','會但不到四個']
-    testLoki(inputLIST, ['say_4_colors'])
     print("")
 
 
@@ -349,9 +361,6 @@ if __name__ == "__main__":
     refDICT = {
         #"key": []
     }
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    #resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
-    #resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    inputLIST = "火星語"
-    resultDICT = execLoki(inputLIST)
-    print(resultDICT)
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
+    resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, splitLIST=splitLIST, refDICT=refDICT) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}

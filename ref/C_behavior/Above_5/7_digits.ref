@@ -11,23 +11,6 @@
         ]
     },
     "utterance": {
-        "不會": {
-            "id": "c3d89899-9e23-4b0a-adba-d4692f180fde",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "偶爾": {
             "id": "568d845a-0d9a-4247-b78a-f249de7de782",
             "argument": [
@@ -102,23 +85,6 @@
                         }
                     ],
                     "text": "唸錯",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不可以": {
-            "id": "3c09a7e8-ee81-4d5f-b7b4-97d53779b144",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -595,23 +561,6 @@
                     "text": "混淆",
                     "checked": false,
                     "checkbox": false
-                }
-            ]
-        },
-        "沒那麼多": {
-            "id": "9982f3d4-1045-413d-a123-d25b3162fee2",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "DegreeP",
-                    "text": "那麼多",
-                    "checked": false,
-                    "checkbox": true
                 }
             ]
         },

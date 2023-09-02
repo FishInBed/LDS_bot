@@ -11,28 +11,6 @@
         ]
     },
     "utterance": {
-        "會": {
-            "id": "5e8d8f55-e92e-4eb0-a5e3-b07dea3d142c",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不多": {
-            "id": "caf3b620-2a65-44c4-8fd9-b2f602e429aa",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "5dd1598c-af53-4f13-b007-c302dd12789b",
             "argument": [
@@ -44,40 +22,12 @@
                 }
             ]
         },
-        "不會": {
-            "id": "55e3afd6-1b8f-4f7f-8fe5-e8ec3f71afbe",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不行": {
             "id": "6f8f828d-ba61-46b1-bceb-74e4fc9a1983",
             "argument": [
                 {
                     "pos": "MODIFIER",
                     "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以": {
-            "id": "8211a920-5a69-4c47-9806-0f884012162a",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -157,69 +107,6 @@
                 }
             ]
         },
-        "錯亂": {
-            "id": "18021bf2-d7fe-4a37-b6e2-2607f6d07bc8",
-            "argument": [
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "失常",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "崩潰",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "亢奮",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "崩壞",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "萎靡",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "錯置",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "緊繃",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "昏沉",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "失調",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "扭曲",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "錯亂",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不太會": {
             "id": "588a6404-3c58-4335-be46-44b01a93829b",
             "argument": [
@@ -239,17 +126,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "有時候": {
-            "id": "40d536af-cb15-4921-bfcd-f1d4dfea2f3f",
-            "argument": [
-                {
-                    "pos": "TIME_justtime",
-                    "text": "有時候",
-                    "checked": true,
                     "checkbox": false
                 }
             ]
@@ -341,98 +217,6 @@
                 {
                     "pos": "ENTITY_classifier",
                     "text": "4個",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不到四個": {
-            "id": "6f412918-506e-4be1-a8e6-27ef95c39a09",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "到了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到約",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到受",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到離",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到包",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到回",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到隨",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到死",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "到",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_classifier",
-                    "text": "四個",
                     "checked": true,
                     "checkbox": false
                 }
