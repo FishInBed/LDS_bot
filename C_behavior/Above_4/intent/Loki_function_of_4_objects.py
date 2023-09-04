@@ -144,7 +144,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
             resultDICT["q3"] = True
         else:
-        else:
             # write your code here
             pass
 

@@ -23,10 +23,10 @@ DEBUG_yes_no = True
 CHATBOT_MODE = True
 
 userDefinedDICT = {}
-try:
-    userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
-except Exception as e:
-    print("[ERROR] userDefinedDICT => {}".format(str(e)))
+# try:
+#     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
+# except Exception as e:
+#     print("[ERROR] userDefinedDICT => {}".format(str(e)))
 
 responseDICT = {}
 # if CHATBOT_MODE:
@@ -57,28 +57,28 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "有":
+    elif utterance == "有":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "沒有":
+    elif utterance == "沒有":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = False
         else:
             # write your code here
             pass
 
-    if utterance == "否":
+    elif utterance == "否":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = False
         else:
             # write your code here
             pass
 
-    if utterance == "對啊":
+    elif utterance == "對啊":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = True
         else:
