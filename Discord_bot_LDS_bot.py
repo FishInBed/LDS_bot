@@ -31,7 +31,7 @@ class BotClient(discord.Client):
                                  "ten_month":"None",
                                  "weight":"None",
                                  "congenital_disease":"None",
-                                 "gentic_disease":"None",
+                                 "genetic_disease":"None",
                              },
                              "environment":{
                                  "school":"None",
@@ -89,7 +89,7 @@ class BotClient(discord.Client):
                     #有講過話，但與上次差超過 5 分鐘(視為沒有講過話，刷新template)
                     if timeDIFF.total_seconds() >= 300:
                         self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
-                        replySTR = "嗨嗨，我們好像見過面，但其實我的記憶力跟金魚差不了多少，所以要重新開始問一次喔～" #可以自修改回應內容
+                        replySTR = "嗨嗨，我們好像見過面，但其實我的記憶力跟金魚差不了多少，所以要重新開始問一次喔～\n我是線上語言能力篩檢助理機器人。我可以幫助你了解孩子的語言發展狀況。\n在此之前須要先知道一下孩子的基本訊息，請問他現在幾歲呢？" #可以自修改回應內容
                     #有講過話，而且還沒超過5分鐘就又跟我 hello (就繼續上次的對話)
                     else:
                         replySTR = self.mscDICT[str(message.author.id)+":"+str(message.author)]["latestQuest"]
@@ -104,12 +104,17 @@ class BotClient(discord.Client):
                 
                 if data_dict["a"] == False:
                     resultDICT = condition_control(data_dict, "background", msgSTR)
-                    replySTR = resultDICT["background"]["response"]
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)] = resultDICT
+                    print(resultDICT)
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"].update(resultDICT)
+                    replySTR = self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"]["response"]
+                    if "a" in resultDICT.keys():
+                        self.mscDICT[str(message.author.id)+":"+str(message.author)]["a"] = True
                 elif data_dict["b"] == False:
                     resultDICT = condition_control(data_dict, "environment", msgSTR)
-                    replySTR = resultDICT["environment"]["response"]
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)] = resultDICT
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["environment"].update(resultDICT)
+                    replySTR = resultDICT["response"]
+                    if "b" in resultDICT.keys():
+                        self.mscDICT[str(message.author.id)+":"+str(message.author)]["b"] = True
                 elif data_dict["c"] == False:
                     age = data_dict["background"]["age"]
                     if age // 12 == 0:    
@@ -117,12 +122,14 @@ class BotClient(discord.Client):
                     else:
                         target_context = "above" + str(age//12)
                     resultDICT = condition_control(data_dict, target_context, msgSTR)
-                    replySTR = resultDICT["behavior"]["response"]
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)] = resultDICT
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["behavior"].update(resultDICT)
+                    replySTR = resultDICT["response"]
+                    if "c" in resultDICT.keys():
+                        self.mscDICT[str(message.author.id)+":"+str(message.author)]["c"] = True
                 
                 logging.debug("######\nLoki 處理結果如下：")
                 # logging.debug(resultDICT)
-            pprint(self.mscDICT)
+            pprint(self.mscDICT[str(message.author.id)+":"+str(message.author)])
             await message.reply(replySTR)
 
 
