@@ -18,6 +18,19 @@ with open('behavior_tags.json', encoding='utf-8') as f:
 with open('behavior_questions.json', encoding='utf-8') as f:
     meta_data = json.load(f)
 
+with open('behavior_questions.json', encoding='utf-8') as f:
+    behavior_questions = json.load(f)
+
+reverse_list = {
+    "under1":["q11"],
+    "above1":["q5"],
+    "above2":["q4", "q7"],
+    "above3":["q2", "q10", "q12"],
+    "above4":["q1", "q5", "q9"],
+    "above5":["q2", "q3", "q5", "q7"],
+    "above6":["q1", "q3", "q8", "q11"]
+}
+
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
 def operateLoki(context, inputSTR, filterList=[]):
     punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
@@ -248,11 +261,17 @@ def condition_control(dicts, context, msgSTR):
         # 偵測 intent
         resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
         if "yes_no" in resultDICT.keys() and waiting_question[0] not in resultDICT:
-            resultDICT[waiting_question[0]] = resultDICT["yes_no"]
-            q_num = int(re.sub("q", "", waiting_question[0]))
-            next_q = "q" + str(q_num+1)
-            resultDICT["response"] = meta_data[context][next_q]
-            resultDICT.pop("yes_no")
+            if waiting_question[0] not in reverse_list[context]:
+                resultDICT[waiting_question[0]] = resultDICT["yes_no"]
+                resultDICT.pop("yes_no")
+            else:
+                if resultDICT["yes_no"][0] == True:
+                    resultDICT[waiting_question[0]] = [False]
+                    resultDICT.pop("yes_no")
+                else:
+                    resultDICT[waiting_question[0]] = [True]
+                    resultDICT.pop("yes_no")
+
         elif "yes_no" in resultDICT.keys() and waiting_question[0] in resultDICT:
             resultDICT.pop("yes_no")
 
@@ -262,10 +281,14 @@ def condition_control(dicts, context, msgSTR):
                 data["behavior"][key] = resultDICT[key][0]
             else:
                 data["behavior"][key] = resultDICT[key][-1]
-        
+
         if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
             data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
             data["behavior"]["c"] = True
+        else:
+            if "response" not in resultDICT.keys():
+                next_q = get_key_from_value(data["behavior"], "None")[0]
+                data["behavior"]["response"] = behavior_questions[context][next_q]
 
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
@@ -274,32 +297,37 @@ def condition_control(dicts, context, msgSTR):
     return data[cont]
 
 if __name__ == "__main__":
-    dicts = {'a': False,
-            'b': False,
-            'background': {'age': 29,
-                            'congenital_disease': False,
-                            'gentic_disease': 'None',
-                            'response': '2歲5個月啊。\n那麼孩子出生時是否足月呢？',
-                            'ten_month': True,
-                            'weight': True},
-            'behavior': {'q1': 'None',
-                        'q10': 'None',
-                        'q11': 'None',
-                        'q12': 'None',
-                        'q13': 'None',
-                        'q2': 'None',
-                        'q3': 'None',
-                        'q4': 'None',
-                        'q5': 'None',
-                        'q6': 'None',
-                        'q7': 'None',
-                        'q8': 'None',
-                        'q9': 'None'},
-            'c': False,
-            'environment': {'3c': 'None',
-                            'school': 'None'}} #弄個測試用的回傳字典
-    context = "background"
-    msgSTR = "沒有"
+    dicts = {'a': True,
+ 'b': True,
+ 'background': {'a': True,
+                'age': 36,
+                'congenital_disease': False,
+                'genetic_disease': False,
+                'response': '好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?',
+                'ten_month': True,
+                'weight': True},
+ 'behavior': {'q1': True,
+              'q10': 'None',
+              'q11': 'None',
+              'q12': 'None',
+              'q13': 'None',
+              'q2': True,
+              'q3': True,
+              'q4': True,
+              'q5': True,
+              'q6': "None",
+              'q7': 'None',
+              'q8': 'None',
+              'q9': 'None',
+              'response': '了解...那麼孩子現在是不是可以正確指認至少一個顏色了呢？'},
+ 'c': False,
+ 'environment': {'3c': False,
+                 'b': True,
+                 'response': '好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作更深入的了解囉。\n'
+                             '孩子可不可以使用約三到四個語詞組成的短句和大人一問一答呢？',
+                 'school': True}} #弄個測試用的回傳字典
+    context = "above3"
+    msgSTR = "可以"
     resultDICT = condition_control(dicts, context, msgSTR)
     print(resultDICT)
     

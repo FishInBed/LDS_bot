@@ -96,7 +96,7 @@ class BotClient(discord.Client):
                 #沒有講過話(給他一個新的template)
                 else:
                     self.mscDICT[str(message.author.id)+":"+str(message.author)] = self.resetMSCwith(message.author.id)
-                    replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解孩子的語言發展狀況。在此之前須要先知道一下孩子的基本訊息，請問他現在幾歲呢？"
+                    replySTR = msgSTR.title() + "\n我是線上語言能力篩檢助理機器人。我可以幫助你了解孩子的語言發展狀況。在此之前須要先知道一下孩子的基本訊息，請問他現在多大了呢？"
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
