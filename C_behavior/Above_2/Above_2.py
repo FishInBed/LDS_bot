@@ -415,7 +415,7 @@ if __name__ == "__main__":
     # testIntent()
 
     # 測試其它句子
-    filterLIST = ["yes_no", "4_body_parts"]
+    filterLIST = ["yes_no", "combined_words"]
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     # 設定參考資料
     refDICT = {

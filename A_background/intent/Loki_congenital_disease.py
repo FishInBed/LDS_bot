@@ -56,7 +56,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "出生就[腦出血]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["cogenital_disease"] = True
+                resultDICT["congenital_disease"] = True
                 resultDICT["response"] = "好的，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
             else:
                 resultDICT["congenital_disease"] = False
@@ -65,7 +65,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[確診][唇顎裂]":
         if CHATBOT_MODE:
             if args[1] in disease:
-                resultDICT["cogenital_disease"] = True
+                resultDICT["congenital_disease"] = True
                 resultDICT["response"] = "好的，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
             else:
                 resultDICT["congenital_disease"] = False
@@ -77,7 +77,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "是[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["cogenital_disease"] = True
+                resultDICT["congenital_disease"] = True
                 resultDICT["response"] = "好的，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
             else:
                 resultDICT["congenital_disease"] = False
@@ -89,7 +89,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "有[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["cogenital_disease"] = True
+                resultDICT["congenital_disease"] = True
                 resultDICT["response"] = "好的，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
             else:
                 resultDICT["congenital_disease"] = False
@@ -101,7 +101,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "診斷為[唇顎裂]":
         if CHATBOT_MODE:
             if args[0] in disease:
-                resultDICT["cogenital_disease"] = True
+                resultDICT["congenital_disease"] = True
                 resultDICT["response"] = "好的，再來想確認一下孩子的親戚是否有家族遺傳性相關疾病呢？"
             else:
                 resultDICT["congenital_disease"] = False
