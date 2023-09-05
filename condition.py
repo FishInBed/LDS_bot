@@ -66,9 +66,9 @@ def get_key_from_value(dict, val):
             resultList.append(key)
     return resultList 
 
-def give_advice(context, age, final_data):
+def give_advice(age, final_data):
     target_age = age
-    accpetance = len(get_key_from_value(final_data[context], True))
+    accpetance = len(get_key_from_value(final_data["behavior"], True))
     if target_age//12 == 0:
         if accpetance >= 10:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
