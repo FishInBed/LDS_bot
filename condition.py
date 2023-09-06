@@ -253,27 +253,29 @@ def condition_control(dicts, context, msgSTR):
     
     # Part C 處理
     else:
-        cont = "behavior"
         # 檢查目前提問進展
         amount = meta_data[context]["amount"]
-        waiting_question = get_key_from_value(data["behavior"], "None")
+        waiting_question = get_key_from_value(data["behavior"], "None")[0]
 
         # 偵測 intent
-        resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
-        if "yes_no" in resultDICT.keys() and waiting_question[0] not in resultDICT:
-            if waiting_question[0] not in reverse_list[context]:
-                resultDICT[waiting_question[0]] = resultDICT["yes_no"]
+        resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question]])
+        if "yes_no" in resultDICT.keys() and waiting_question not in resultDICT:
+            if waiting_question not in reverse_list[context]:
+                resultDICT[waiting_question] = resultDICT["yes_no"]
                 resultDICT.pop("yes_no")
             else:
                 if resultDICT["yes_no"][0] == True:
-                    resultDICT[waiting_question[0]] = [False]
+                    resultDICT[waiting_question] = [False]
                     resultDICT.pop("yes_no")
                 else:
-                    resultDICT[waiting_question[0]] = [True]
+                    resultDICT[waiting_question] = [True]
                     resultDICT.pop("yes_no")
 
-        elif "yes_no" in resultDICT.keys() and waiting_question[0] in resultDICT:
+        elif "yes_no" in resultDICT.keys() and waiting_question in resultDICT:
             resultDICT.pop("yes_no")
+        
+        elif "yes_no" not in resultDICT.keys() and waiting_question not in resultDICT:
+            resultDICT["response"] = ["不好意思我不太理解，能請您換個說法嗎？"]
 
         # 資料寫入字典
         for key in resultDICT:
@@ -282,19 +284,23 @@ def condition_control(dicts, context, msgSTR):
             else:
                 data["behavior"][key] = resultDICT[key][-1]
 
+        if "response" not in resultDICT.keys() :
+            next_q = get_key_from_value(data["behavior"], "None")[0]
+            data["behavior"]["response"] = behavior_questions[context][next_q]
+        else:
+            if resultDICT["response"] is None:
+                next_q = get_key_from_value(data["behavior"], "None")[0]
+                data["behavior"]["response"] = behavior_questions[context][next_q]
+        
         if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
             data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
             data["behavior"]["c"] = True
-        else:
-            if "response" not in resultDICT.keys():
-                next_q = get_key_from_value(data["behavior"], "None")[0]
-                data["behavior"]["response"] = behavior_questions[context][next_q]
 
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
             data["behaivor"]["response"] = give_advice(data["background"]["age"], data)
 
-    return data[cont]
+    return data["behavior"]
 
 if __name__ == "__main__":
     dicts = {'a': True,
