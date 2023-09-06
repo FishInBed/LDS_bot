@@ -310,7 +310,8 @@ def condition_control(dicts, context, msgSTR):
                 data["behavior"][key] = resultDICT[key][-1]
 
         if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
-            data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
+            #data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
+            data["behavior"]["response"] = give_advice(data["background"]["age"], data)
             data["behavior"]["c"] = True
         else:
             if "response" not in resultDICT.keys():
@@ -319,7 +320,7 @@ def condition_control(dicts, context, msgSTR):
 
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
-            data["behaivor"]["response"] = give_advice(data["background"]["age"], data)
+            data["behavior"]["response"] = give_advice(data["background"]["age"], data)
 
     return data[cont]
 
