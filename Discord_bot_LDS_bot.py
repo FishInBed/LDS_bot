@@ -100,18 +100,21 @@ class BotClient(discord.Client):
 # ##########非初次對話：這裡用 Loki 計算語意
             else: #開始處理正式對話
                 #從這裡開始接上 NLU 模型
-                data_dict = self.mscDICT[str(message.author.id)+":"+str(message.author)]
                 
+                data_dict = self.mscDICT[str(message.author.id)+":"+str(message.author)]
+
+                # 用檢查字典值a, b, c是否為True的方式確認應該進行哪個context
                 if data_dict["a"] == False:
                     resultDICT = condition_control(data_dict, "background", msgSTR)
                     print(resultDICT)
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"].update(resultDICT)
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"].update(resultDICT) # 把判斷完的新資料更新進mscDICT
                     replySTR = self.mscDICT[str(message.author.id)+":"+str(message.author)]["background"]["response"]
+                    # 確認 context a 資料是否蒐集完畢
                     if "a" in resultDICT.keys():
                         self.mscDICT[str(message.author.id)+":"+str(message.author)]["a"] = True
                 elif data_dict["b"] == False:
                     resultDICT = condition_control(data_dict, "environment", msgSTR)
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["environment"].update(resultDICT)
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["environment"].update(resultDICT) # 把判斷完的新資料更新進mscDICT
                     replySTR = resultDICT["response"]
                     if "b" in resultDICT.keys():
                         self.mscDICT[str(message.author.id)+":"+str(message.author)]["b"] = True
@@ -122,7 +125,7 @@ class BotClient(discord.Client):
                     else:
                         target_context = "above" + str(age//12)
                     resultDICT = condition_control(data_dict, target_context, msgSTR)
-                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["behavior"].update(resultDICT)
+                    self.mscDICT[str(message.author.id)+":"+str(message.author)]["behavior"].update(resultDICT) # 把判斷完的新資料更新進mscDICT
                     replySTR = resultDICT["response"]
                     if "c" in resultDICT.keys():
                         self.mscDICT[str(message.author.id)+":"+str(message.author)]["c"] = True
