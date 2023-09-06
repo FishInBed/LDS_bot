@@ -26,15 +26,15 @@
 * 註冊/登入 [卓騰語言科技 AI -> NLP](https://api.droidtown.co/login/)
 * 點選 Loki 
 * 開始使用 Loki
-![](https://hackmd.io/_uploads/BJr62hEA3.png)
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_1.png)
 * 建立專案
   共計九個，分別為：Under_1, Above_1, Above_2, Above_3, Above_4, Above_5, Above_6
-![](https://hackmd.io/_uploads/SJXcTnV03.png)
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_2.png)
 * 點擊進入已設定之專案
 * 點擊下方「選擇檔案」並匯入該專案所屬的所有.ref檔
-![](https://hackmd.io/_uploads/Sk9neTV0h.png)
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_3.png)
 * 點擊進入每個意圖進行「部署模型」
-![](https://hackmd.io/_uploads/r164W64R2.png)
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_4.png)
 
 
 
