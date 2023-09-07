@@ -40,6 +40,6 @@
 * 
 ### **建立account.info檔案**
 * 在 LDS_bot 資料夾底下建立 account.info.txt 檔案，並輸入下列內容
-
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/account.info.png)
 # **聯絡資訊**
 若有任何問題，歡迎email聯繫
