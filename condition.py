@@ -21,7 +21,6 @@ with open('behavior_questions.json', encoding='utf-8') as f:
 with open('behavior_questions.json', encoding='utf-8') as f:
     behavior_questions = json.load(f)
 
-# 抓取yes_no回答後需要回傳相反數據的問題
 reverse_list = {
     "under1":["q11"],
     "above1":["q5"],
@@ -33,8 +32,6 @@ reverse_list = {
 }
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
-
-# 定義可以直接輸入context讓loki啟動的函式
 def operateLoki(context, inputSTR, filterList=[]):
     punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
     inputLIST = punctuationPat.sub("\n", inputSTR).split("\n")
@@ -62,27 +59,16 @@ def operateLoki(context, inputSTR, filterList=[]):
     
     return resultDICT
 
-# 定義用來確認還有那些問題沒問的函式
 def get_key_from_value(dict, val):
-    """
-    輸入字典跟欲查詢的value\\
-    回傳字典中會以list的型態回傳value為目標值的key
-    """
     resultList = []
     for key, value in dict.items():
         if val == value:
             resultList.append(key)
     return resultList 
 
-# 評估要給使用者什麼建議的功能
 def give_advice(age, final_data):
-    """
-    輸入孩童年齡（單位：月）和最終dict可得就醫建議
-    """
     target_age = age
-    accpetance = len(get_key_from_value(final_data["behavior"], True)) # 計算有幾個問題是True
-
-    # under 1
+    accpetance = len(get_key_from_value(final_data["behavior"], True))
     if target_age//12 == 0:
         if accpetance >= 10:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -96,7 +82,6 @@ def give_advice(age, final_data):
         else:
             result = "目前孩子正處理語言發展的準備前期，建議您可以多跟孩子互動，並持續觀察孩子與您的互動表現，待孩子大一點，如：十個月大或近一歲時，若還不能發出一些不同的聲音時，再到醫療院所進行語言篩檢。"
 
-    # above 1
     elif target_age//12 == 1:
         if accpetance >= 6:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -113,8 +98,7 @@ def give_advice(age, final_data):
                     result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
             elif target_age >= 19:
                 result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
-
-    # above 2
+    
     elif target_age//12 == 2:
         if accpetance >= 8:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -125,8 +109,7 @@ def give_advice(age, final_data):
                 result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
         else :
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
-
-    # above 3
+    
     elif target_age//12 == 3:
         if accpetance >= 8:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -137,8 +120,7 @@ def give_advice(age, final_data):
                 result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
         else :
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
-
-    # above 4
+            
     elif target_age//12 == 4:
         if accpetance >= 7:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -152,7 +134,6 @@ def give_advice(age, final_data):
         else :
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
 
-    # above 5
     elif target_age//12 == 5:
         if accpetance >= 6:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -166,7 +147,6 @@ def give_advice(age, final_data):
         else :
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
 
-    # above 6
     elif target_age//12 == 6:
         if accpetance >= 10:
             result = "推測您的孩子符合同齡孩童語言發展，建議您或照顧者持續在生活中營造更多與孩子互動的機會，同時也要持續觀察孩子的語言表現哦!"
@@ -181,20 +161,13 @@ def give_advice(age, final_data):
             result = "建議您或照顧者可帶孩子至醫療院所接受完整評估，也需持續在生活中營造更多與孩子互動的機會以刺激孩子語言發展。"
     return result
 
-# 判斷對話進行進度及決定下個問題要問什麼的函式
 def condition_control(dicts, context, msgSTR):
-    """
-    輸入目前的self.MSCDict, context, 使用者訊息\\
-    回傳資料更新後的字典
-    """
-    
     data = dicts
-    
     # Part A 處理
     if context == "background":
         cont = "background"
         # 檢查目前提問進展
-        waiting_question = get_key_from_value(data[context], "None") # 有幾個None就表示問到第幾題了 
+        waiting_question = get_key_from_value(data[context], "None") 
         
         # 偵測 intent
         if "half" in data[context].keys():
@@ -280,29 +253,27 @@ def condition_control(dicts, context, msgSTR):
     
     # Part C 處理
     else:
+        cont = "behavior"
         # 檢查目前提問進展
         amount = meta_data[context]["amount"]
-        waiting_question = get_key_from_value(data["behavior"], "None")[0]
+        waiting_question = get_key_from_value(data["behavior"], "None")
 
         # 偵測 intent
-        resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question]])
-        if "yes_no" in resultDICT.keys() and waiting_question not in resultDICT:
-            if waiting_question not in reverse_list[context]:
-                resultDICT[waiting_question] = resultDICT["yes_no"]
+        resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
+        if "yes_no" in resultDICT.keys() and waiting_question[0] not in resultDICT:
+            if waiting_question[0] not in reverse_list[context]:
+                resultDICT[waiting_question[0]] = resultDICT["yes_no"]
                 resultDICT.pop("yes_no")
             else:
                 if resultDICT["yes_no"][0] == True:
-                    resultDICT[waiting_question] = [False]
+                    resultDICT[waiting_question[0]] = [False]
                     resultDICT.pop("yes_no")
                 else:
-                    resultDICT[waiting_question] = [True]
+                    resultDICT[waiting_question[0]] = [True]
                     resultDICT.pop("yes_no")
 
-        elif "yes_no" in resultDICT.keys() and waiting_question in resultDICT:
+        elif "yes_no" in resultDICT.keys() and waiting_question[0] in resultDICT:
             resultDICT.pop("yes_no")
-        
-        elif "yes_no" not in resultDICT.keys() and waiting_question not in resultDICT:
-            resultDICT["response"] = ["不好意思我不太理解，能請您換個說法嗎？"]
 
         # 資料寫入字典
         for key in resultDICT:
@@ -311,24 +282,19 @@ def condition_control(dicts, context, msgSTR):
             else:
                 data["behavior"][key] = resultDICT[key][-1]
 
-        if "response" not in resultDICT.keys() :
-            next_q = get_key_from_value(data["behavior"], "None")[0]
-            data["behavior"]["response"] = behavior_questions[context][next_q]
+        if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
+            data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
+            data["behavior"]["c"] = True
         else:
-            if resultDICT["response"] is None:
+            if "response" not in resultDICT.keys():
                 next_q = get_key_from_value(data["behavior"], "None")[0]
                 data["behavior"]["response"] = behavior_questions[context][next_q]
-        
-        if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
-            #data["behavior"]["response"] = give_advice(context, data["background"]["age"], data)
-            data["behavior"]["response"] = give_advice(data["background"]["age"], data)
-            data["behavior"]["c"] = True
 
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
-            data["behavior"]["response"] = give_advice(data["background"]["age"], data)
+            data["behaivor"]["response"] = give_advice(data["background"]["age"], data)
 
-    return data["behavior"]
+    return data[cont]
 
 if __name__ == "__main__":
     dicts = {'a': True,
@@ -364,4 +330,3 @@ if __name__ == "__main__":
     msgSTR = "可以"
     resultDICT = condition_control(dicts, context, msgSTR)
     print(resultDICT)
-    
