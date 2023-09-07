@@ -36,15 +36,10 @@
 * 點擊進入每個意圖進行「部署模型」
 ![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_4.png)
 
-
-
-
-
-
 ### **啟用 Discord Bot**
 * 
-
-
+### **建立account.info檔案**
+* 在 LDS_bot 資料夾底下建立 account.info.txt 檔案，並輸入下列內容
 
 # **聯絡資訊**
 若有任何問題，歡迎email聯繫
