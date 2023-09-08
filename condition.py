@@ -68,7 +68,6 @@ def get_key_from_value(dict, val):
     for key, value in dict.items():
         if val == value:
             resultList.append(key)
-    resultList.sort(key=order_rule)
     return resultList 
 
 def give_advice(age, final_data):
@@ -262,6 +261,7 @@ def condition_control(dicts, context, msgSTR):
         # 檢查目前提問進展
         amount = meta_data[context]["amount"]
         waiting_question = get_key_from_value(data["behavior"], "None")
+        waiting_question.sort(key=order_rule)
         
         # 偵測 intent
         resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
