@@ -61,10 +61,10 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             if "不常" in inputSTR:
                 resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
-                esultDICT["q10"] =False
+                resultDICT["q10"] =False
             elif "常常" in inputSTR:
                 resultDICT["response"] = "最後一個想問的問題是...平時孩子會常常出現自言自語的表現，只說自己感興趣的話題嗎？"
-                esultDICT["q10"] = True
+                resultDICT["q10"] = True
         else:
             # write your code here
             pass
