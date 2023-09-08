@@ -59,11 +59,16 @@ def operateLoki(context, inputSTR, filterList=[]):
     
     return resultDICT
 
+def order_rule(x):
+    order = ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11", "q12", "q13"]
+    return order.index(x)
+
 def get_key_from_value(dict, val):
     resultList = []
     for key, value in dict.items():
         if val == value:
             resultList.append(key)
+    resultList.sort(key=order_rule)
     return resultList 
 
 def give_advice(age, final_data):
@@ -257,7 +262,7 @@ def condition_control(dicts, context, msgSTR):
         # 檢查目前提問進展
         amount = meta_data[context]["amount"]
         waiting_question = get_key_from_value(data["behavior"], "None")
-
+        
         # 偵測 intent
         resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
         if "yes_no" in resultDICT.keys() and waiting_question[0] not in resultDICT:
@@ -265,7 +270,7 @@ def condition_control(dicts, context, msgSTR):
                 resultDICT[waiting_question[0]] = resultDICT["yes_no"]
                 resultDICT.pop("yes_no")
             else:
-                if resultDICT["yes_no"][0] == True:
+                if resultDICT["yes_no"] == [True]:
                     resultDICT[waiting_question[0]] = [False]
                     resultDICT.pop("yes_no")
                 else:
@@ -274,6 +279,8 @@ def condition_control(dicts, context, msgSTR):
 
         elif "yes_no" in resultDICT.keys() and waiting_question[0] in resultDICT:
             resultDICT.pop("yes_no")
+        
+        print(waiting_question)
 
         # 資料寫入字典
         for key in resultDICT:
@@ -300,7 +307,7 @@ if __name__ == "__main__":
     dicts = {'a': True,
  'b': True,
  'background': {'a': True,
-                'age': 36,
+                'age': 76,
                 'congenital_disease': False,
                 'genetic_disease': False,
                 'response': '好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?',
@@ -315,18 +322,20 @@ if __name__ == "__main__":
               'q3': True,
               'q4': True,
               'q5': True,
-              'q6': "None",
-              'q7': 'None',
+              'q6': True,
+              'q7': False,
               'q8': 'None',
               'q9': 'None',
-              'response': '了解...那麼孩子現在是不是可以正確指認至少一個顏色了呢？'},
+              'response': '目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？'},
  'c': False,
  'environment': {'3c': False,
                  'b': True,
                  'response': '好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作更深入的了解囉。\n'
-                             '孩子可不可以使用約三到四個語詞組成的短句和大人一問一答呢？',
-                 'school': True}} #弄個測試用的回傳字典
-    context = "above3"
-    msgSTR = "可以"
+                             '孩子說話時的口齒不清，需要親近家人翻譯後他人才聽得懂嗎？',
+                 'school': True},
+ 'latestQuest': '',
+ 'response': []} #弄個測試用的回傳字典
+    context = "above6"
+    msgSTR = "不會"
     resultDICT = condition_control(dicts, context, msgSTR)
     print(resultDICT)
