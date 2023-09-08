@@ -63,6 +63,6 @@
 
 
 # **聯絡資訊**
-若有任何問題，歡迎email聯繫 
-[Cathy Yu](c5227c@gmail.com)
+若有任何問題，歡迎email聯繫<br>
+[Cathy Yu](c5227c@gmail.com)<br>
 [Ruo-Chi Yao](kireiyvette@gmail.com)
