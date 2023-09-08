@@ -25,8 +25,8 @@
 ### **啟用 Loki**
 * 註冊/登入 [卓騰語言科技 AI -> NLP](https://api.droidtown.co/login/)
 * 點選 Loki 
-* 開始使用 Loki
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_1.png)
+* 開始使用 Loki<br>
+  <img src="https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_1.png" width="600" />
 * 建立專案
   共計九個，分別為：Under_1, Above_1, Above_2, Above_3, Above_4, Above_5, Above_6
 ![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_2.png)
