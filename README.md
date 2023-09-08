@@ -36,10 +36,34 @@
 * 點擊進入每個意圖進行「部署模型」
 ![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_4.png)
 
-### **啟用 Discord Bot**
-* 
 ### **建立account.info檔案**
 * 在 LDS_bot 資料夾底下建立 account.info.txt 檔案，並輸入下列內容
 ![](https://github.com/FishInBed/LDS_bot/blob/main/image/account.info.png)
+
+### **啟用 Discord Bot**
+* 註冊/登入 Discord
+* 連至 [developers/applications](https://discord.com/developers/applications) 
+* 點選畫面右上角的「New Application」
+* 填入 Bot 名稱後點選 create
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_1.png)
+
+* 「Copy」下方的Token並將其存至 account.info.txt 中
+  
+* 左側選單中點選「OAuth2」-->點選「bot」
+
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_2.png)
+
+* 左側選單中點選「OAuth2」-->BOT PERMISSIONS勾選「Send Messages」、「Manage Messages」、「Embed Links」、「Read Message History」
+
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_3.png)
+
+* 左側選單中「BOT」-->features it needs勾選勾選「Send Messages」、「Manage Messages」、「Embed Links」、「Read Message History」
+
+![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_4.png)
+
+* 複製 BOT 的連結至指定的伺服器
+* 執行Discord_bot_LDS_bot.py
+
+
 # **聯絡資訊**
 若有任何問題，歡迎email聯繫
