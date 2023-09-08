@@ -29,41 +29,41 @@
   <img src="https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_1.png" width="600" />
 * 建立專案
   共計九個，分別為：Under_1, Above_1, Above_2, Above_3, Above_4, Above_5, Above_6
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_2.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_2.png" width="600" />
 * 點擊進入已設定之專案
 * 點擊下方「選擇檔案」並匯入該專案所屬的所有.ref檔
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_3.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_3.png" width="600" />
 * 點擊進入每個意圖進行「部署模型」
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_4.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/Loki_4.png" width="600" />
 
 ### **建立account.info檔案**
 * 在 LDS_bot 資料夾底下建立 account.info.txt 檔案，並輸入下列內容
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/account.info.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/account.info.png" width="600" />
 
 ### **啟用 Discord Bot**
 * 註冊/登入 Discord
 * 連至 [developers/applications](https://discord.com/developers/applications) 
 * 點選畫面右上角的「New Application」
 * 填入 Bot 名稱後點選 create
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_1.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/discord_1.png" width="600" />
 
 * 「Copy」下方的Token並將其存至 account.info.txt 中
   
 * 左側選單中點選「OAuth2」-->點選「bot」
 
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_2.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/discord_2.png" width="600" />
 
 * 左側選單中點選「OAuth2」-->BOT PERMISSIONS勾選「Send Messages」、「Manage Messages」、「Embed Links」、「Read Message History」
 
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_3.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/discord_3.png" width="600" />
 
 * 左側選單中「BOT」-->features it needs勾選勾選「Send Messages」、「Manage Messages」、「Embed Links」、「Read Message History」
 
-![](https://github.com/FishInBed/LDS_bot/blob/main/image/discord_4.png)
+<img src="https://github.com/FishInBed/LDS_bot/blob/main/image/discord_4.png" width="600" />
 
 * 複製 BOT 的連結至指定的伺服器
 * 執行Discord_bot_LDS_bot.py
 
 
 # **聯絡資訊**
-若有任何問題，歡迎email聯繫
+若有任何問題，歡迎email聯繫 <a href="c5227c@gmai.com"><p>Cathy Yu</p>
