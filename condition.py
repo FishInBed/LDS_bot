@@ -1,6 +1,7 @@
 import logging
 import re
 import json
+from random import sample
 
 from A_background.A_background import execLoki as background_execLoki
 from B_environment.B_environment import execLoki as environment_execLoki
@@ -30,6 +31,12 @@ reverse_list = {
     "above5":["q2", "q3", "q5", "q7"],
     "above6":["q1", "q3", "q8", "q11"]
 }
+
+no_response = [
+    "不好意思我不太擅長改錯字，如果您發現自己有打錯字的地方的話，可以請您修正後再回覆一次嗎？",
+    "哎呀！你可能不小心觸發了什麼文字陷阱，要不要考慮換個說法再回答一次呢？",
+    "偷偷告訴你一個秘密，我其實對錯字很敏感，如果出現錯字就會影響我的評估結果，所以請你修正錯字後再打一次吧～"
+]
 
 punctuationPat = re.compile("[,\.\?:;，。？、：；\n]+")
 def operateLoki(context, inputSTR, filterList=[]):
@@ -200,6 +207,9 @@ def condition_control(dicts, context, msgSTR):
                     else:
                         resultDICT["response"] = ["那麼是孩子的哪位親人有什麼樣的遺傳性疾病呢？"]
                         resultDICT.pop("yes_no")
+            
+        if "response" not in resultDICT.keys():
+            resultDICT["response"] = sample(no_response, 1)
         
         # 資料寫入字典
         for key in resultDICT:
@@ -236,6 +246,9 @@ def condition_control(dicts, context, msgSTR):
                 resultDICT.pop("yes_no")
             elif "yes_no" in resultDICT.keys() and "3C" in resultDICT.keys():
                 resultDICT.pop("yes_no")
+
+        if "response" not in resultDICT.keys():
+            resultDICT["response"] = sample(no_response, 1) 
 
         # 資料寫入字典
         for key in resultDICT:
@@ -283,6 +296,8 @@ def condition_control(dicts, context, msgSTR):
         
         print(waiting_question)
 
+
+
         # 資料寫入字典
         for key in resultDICT:
             if key != "response":
@@ -297,7 +312,10 @@ def condition_control(dicts, context, msgSTR):
             if "response" not in resultDICT.keys():
                 new_waiting = get_key_from_value(data["behavior"], "None")
                 new_waiting.sort(key=order_rule)
-                data["behavior"]["response"] = behavior_questions[context][new_waiting[0]]
+                if new_waiting[0] == waiting_question[0]:
+                    data["behavior"]["response"] = sample(no_response, 1)[0]
+                else:
+                    data["behavior"]["response"] = behavior_questions[context][new_waiting[0]]
 
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
@@ -309,12 +327,12 @@ if __name__ == "__main__":
     dicts = {'a': True,
  'b': True,
  'background': {'a': True,
-                'age': 76,
+                'age': 14,
                 'congenital_disease': False,
                 'genetic_disease': False,
-                'response': '好的，接下來想針對孩子的生活環境跟您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?',
+                'response': '好的，接下來想針對孩子的生活環境跟 您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?',   
                 'ten_month': True,
-                'weight': True},
+                'weight': False},
  'behavior': {'q1': True,
               'q10': 'None',
               'q11': 'None',
@@ -322,22 +340,21 @@ if __name__ == "__main__":
               'q13': 'None',
               'q2': True,
               'q3': True,
-              'q4': True,
-              'q5': True,
-              'q6': True,
-              'q7': False,
+              'q4': False,
+              'q5': 'None',
+              'q6': 'None',
+              'q7': 'None',
               'q8': 'None',
               'q9': 'None',
-              'response': '目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？'},
  'c': False,
  'environment': {'3c': False,
                  'b': True,
-                 'response': '好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作更深入的了解囉。\n'
-                             '孩子說話時的口齒不清，需要親近家人翻譯後他人才聽得懂嗎？',
+                 'response': '好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作 更深入的了解囉。\n'
+                             '孩子會不會用手勢或動作來表達自己的喜好呢？例如：點頭表是「要」或「好 」、搖頭表示「不要」、手指指物、把東西推開？',
                  'school': True},
  'latestQuest': '',
- 'response': []} #弄個測試用的回傳字典
-    context = "above6"
+ 'response': []}} #弄個測試用的回傳字典
+    context = "above1"
     msgSTR = "不會"
     resultDICT = condition_control(dicts, context, msgSTR)
     print(resultDICT)
