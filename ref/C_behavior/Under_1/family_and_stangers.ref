@@ -8,20 +8,53 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "不行": {
-            "id": "ee13a2c9-a6ae-4c78-8454-41e494510f01",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "403b8d29-ad4c-478d-8386-2213c969da31",
             "argument": [
@@ -30,6 +63,17 @@
                     "text": "常常",
                     "checked": true,
                     "checkbox": false
+                }
+            ]
+        },
+        "很少": {
+            "id": "94b76deb-01c3-43bd-aa1c-a60ef350570c",
+            "argument": [
+                {
+                    "pos": "DegreeP",
+                    "text": "很少",
+                    "checked": true,
+                    "checkbox": true
                 }
             ]
         },
@@ -70,92 +114,6 @@
                     "text": "會",
                     "checked": false,
                     "checkbox": false
-                }
-            ]
-        },
-        "很少見": {
-            "id": "f5fb4551-500b-45db-8ef5-96180c4cedbe",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "很少",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "見到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見美",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看出",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見古",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見建",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見得",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看見",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見圓",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "見",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "331ae7b0-7c91-4789-80cb-92b57ae54f2d",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
-                    "checkbox": true
                 }
             ]
         },
@@ -665,7 +623,7 @@
                         {
                             "text": "怕羞",
                             "level": "tier_1",
-                            "checked": false
+                            "checked": true
                         },
                         {
                             "text": "羞怯",
@@ -700,7 +658,7 @@
                         {
                             "text": "怕生",
                             "level": "word2vec",
-                            "checked": false
+                            "checked": true
                         },
                         {
                             "text": "吃醋",
@@ -724,81 +682,6 @@
                         }
                     ],
                     "text": "害羞",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "小孩很怕生": {
-            "id": "ed620ccc-7736-45b6-ad41-a0390ffe5f3d",
-            "argument": [
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "小孩",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "很",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "彆扭",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "輕浮",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "害羞",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "調皮",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "固執",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "怕事",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "貪吃",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "討人厭",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "爭氣",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "怕鬼",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "怕生",
                     "checked": false,
                     "checkbox": false
                 }
@@ -1050,7 +933,7 @@
                 {
                     "pos": "ENTITY_noun",
                     "text": "人",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 },
                 {
@@ -1129,7 +1012,7 @@
                 {
                     "pos": "ENTITY_nouny",
                     "text": "小孩",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 },
                 {

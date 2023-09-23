@@ -8,6 +8,50 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
@@ -39,7 +83,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很多",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -203,23 +247,6 @@
                 }
             ]
         },
-        "沒辦法": {
-            "id": "90498a7b-cdfb-432d-ba51-71b77b65aedd",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
         "看心情": {
             "id": "6155491d-4963-41b9-8461-f8083c0fa28b",
             "argument": [
@@ -362,17 +389,7 @@
                             "checked": false
                         },
                         {
-                            "text": "看來",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看起",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看著",
+                            "text": "瞧",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -382,7 +399,7 @@
                             "checked": false
                         },
                         {
-                            "text": "瞧",
+                            "text": "看到",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -392,7 +409,17 @@
                             "checked": false
                         },
                         {
-                            "text": "看到",
+                            "text": "看著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "看來",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "看起",
                             "level": "word2vec",
                             "checked": false
                         }

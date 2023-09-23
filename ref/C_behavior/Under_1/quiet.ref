@@ -8,75 +8,79 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "是啊": {
-            "id": "a6d62d46-0158-490c-b76d-8c0783135c07",
+        "他都很吵": {
+            "id": "a8022603-6698-490a-86e4-c64373eb8d56",
             "argument": [
                 {
-                    "pos": "AUX",
-                    "text": "是",
+                    "pos": "ENTITY_pronoun",
+                    "text": "他",
                     "checked": false,
                     "checkbox": false
                 },
                 {
-                    "pos": "CLAUSE_particle",
-                    "text": "啊",
+                    "pos": "QUANTIFIER",
+                    "text": "都",
                     "checked": false,
                     "checkbox": false
+                },
+                {
+                    "pos": "DegreeP",
+                    "text": "很吵",
+                    "checked": false,
+                    "checkbox": true
                 }
             ]
         },
-        "沒錯": {
-            "id": "95d5d767-8a5d-4cc9-8819-a93acf399bb2",
+        "不太有聲音": {
+            "id": "3c5c6f05-7e78-40dd-a195-6e582fd30140",
             "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "錯",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "是不會": {
-            "id": "fe12c149-0f79-441b-ba42-a645aa541093",
-            "argument": [
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "對不太有聲音": {
-            "id": "a0e4069b-4a5e-48a6-939c-60d4596c37b0",
-            "argument": [
-                {
-                    "pos": "FUNC_inner",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "MODIFIER",
                     "text": "不太",
@@ -137,22 +141,22 @@
                             "checked": false
                         },
                         {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "有同",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
                             "text": "存在著",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "含有",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "有過",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -174,56 +178,9 @@
                 }
             ]
         },
-        "不會哦他都很吵": {
-            "id": "2de9ea3a-18d6-43dc-8e9b-84aaaf3a8ba1",
+        "一般都很安靜": {
+            "id": "8cb2418f-af18-4a65-a49b-e41ac0057799",
             "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "CLAUSE_particle",
-                    "text": "哦",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_pronoun",
-                    "text": "他",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "DegreeP",
-                    "text": "很吵",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "對一般都很安靜": {
-            "id": "d1c71a39-3386-4de7-ab31-a530bb241b76",
-            "argument": [
-                {
-                    "pos": "FUNC_inner",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "MODIFIER",
                     "text": "一般",

@@ -28,7 +28,9 @@
         "congenital": [
             "中樞神經感染",
             "先天性心臟病",
+            "唇腭裂",
             "唇裂",
+            "唇顎裂",
             "唐氏症",
             "小兒症",
             "小胖威利症",
@@ -42,7 +44,8 @@
             "腦瘤",
             "腦部感染",
             "腦部缺氧性病變",
-            "腭裂"
+            "腭裂",
+            "顎裂"
         ],
         "child_school": [
             "幼兒園",
@@ -60,36 +63,48 @@
     },
     "utterance": {
         "否": {
-            "id": "60ee43d8-b338-448b-9c5d-91c49c65eaae",
+            "id": "f9480f10-775a-40de-84ee-4ff949797637",
             "pos": "<ENTITY_oov>否</ENTITY_oov>",
             "lexy": [],
             "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>否</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         },
         "對": {
-            "id": "1ae04a74-0952-4866-8a63-ed43175d049f",
+            "id": "c2b4ebeb-92fe-4944-92fd-8cb8d689fb28",
             "pos": "<MODIFIER>對</MODIFIER>",
             "lexy": [],
-            "pattern": "<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?|<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)><CLAUSE_particle>[^<]+</CLAUSE_particle>"
+            "pattern": "<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>"
+        },
+        "是": {
+            "id": "fa065914-9bdc-41ea-b301-707cc0a7add5",
+            "pos": "<AUX>是</AUX>",
+            "lexy": [],
+            "pattern": "<AUX>[^<]+</AUX>"
         },
         "有": {
-            "id": "c3fe8b72-a6b0-45ea-b4d0-55c62d74066e",
+            "id": "89d2ffc2-c0e6-47ac-9bf7-e631d20bec50",
             "pos": "<ACTION_verb>有</ACTION_verb>",
             "lexy": [
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
             ],
-            "pattern": "<(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)>|<AUX>[^<]+</AUX>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
+            "pattern": "<(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
+        },
+        "不是": {
+            "id": "8263c32f-efe0-4fa2-9f2a-495f8413c97f",
+            "pos": "<FUNC_negation>不</FUNC_negation><AUX>是</AUX>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation><AUX>[^<]+</AUX>"
         },
         "對啊": {
-            "id": "9bbf0342-5367-4294-b86f-66c7bdde94bb",
+            "id": "f721cca8-9cf1-4d93-b4c4-23453c5d8c11",
             "pos": "<FUNC_inner>對</FUNC_inner><CLAUSE_particle>啊</CLAUSE_particle>",
             "lexy": [],
             "pattern": "<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)><CLAUSE_particle>[^<]+</CLAUSE_particle>"
         },
         "沒有": {
-            "id": "98060252-ee56-4beb-a673-f54041a3414e",
+            "id": "99182feb-9c21-49eb-b3db-aa67e1792191",
             "pos": "<FUNC_negation>沒有</FUNC_negation>",
             "lexy": [],
-            "pattern": "(<(MODIFIER|ModifierP)>不對</(MODIFIER|ModifierP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?)|<FUNC_negation>[^<]+</FUNC_negation>(<AUX>[^<]+</AUX>)?(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
         }
     },
     "alias": {},
