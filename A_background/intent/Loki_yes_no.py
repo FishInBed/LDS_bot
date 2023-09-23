@@ -23,10 +23,10 @@ DEBUG_yes_no = True
 CHATBOT_MODE = True
 
 userDefinedDICT = {}
-# try:
-#     userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
-# except Exception as e:
-#     print("[ERROR] userDefinedDICT => {}".format(str(e)))
+try:
+    userDefinedDICT = json.load(open(os.path.join(os.path.dirname(__file__), "USER_DEFINED.json"), encoding="utf-8"))
+except Exception as e:
+    print("[ERROR] userDefinedDICT => {}".format(str(e)))
 
 responseDICT = {}
 # if CHATBOT_MODE:
@@ -50,37 +50,54 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
+    if utterance == "不是":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "否":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = False
+        else:
+            # write your code here
+            pass
+
     if utterance == "對":
         if CHATBOT_MODE:
-            resultDICT["yes_no"] = True
+            if "不對" in inputSTR or "不行" in inputSTR:
+                resultDICT["yes_no"] = False
+            else:
+                resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
 
-    elif utterance == "有":
+    if utterance == "對啊":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
 
-    elif utterance == "沒有":
+    if utterance == "是":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "有":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "沒有":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = False
-        else:
-            # write your code here
-            pass
-
-    elif utterance == "否":
-        if CHATBOT_MODE:
-            resultDICT["yes_no"] = False
-        else:
-            # write your code here
-            pass
-
-    elif utterance == "對啊":
-        if CHATBOT_MODE:
-            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass

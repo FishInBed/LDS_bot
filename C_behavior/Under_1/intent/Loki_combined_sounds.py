@@ -55,14 +55,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
             resultDICT["q1"] = True
         else:
-            # write your code here
             pass
 
-    if utterance == "[不太]確定": #去reply裡面抓引導用問題
+    if utterance == "[不太]確定":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
-            # write your code here
             pass
 
     if utterance == "[只]聽過[一兩][次]":
@@ -70,7 +68,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
             resultDICT["q1"] = True
         else:
-            # write your code here
             pass
 
     if utterance == "[可以]但沒那麼多[種]":
@@ -78,41 +75,22 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
             resultDICT["q1"] = True
         else:
-            # write your code here
             pass
-
+    # NOTE 會但不多跟不常為什麼回傳的東西不一樣
+    # NOTE 需考慮萬一不是常常也不是不常要回傳什麼（建議以不常為條件，剩下的用else帶過）
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
-            resultDICT["q1"] = True
+            if "不常" in inputSTR:
+                resultDICT["response"] = "這樣子呀...那當您與孩子玩或逗孩子時，孩子會不會發出一些不同聲音來回應您呢？"
+                resultDICT["q1"] = False
+            elif "常常" in inputSTR:
+                resultDICT["response"] = "這樣子呀...那當您與孩子玩或逗孩子時，孩子會不會發出一些不同聲音來回應您呢？"
+                resultDICT["q1"] = True
         else:
-            # write your code here
             pass
 
-    if utterance == "[會]但[不多]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不[一定]": #去reply裡面抓引導用問題
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太[會]": 
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
-            resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很多":
+    # NOTE 會但不多跟很少為什麼回傳的東西不一樣
+    if utterance == "[很多]":
         if CHATBOT_MODE:
             if "多" in inputSTR:
                 resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
@@ -121,7 +99,27 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
                 resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
                 resultDICT["q1"] = False
         else:
-            # write your code here
+            pass
+
+    if utterance == "[會]但[不多]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
+            resultDICT["q1"] = True
+        else:
+            pass
+
+    if utterance == "不[一定]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            pass
+    
+    # NOTE 怎麼判斷不太會跟會但不多的差異
+    if utterance == "不太[會]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
+            resultDICT["q1"] = False
+        else:
             pass
 
     if utterance == "沒聽過":
@@ -129,22 +127,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
             resultDICT["q1"] = False
         else:
-            # write your code here
             pass
 
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...那孩子他是否可以發出類似「咕、咕、咕」的聲音呀？"
-            resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "看[心情]": #去reply裡面抓引導用問題
+    if utterance == "看[心情]":
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
-            # write your code here
             pass
 
     return resultDICT
