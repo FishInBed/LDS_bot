@@ -8,6 +8,50 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
@@ -22,24 +66,13 @@
                 }
             ]
         },
-        "不行": {
-            "id": "6f8f828d-ba61-46b1-bceb-74e4fc9a1983",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "很少": {
             "id": "2b8240eb-b701-4ade-9217-9c4649d1b53a",
             "argument": [
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -126,98 +159,6 @@
                     "pos": "MODAL",
                     "text": "會",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不到4個": {
-            "id": "9e6efdf2-d0c3-4feb-be50-294e1e806746",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "到了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到約",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到受",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到離",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到包",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到回",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到隨",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到死",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "到",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_classifier",
-                    "text": "4個",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

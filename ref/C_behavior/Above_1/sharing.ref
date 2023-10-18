@@ -8,20 +8,53 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "不多": {
-            "id": "6ffcece6-9836-43d6-8215-a2ebd1521f83",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "1a27d07a-bf99-46cf-98ed-a07c0d5a52be",
             "argument": [
@@ -39,7 +72,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -79,75 +112,6 @@
                 {
                     "pos": "MODAL",
                     "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "很少見": {
-            "id": "48c5744b-7699-4dc0-a392-a7d8c0287c49",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "很少",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "見到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見美",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看出",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見古",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見建",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見得",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看見",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見圓",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "見",
                     "checked": false,
                     "checkbox": false
                 }
@@ -534,46 +498,6 @@
                 }
             ]
         },
-        "好像不會": {
-            "id": "88483f6d-8454-4309-a134-fd6707a4be61",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "8ceec0f5-2600-4d0d-a083-60550f6c9182",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "拿著不放": {
             "id": "8d4b661d-6cf3-4ecb-b802-4b11579dabd6",
             "argument": [
@@ -886,29 +810,6 @@
                 }
             ]
         },
-        "會但不常": {
-            "id": "1735252c-1123-4c5b-8a41-2622a636bba1",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "都只是拿著": {
             "id": "96140beb-7773-4684-9a75-c4c0bdd3f9ad",
             "argument": [
@@ -1191,137 +1092,6 @@
                 {
                     "pos": "RANGE_locality",
                     "text": "裡",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "只看過一兩次": {
-            "id": "c0d94546-e812-4114-a91a-949171ca9ed8",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "只",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "VerbP",
-                    "lexy": [
-                        {
-                            "text": "聽過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "讀過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "聽說過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "碰過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有看過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "接觸過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "玩過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "遇過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "聽",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "讀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "聽說",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "碰",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有看",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "接觸",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "玩",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "遇",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "看過",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_measurement",
-                    "text": "一兩",
-                    "checked": true,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_eventQuantifier",
-                    "text": "次",
                     "checked": true,
                     "checkbox": false
                 }

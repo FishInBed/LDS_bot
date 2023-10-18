@@ -5,19 +5,56 @@
         "atk": "v265",
         "intent": "1.0"
     },
-    "user_defined": {},
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
+        ]
+    },
     "utterance": {
-        "對": {
-            "id": "cfd8ffde-4678-438f-9ac6-fc721652a16d",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "4274bca6-e904-44e1-8c84-2ad20459989e",
             "argument": [
@@ -41,192 +78,6 @@
                 {
                     "pos": "FUNC_degreeHead",
                     "text": "太",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像有": {
-            "id": "1cbacf6e-1a8d-4078-a0fe-a0ace4ca5fb4",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "很少見": {
-            "id": "28d68eda-7a21-40a5-9a5e-07baa0eaf5e3",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "很少",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "見到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見美",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看出",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見古",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見建",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見得",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "看見",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "見圓",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "見",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "ab457006-5886-4ba7-b06f-4542f992dc66",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
                     "checked": false,
                     "checkbox": false
                 },

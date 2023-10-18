@@ -7,21 +7,55 @@
     },
     "user_defined": {
         "_ANoun": [
+            "別人",
             "嘴巴"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "不行": {
-            "id": "78074940-e61c-445c-9e89-b9e340f2c986",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "9f69ab15-efb5-4027-91e5-976f40ee942c",
             "argument": [
@@ -39,7 +73,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -62,23 +96,6 @@
                 {
                     "pos": "MODAL",
                     "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "都可以": {
-            "id": "bade95e4-f813-4d8e-a60d-70da1e76896c",
-            "argument": [
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }
@@ -248,86 +265,6 @@
                         }
                     ],
                     "text": "確定",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "000d0409-f61a-46c0-b564-0ba6969dae5a",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像可以": {
-            "id": "8749c9eb-2f2f-457a-9b14-81dee9f7db1b",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "7f2725ff-c9c0-448c-aec7-af05dc766749",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不多": {
-            "id": "586d7b3c-f5a4-47eb-9e84-37ddfe91fe1f",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
                     "checked": false,
                     "checkbox": false
                 }

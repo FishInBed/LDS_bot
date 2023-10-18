@@ -5,7 +5,55 @@
         "atk": "v265",
         "intent": "1.0"
     },
-    "user_defined": {},
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
+        ]
+    },
     "utterance": {
         "不多": {
             "id": "092954ea-ffe1-4050-ac3a-b599acc7ecc3",
@@ -35,7 +83,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -249,29 +297,6 @@
                     "text": "心情",
                     "checked": true,
                     "checkbox": true
-                }
-            ]
-        },
-        "會但不多": {
-            "id": "f10d626b-fae3-4115-b176-960de32f2043",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },
@@ -692,230 +717,6 @@
                 {
                     "pos": "FUNC_inner",
                     "text": "的",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不愛說": {
-            "id": "043c572d-83ea-4485-9d38-c00b2400f500",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "喜愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "愛好",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "愛憎",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "愛戴",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "愛護",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "愛過",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "憐愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "深愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "熱愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "疼愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "相愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "篤愛",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "建愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "給愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "迷戀",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "喜歡",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "視愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "勒愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "集愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到愛",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "愛",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "演說",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "說話",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "宣判",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "拼讀",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "談到",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "辯護",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "說真",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有說",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講出",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "常說",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "講",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "說了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "罵",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "說",
                     "checked": false,
                     "checkbox": false
                 }

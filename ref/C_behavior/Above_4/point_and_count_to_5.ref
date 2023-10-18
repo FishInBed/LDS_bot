@@ -8,6 +8,50 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
@@ -22,24 +66,13 @@
                 }
             ]
         },
-        "不行": {
-            "id": "7f6fa640-52c8-4442-8657-9636cb4dd6a7",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "很少": {
             "id": "19fb93a7-d562-4210-ae8d-9e775578fc66",
             "argument": [
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -84,49 +117,9 @@
                 }
             ]
         },
-        "沒辦法": {
-            "id": "543f8e78-4f69-4421-87f2-4d7145c88dd0",
+        "不到5個": {
+            "id": "96bf4688-1faa-4847-9e5f-3d11ca5f6cda",
             "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "都可以": {
-            "id": "0a7fee12-9d7e-46b9-8e4f-a69983045690",
-            "argument": [
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "91c1f2ec-8257-4c1c-bfe9-28e39a7b9d8b",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
                 {
                     "pos": "FUNC_negation",
                     "text": "不",
@@ -134,221 +127,72 @@
                     "checkbox": false
                 },
                 {
-                    "pos": "MODAL",
-                    "text": "會",
+                    "pos": "ACTION_verb",
+                    "lexy": [
+                        {
+                            "text": "到了",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到約",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到受",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到離",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到包",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到經過",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到回",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到隨",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到死",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到愛",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "到經",
+                            "level": "word2vec",
+                            "checked": false
+                        }
+                    ],
+                    "text": "到",
                     "checked": false,
                     "checkbox": false
-                }
-            ]
-        },
-        "好像可以": {
-            "id": "d16163ec-c5ff-469a-bedb-c58bcf745bf9",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
                 },
                 {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不常": {
-            "id": "dd1703b2-e1b4-49dc-b132-ea060176aa59",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
+                    "pos": "ENTITY_classifier",
+                    "text": "5個",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "應該有超過": {
-            "id": "a7e6e835-d0f7-45e4-8f87-35bbf62d668f",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "應該",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "超出",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "超越",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "超車",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "追趕",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "達到",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "超逾",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "低於",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "達約",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "高達",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "超過了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "逾",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "約達",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "少於",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有近",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "超過",
-                    "checked": false,
                     "checkbox": false
                 }
             ]
@@ -513,98 +357,6 @@
                     "pos": "FUNC_inner",
                     "text": "的",
                     "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不到5個": {
-            "id": "a87e1376-85c0-4e70-a28a-7d2edc071595",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "到了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到約",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到受",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到離",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到包",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到回",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到隨",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到死",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到愛",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "到經",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "到",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_classifier",
-                    "text": "5個",
-                    "checked": true,
                     "checkbox": false
                 }
             ]

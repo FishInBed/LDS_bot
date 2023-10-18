@@ -7,27 +7,55 @@
     },
     "user_defined": {
         "_ANoun": [
+            "別人",
             "嘴巴"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "是的": {
-            "id": "761bb807-a488-41ad-9ee2-81138fe77010",
-            "argument": [
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "的",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不一定": {
             "id": "8e62b269-1beb-410c-beea-5035ca57b65b",
             "argument": [
@@ -231,69 +259,6 @@
                     "text": "心情",
                     "checked": true,
                     "checkbox": true
-                }
-            ]
-        },
-        "不會這樣": {
-            "id": "4e16912f-c043-4284-9273-6da79f8f502d",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_DetPhrase",
-                    "text": "這樣",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "73d40c2c-59fc-4953-90f0-9d730bae93e7",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "就是這樣": {
-            "id": "fc2f948d-04b6-4383-a0aa-caaf6b12de6e",
-            "argument": [
-                {
-                    "pos": "AUX",
-                    "text": "就是",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_DetPhrase",
-                    "text": "這樣",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },

@@ -7,21 +7,55 @@
     },
     "user_defined": {
         "_ANoun": [
+            "別人",
             "嘴巴"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "不行": {
-            "id": "c8b05ced-3761-4098-b6c8-900fe2f22ff7",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "ea2694c9-4cc8-45c4-ad7a-c874404d69a1",
             "argument": [
@@ -39,64 +73,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "不太會": {
-            "id": "3cfc4525-81af-4cad-bc3d-60f2af3265eb",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_degreeHead",
-                    "text": "太",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不太行": {
-            "id": "b2e31cb5-05df-48b6-a3a8-e9b78a1fe0bc",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "DegreeP",
-                    "text": "太行",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "964c03cd-5086-427f-9342-75e2549ecd2d",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -290,185 +267,6 @@
                 }
             ]
         },
-        "算有哦": {
-            "id": "4229eec2-ec69-4b59-98b2-47c9a31e76c2",
-            "argument": [
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "算輸",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算數",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算真",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "行了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "夠了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算做",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "願屈",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算想",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "算用",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "行",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "夠",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "算",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "具有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "兼有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "存有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "帶有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "懷有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "持有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "擁有",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有了",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "有著",
-                            "level": "tier_1",
-                            "checked": false
-                        },
-                        {
-                            "text": "保留",
-                            "level": "tier_2",
-                            "checked": false
-                        },
-                        {
-                            "text": "有同",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在著",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "含有",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "有過",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "存在",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "有",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "CLAUSE_particle",
-                    "text": "哦",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "都可以": {
-            "id": "5a227b55-71e8-4ecf-8041-5e9a35e02940",
-            "argument": [
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不太確定": {
             "id": "a078d541-858e-4c0d-ac14-f19a81be0ab0",
             "argument": [
@@ -655,109 +453,6 @@
                 }
             ]
         },
-        "好像不會": {
-            "id": "492a6aba-676a-4da0-b528-1d5f1486a531",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像可以": {
-            "id": "9a5d1299-e708-4d6e-96d4-69c3fbeeaab5",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "fd85de92-96ff-41b1-b4d9-18611ee2a2c6",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會但不常": {
-            "id": "570efea0-538e-4df1-8adf-d35ca155b125",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不多": {
-            "id": "b0c4ec68-eee7-4d0d-b6fe-69d92aeebb76",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "小孩沒興趣": {
             "id": "45ba09c5-03e1-4e57-938c-18aebfa68c8c",
             "argument": [
@@ -778,6 +473,29 @@
                     "text": "興趣",
                     "checked": false,
                     "checkbox": true
+                }
+            ]
+        },
+        "沒那麼多種": {
+            "id": "4be0dadc-d102-47eb-ae80-42cabf4b907a",
+            "argument": [
+                {
+                    "pos": "FUNC_negation",
+                    "text": "沒",
+                    "checked": false,
+                    "checkbox": false
+                },
+                {
+                    "pos": "DegreeP",
+                    "text": "那麼多",
+                    "checked": false,
+                    "checkbox": true
+                },
+                {
+                    "pos": "ENTITY_classifier",
+                    "text": "種",
+                    "checked": true,
+                    "checkbox": false
                 }
             ]
         },
@@ -907,41 +625,6 @@
                 {
                     "pos": "ACTION_eventQuantifier",
                     "text": "次",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但沒那麼多種": {
-            "id": "e5f2161d-67bb-4d0b-9503-eb9ff098e061",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "DegreeP",
-                    "text": "那麼多",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "ENTITY_classifier",
-                    "text": "種",
                     "checked": true,
                     "checkbox": false
                 }

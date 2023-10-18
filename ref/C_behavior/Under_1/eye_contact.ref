@@ -486,29 +486,6 @@
                 }
             ]
         },
-        "會但不常": {
-            "id": "402b966b-37a3-42b7-829a-d9534915dee9",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "小孩不太看人": {
             "id": "6dd02676-0a94-4690-9aaa-6ab47b1574ae",
             "argument": [

@@ -486,21 +486,9 @@
                 }
             ]
         },
-        "會但聲音都很像": {
-            "id": "63d92f56-01db-4dd2-ac45-d6836ba74e11",
+        "聲音都很像": {
+            "id": "a56deb37-29c6-4170-9796-10c686b04975",
             "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "ENTITY_noun",
                     "text": "聲音",
@@ -521,62 +509,9 @@
                 }
             ]
         },
-        "不太會而且聲音很少": {
-            "id": "1997a6ca-faa9-4006-9d64-6c2efbb31843",
+        "聲音沒什麼變化": {
+            "id": "2df502a0-dbc5-43ff-820a-85d55ccb54c5",
             "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_degreeHead",
-                    "text": "太",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inner",
-                    "text": "而且",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_noun",
-                    "text": "聲音",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "DegreeP",
-                    "text": "很少",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "會但聲音沒什麼變化": {
-            "id": "868cda42-a425-4124-beb9-4a82c19ddeae",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "ENTITY_noun",
                     "text": "聲音",
@@ -629,17 +564,7 @@
                             "checked": false
                         },
                         {
-                            "text": "變遷",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "轉變",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "偏移",
+                            "text": "改變",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -654,17 +579,27 @@
                             "checked": false
                         },
                         {
-                            "text": "衰減",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "漲落",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "改變",
+                            "text": "衰減",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "轉變",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "偏移",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "變遷",
                             "level": "word2vec",
                             "checked": false
                         },

@@ -5,7 +5,55 @@
         "atk": "v265",
         "intent": "1.0"
     },
-    "user_defined": {},
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
+        ]
+    },
     "utterance": {
         "不常": {
             "id": "e342969c-0009-416a-bce0-c95b748b4e99",
@@ -18,24 +66,13 @@
                 }
             ]
         },
-        "不行": {
-            "id": "3cb95ac4-7ec7-4f7f-8c65-adc7602e3419",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "很少": {
             "id": "803010ba-ea70-4096-a9a3-cb93a4f79c81",
             "argument": [
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -127,144 +164,6 @@
                         }
                     ],
                     "text": "錯亂",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "b6e3f83a-7e61-4022-91a0-b17f262cf929",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "你我不分": {
-            "id": "710cb6d0-3685-480d-ab76-7b2744b1a5a1",
-            "argument": [
-                {
-                    "pos": "ENTITY_pronoun",
-                    "text": "你",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_pronoun",
-                    "text": "我",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ACTION_verb",
-                    "lexy": [
-                        {
-                            "text": "分成",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "劃分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "細分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "共分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "略分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "概分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "粗分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "分作",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "區分",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "下分",
-                            "level": "word2vec",
-                            "checked": false
-                        }
-                    ],
-                    "text": "分",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "0d685c3d-3c4a-4074-a180-6c488b944664",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像可以": {
-            "id": "713d4bff-4f69-4784-9876-4e36f4a31d15",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
                     "checked": false,
                     "checkbox": false
                 }

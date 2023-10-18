@@ -7,7 +7,52 @@
     },
     "user_defined": {
         "_ANoun": [
+            "別人",
             "嘴巴"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
@@ -18,17 +63,6 @@
                     "pos": "TIME_justtime",
                     "text": "不常",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "不行": {
-            "id": "e21770cd-c920-492b-a0a1-93f33a6c6934",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
                     "checkbox": false
                 }
             ]
@@ -108,7 +142,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -262,23 +296,6 @@
                     "text": "會",
                     "checked": false,
                     "checkbox": false
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "f5f50c1e-53af-4be6-93ec-ad162509d24a",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
-                    "checked": false,
-                    "checkbox": true
                 }
             ]
         },
@@ -471,89 +488,9 @@
                 }
             ]
         },
-        "都可以": {
-            "id": "b623b001-bfd2-4399-a163-98612e4cc203",
+        "把書丟掉": {
+            "id": "8112c8c9-bf64-4424-9b07-6f6a033a69b6",
             "argument": [
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像不會": {
-            "id": "99ffeddf-b8a7-480f-a592-fe0d32e09b57",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像可以": {
-            "id": "a7c67caa-c3b5-45fc-bc09-f050e8a996f0",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "91fd7b9c-a8fa-40de-a603-730db5be3717",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "會把書丟掉": {
-            "id": "670efd6a-2273-4575-8f3c-d234419fb6ea",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "ACTION_lightVerb",
                     "text": "把",
@@ -563,7 +500,7 @@
                 {
                     "pos": "ENTITY_noun",
                     "text": "書",
-                    "checked": true,
+                    "checked": false,
                     "checkbox": true
                 },
                 {
@@ -710,7 +647,17 @@
                             "checked": false
                         },
                         {
-                            "text": "拿走",
+                            "text": "吞下去",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "花掉",
+                            "level": "word2vec",
+                            "checked": false
+                        },
+                        {
+                            "text": "吞下",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -720,7 +667,7 @@
                             "checked": false
                         },
                         {
-                            "text": "吞下去",
+                            "text": "拿走",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -735,22 +682,12 @@
                             "checked": false
                         },
                         {
-                            "text": "丟掉了",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
                             "text": "用不到",
                             "level": "word2vec",
                             "checked": false
                         },
                         {
-                            "text": "花掉",
-                            "level": "word2vec",
-                            "checked": false
-                        },
-                        {
-                            "text": "吞下",
+                            "text": "丟掉了",
                             "level": "word2vec",
                             "checked": false
                         },
@@ -766,15 +703,9 @@
                 }
             ]
         },
-        "會把書用壞": {
-            "id": "a3ce00bc-c9ea-46f5-9551-2a90ec5bead6",
+        "把書用壞": {
+            "id": "0606a4f0-7b3b-4e97-bad5-396e9aa9f7eb",
             "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "ACTION_lightVerb",
                     "text": "把",
@@ -784,7 +715,7 @@
                 {
                     "pos": "ENTITY_noun",
                     "text": "書",
-                    "checked": true,
+                    "checked": false,
                     "checkbox": true
                 },
                 {

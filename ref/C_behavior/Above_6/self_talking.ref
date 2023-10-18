@@ -5,19 +5,56 @@
         "atk": "v265",
         "intent": "1.0"
     },
-    "user_defined": {},
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
+        ]
+    },
     "utterance": {
-        "對": {
-            "id": "365f632d-55ee-4a9a-ba90-bcdaf3d9338e",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不常": {
             "id": "2fce68a8-2856-4d52-89d4-94857e0ad930",
             "argument": [
@@ -35,25 +72,8 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
-                }
-            ]
-        },
-        "沒錯": {
-            "id": "6a694e83-cfbc-4ba9-897b-aa9ee8cab9ab",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "錯",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },
@@ -303,15 +323,9 @@
                 }
             ]
         },
-        "會一直重覆": {
-            "id": "d6505327-9dda-48fc-b7de-352d4efbd526",
+        "一直重覆": {
+            "id": "a23eff86-6ac2-410d-877f-2ceeca58cf5a",
             "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
                 {
                     "pos": "TIME_justtime",
                     "text": "一直",

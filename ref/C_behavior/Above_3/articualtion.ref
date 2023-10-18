@@ -5,47 +5,56 @@
         "atk": "v265",
         "intent": "1.0"
     },
-    "user_defined": {},
+    "user_defined": {
+        "_ANoun": [
+            "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
+        ]
+    },
     "utterance": {
-        "對": {
-            "id": "2fde8d65-e1ed-4600-83bd-508a104ebefa",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "對",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "是": {
-            "id": "dacfecba-806c-402b-b1f3-7c9207a82bce",
-            "argument": [
-                {
-                    "pos": "AUX",
-                    "text": "是",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "沒錯": {
-            "id": "66c0c915-1285-40f9-9560-94253d302251",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "錯",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "不太會": {
             "id": "86dff0a5-02ff-4860-8b50-8f157604ae07",
             "argument": [
@@ -76,23 +85,6 @@
                     "pos": "TIME_justtime",
                     "text": "有時候",
                     "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "a4108c6f-c1e6-48fd-990f-bc1135c7621a",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": true,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
                     "checkbox": false
                 }
             ]

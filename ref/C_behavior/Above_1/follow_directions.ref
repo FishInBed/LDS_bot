@@ -8,20 +8,53 @@
     "user_defined": {
         "_ANoun": [
             "別人"
+        ],
+        "genetic": [
+            "智能不足",
+            "發展遲緩",
+            "精神疾病",
+            "聽損",
+            "自閉",
+            "自閉症",
+            "視覺障礙",
+            "視障"
+        ],
+        "month_age": [
+            "個月"
+        ],
+        "congenital": [
+            "中樞神經感染",
+            "先天性心臟病",
+            "唇腭裂",
+            "唇裂",
+            "唇顎裂",
+            "唐氏症",
+            "小兒症",
+            "小胖威利症",
+            "小腦症",
+            "水腦症",
+            "甲狀腺功能低下",
+            "癩癎",
+            "聽損",
+            "脊柱裂",
+            "腦出血",
+            "腦瘤",
+            "腦部感染",
+            "腦部缺氧性病變",
+            "腭裂",
+            "顎裂"
+        ],
+        "child_school": [
+            "幼兒園",
+            "幼稚園",
+            "托兒所",
+            "托嬰中心"
+        ],
+        "see_condition": [
+            "要看"
         ]
     },
     "utterance": {
-        "不行": {
-            "id": "fde2d85a-cb76-418b-8d6d-8efed0b3d853",
-            "argument": [
-                {
-                    "pos": "MODIFIER",
-                    "text": "不行",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "常常": {
             "id": "c43672ae-3e98-431a-ac05-0892df31e449",
             "argument": [
@@ -39,7 +72,7 @@
                 {
                     "pos": "DegreeP",
                     "text": "很少",
-                    "checked": false,
+                    "checked": true,
                     "checkbox": true
                 }
             ]
@@ -154,23 +187,6 @@
                 {
                     "pos": "ENTITY_noun",
                     "text": "人",
-                    "checked": false,
-                    "checkbox": true
-                }
-            ]
-        },
-        "沒辦法": {
-            "id": "f6f44f26-0e08-4f5c-9ec8-618030604570",
-            "argument": [
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "ENTITY_nouny",
-                    "text": "辦法",
                     "checked": false,
                     "checkbox": true
                 }
@@ -362,23 +378,6 @@
                     "text": "心情",
                     "checked": true,
                     "checkbox": true
-                }
-            ]
-        },
-        "都可以": {
-            "id": "6974d01a-b751-4c05-b357-670d6286226b",
-            "argument": [
-                {
-                    "pos": "QUANTIFIER",
-                    "text": "都",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
                 }
             ]
         },
@@ -574,46 +573,6 @@
                 }
             ]
         },
-        "好像不會": {
-            "id": "f495ad41-70fb-4b40-8bef-9a72f2f5d244",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "不",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "好像沒有": {
-            "id": "a67d404a-27ae-4454-95f9-f99a625696d1",
-            "argument": [
-                {
-                    "pos": "DegreeP",
-                    "text": "好像",
-                    "checked": false,
-                    "checkbox": true
-                },
-                {
-                    "pos": "FUNC_negation",
-                    "text": "沒有",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
         "並不會每次": {
             "id": "def22670-31e5-45f3-aca3-aa01e64e0a31",
             "argument": [
@@ -638,29 +597,6 @@
                 {
                     "pos": "ENTITY_DetPhrase",
                     "text": "每次",
-                    "checked": false,
-                    "checkbox": false
-                }
-            ]
-        },
-        "可以但不多": {
-            "id": "c030178e-6d43-4a13-af2f-c871e33b7c13",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "可以",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "MODIFIER",
-                    "text": "不多",
                     "checked": false,
                     "checkbox": false
                 }

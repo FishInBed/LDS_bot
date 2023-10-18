@@ -486,29 +486,6 @@
                 }
             ]
         },
-        "會但不常": {
-            "id": "d99ff5fc-7be8-4798-afe9-f6ffd80d4575",
-            "argument": [
-                {
-                    "pos": "MODAL",
-                    "text": "會",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "FUNC_inter",
-                    "text": "但",
-                    "checked": false,
-                    "checkbox": false
-                },
-                {
-                    "pos": "TIME_justtime",
-                    "text": "不常",
-                    "checked": true,
-                    "checkbox": false
-                }
-            ]
-        },
         "只看過一兩次": {
             "id": "7f63af0d-6a60-4102-87de-ee2930d52988",
             "argument": [
