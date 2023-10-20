@@ -52,19 +52,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？"
+                resultDICT["q7"] = False
+            else:
                 resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？"
                 resultDICT["q7"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？"
-            resultDICT["q7"] = False
         else:
             # write your code here
             pass
@@ -91,14 +84,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？"
-            resultDICT["q7"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
@@ -114,7 +99,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "跳來跳去": 
+    if utterance == "跳來跳去":
         if CHATBOT_MODE:
             resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子說話時，每十句會出現至少兩句的口吃、不流暢的情形嗎？"
             resultDICT["q7"] = False

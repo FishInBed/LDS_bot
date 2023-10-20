@@ -52,43 +52,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+                resultDICT["q9"] = False
+            else:
                 resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
                 resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[不行]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[你][我]不分":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = False
+            if "很少" in inputSTR:
+                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+                resultDICT["q9"] = False
+            else:
+                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
+                resultDICT["q9"] = True
         else:
             # write your code here
             pass
@@ -116,26 +97,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "很少": #去reply裡面抓引導用問題
-        if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-                resultDICT["q9"] = True
-            elif "少" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
     if utterance == "搞不[清楚]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
         if CHATBOT_MODE:
             resultDICT["response"] = "那在平常時，孩子總是會說一些自己想說的話，或重覆說出同樣的句子嗎？"
             resultDICT["q9"] = False

@@ -52,43 +52,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
+                resultDICT["q11"] = False
+            else:
                 resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
                 resultDICT["q11"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = True
         else:
             # write your code here
             pass
@@ -103,22 +72,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "算有哦":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...當您或其他人與孩子互動時，孩子常會出現答非所問的情形嗎？"
-            resultDICT["q11"] = True
         else:
             # write your code here
             pass

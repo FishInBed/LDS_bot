@@ -53,28 +53,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
             resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[應該]有超過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[數字]混淆":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
             resultDICT["q1"] = False
         else:
             # write your code here
             pass
 
-    if utterance == "不到[7個]":
+    if utterance == "[數字]混淆":
         if CHATBOT_MODE:
             resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
             resultDICT["q1"] = False
@@ -93,14 +77,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
             resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像[可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那另外想了解的是...孩子說話時的發音不清楚，只有同住的家人才聽得懂嗎？"
-            resultDICT["q1"] = True
         else:
             # write your code here
             pass

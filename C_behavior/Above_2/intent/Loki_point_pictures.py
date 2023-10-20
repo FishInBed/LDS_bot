@@ -57,38 +57,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[小孩]沒興趣": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
@@ -101,17 +69,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             if "不常" in inputSTR:
                 resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
                 resultDICT["q8"] = False
-            elif "常常" in inputSTR:
+            else:
                 resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
                 resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = True
         else:
             # write your code here
             pass
@@ -126,14 +86,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "這樣呀...當您與孩子一起看書時，他是否已經懂得一些看書的規則呀？例如：他會一頁頁翻書或會用手去指圖片？"
-            resultDICT["q8"] = False
         else:
             # write your code here
             pass

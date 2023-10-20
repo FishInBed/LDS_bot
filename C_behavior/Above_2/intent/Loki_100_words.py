@@ -59,19 +59,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
+                resultDICT["q2"] = False
+            else:
                 resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
                 resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
         else:
             # write your code here
             pass
@@ -87,78 +80,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[只]聽過[一兩][次]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[可以]但不愛說":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[可以]但沒那麼多":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]沒有":
-        if CHATBOT_MODE:
-            rresultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[應該]有超過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不到[100個]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛講":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
         else:
             # write your code here
             pass
@@ -179,23 +100,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "不太[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不太行":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "不說話":
+    if utterance == "不到[100個]":
         if CHATBOT_MODE:
             resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
             resultDICT["q2"] = False
@@ -211,31 +116,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒聽過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "沒聽過[小孩]說話":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
         if CHATBOT_MODE:
             resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
             resultDICT["q2"] = False
@@ -246,22 +127,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "火星語": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "算有哦":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "還不[會]說話":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...孩子能不能在日常生活中，連結兩個語詞來表達需求呀？例如：說出類似「媽媽抱抱」、「媽媽喝」？"
-            resultDICT["q2"] = False
         else:
             # write your code here
             pass

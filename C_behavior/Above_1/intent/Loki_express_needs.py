@@ -57,14 +57,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[不多]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
@@ -72,46 +64,26 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]沒有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[常常]":
+    if utterance == "[常常]": 
         if CHATBOT_MODE:
             if "不常" in inputSTR:
                 resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
                 resultDICT["q1"] = False
-            elif "常常" in inputSTR:
+            else:
                 resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
                 resultDICT["q1"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[會]但[不多]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = True
+            if "很少" in inputSTR:
+                resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
+                resultDICT["q1"] = False
+            else:
+                resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
+                resultDICT["q1"] = True
         else:
             # write your code here
             pass
@@ -141,26 +113,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
             resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很少":
-        if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-                resultDICT["q1"] = True
-            elif "少" in inputSTR:
-                resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-                resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很少見":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那...在沒有任何提示下，您的孩子能不能聽懂日常生活中常見的指令並完成動作呢？例如：拿去丟掉、鞋鞋收起來、拿給媽媽？"
-            resultDICT["q1"] = False
         else:
             # write your code here
             pass

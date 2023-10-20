@@ -52,65 +52,24 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
+                resultDICT["q9"] = False
+            else:
                 resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
                 resultDICT["q9"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[不行]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]沒有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]把[書]丟掉": #去reply裡面抓引導用問題
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]把[書]用壞": #去reply裡面抓引導用問題
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = True
+            if "很少" in inputSTR:
+                resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
+                resultDICT["q9"] = False
+            else:
+                resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
+                resultDICT["q9"] = True
         else:
             # write your code here
             pass
@@ -129,13 +88,16 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "很少":
+    if utterance == "把書丟掉": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-                resultDICT["q9"] = True
-            elif "少" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            # write your code here
+            pass
+
+    if utterance == "把書用壞": #去reply裡面抓引導用問題
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
@@ -143,14 +105,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "撕[書]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "接著想了解一下...您的孩子會不會說出部分語詞同時加上肢體動作來表達需求呢？例如：手指桌上的餅乾並說出「要」？"
-            resultDICT["q9"] = False
         else:
             # write your code here
             pass

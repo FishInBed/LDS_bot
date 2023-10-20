@@ -57,26 +57,18 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[只]看過[一兩][次]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "[小孩][很]喜歡跟[人]玩":
         if CHATBOT_MODE:
             resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
             resultDICT["q4"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[小孩]不喜歡[別人]碰[他]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -86,25 +78,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             if "不常" in inputSTR:
                 resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
                 resultDICT["q4"] = False
-            elif "常常" in inputSTR:
+            else:
                 resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
                 resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不多]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = True
         else:
             # write your code here
             pass
@@ -154,25 +130,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "小孩不喜歡[別人]碰[他]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "沒[什麼]反應": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問一下在日常生活中，孩子會重覆不斷做出固定的動作嗎？例如：重覆玩手、一直轉圈圈、以固定的單一方式玩玩具？"
-            resultDICT["q4"] = False
         else:
             # write your code here
             pass

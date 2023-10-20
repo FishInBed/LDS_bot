@@ -50,90 +50,85 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
     if utterance == "[小孩][很]喜歡跟[人]玩":
         if CHATBOT_MODE:
             resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = True
+            resultDICT["q5"] = False
         else:
-            pass
-    # NOTE: 害羞跟怕生的判斷是不一樣的，這是正常的嗎？
-    if utterance == "[小孩][很]害羞":
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
+            # write your code here
             pass
 
-    if utterance == "[小孩]不喜歡[別人]碰[他]":
+    if utterance == "[小孩][很]害羞": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
-    if utterance == "[小孩]不太理人":
+    if utterance == "[小孩]不喜歡[別人]碰[他]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-    
-    #NOTE
+
+    if utterance == "[小孩]不太理人": #去reply裡面抓引導用問題
+        if CHATBOT_MODE:
+            resultDICT["response"] = getResponse(utterance, args)
+        else:
+            # write your code here
+            pass
+
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            if "常常" in inputSTR:
-                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-                resultDICT["q5"] = True
-            elif "不常" in inputSTR:
+            if "不常" in inputSTR:
                 resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
                 resultDICT["q5"] = False
+            else:
+                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
+                resultDICT["q5"] = True
         else:
+            # write your code here
             pass
-    #NOTE
+
     if utterance == "[很少]":
         if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
-                resultDICT["q4"] = True
-            elif "少" in inputSTR:
-                resultDICT["response"] = "這樣呀...那對於熟悉的家人與陌生的人，孩子看到不認識的人會不會有害羞或害怕的反應呢？"
-                resultDICT["q4"] = False
+            if "很少" in inputSTR:
+                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
+                resultDICT["q5"] = False
+            else:
+                resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
+                resultDICT["q5"] = True
         else:
+            # write your code here
             pass
 
-    if utterance == "不[一定]":
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
-    if utterance == "不太[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = False
-        else:
-            pass
-
-    if utterance == "分不出來":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "那如果孩子手上或眼前的物品或玩具掉落，他會不會左顧右盼地去尋找呢？"
-            resultDICT["q5"] = False
-        else:
-            pass
-
-    if utterance == "沒[什麼]反應":
+    if utterance == "沒[什麼]反應": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
-    if utterance == "看[心情]":
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
     return resultDICT

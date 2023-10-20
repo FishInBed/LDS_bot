@@ -50,72 +50,63 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
-            pass
-    #NOTE
-    if utterance == "[只]看過[一兩][次]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
-            resultDICT["q13"] = True
-        else:
+            # write your code here
             pass
 
-    if utterance == "[小孩]不太理人":
+    if utterance == "[小孩]不太理人": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-    #NOTE
+
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            if "常常" in inputSTR:
-                resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
-                resultDICT["q13"] = True
-            elif "不常" in inputSTR:
+            if "不常" in inputSTR:
                 resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
                 resultDICT["q13"] = False
+            else:
+                resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
+                resultDICT["q13"] = True
         else:
+            # write your code here
             pass
-    #NOTE
+
     if utterance == "[很少]":
         if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
-                resultDICT["q13"] = True
-            elif "少" in inputSTR:
+            if "很少" in inputSTR:
                 resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
                 resultDICT["q13"] = False
+            else:
+                resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
+                resultDICT["q13"] = True
         else:
+            # write your code here
             pass
-    
-    # NOTE 如果這個要回傳的跟「會」一樣，那是不是根本不需要
-    # NOTE 會但不常回傳True，跟很少回傳False的差異是什麼
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
-            resultDICT["q13"] = True
-        else:
-            pass
-
-    if utterance == "不[一定]":
+        
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-
-    if utterance == "不太[會]":
+        
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-
-    if utterance == "不理[人]":
+        
+    if utterance == "不理[人]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
     if utterance == "並不[會]每次":
@@ -123,18 +114,21 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "謝謝您協助我們了解孩子目前的語言互動表現，接下來我們會根據收集到的內容提供您相關的建議哦～"
             resultDICT["q13"] = True
         else:
+            # write your code here
             pass
 
-    if utterance == "沒[什麼]反應":
+    if utterance == "沒[什麼]反應": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-
-    if utterance == "看[心情]":
+        
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
     return resultDICT

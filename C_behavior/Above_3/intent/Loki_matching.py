@@ -62,25 +62,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             if "不常" in inputSTR:
                 resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
                 resultDICT["q8"] = False
-            elif "常常" in inputSTR:
+            else:
                 resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
                 resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
-            resultDICT["q8"] = True
         else:
             # write your code here
             pass
@@ -95,22 +79,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "不太行": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "分不出來":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "目前我們已經完成大部分的問題了...接下來剩幾個而已唷～請問，您的孩子在說話時，是不是已經可以正確使用代名詞(例如：我、你、他)了呢？"
-            resultDICT["q8"] = False
         else:
             # write your code here
             pass

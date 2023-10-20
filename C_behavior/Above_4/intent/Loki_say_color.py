@@ -50,65 +50,10 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
             resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True            
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[可以]但不愛講":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[應該]有超過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛說":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]搞錯[顏色]": #去reply裡面抓引導用問題
-        if CHATBOT_MODE:
-            resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]說但發音不[清楚]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
+            resultDICT["q8"] = False
         else:
             # write your code here
             pass
@@ -117,14 +62,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         if CHATBOT_MODE:
             resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
             resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
         else:
             # write your code here
             pass
@@ -143,39 +80,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "好像[可以]":
+    if utterance == "搞錯顏色": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = False
+            resultDICT["response"] = getResponse(utterance, args)
         else:
             # write your code here
             pass
 
     if utterance == "沒聽過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
-            resultDICT["q8"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "還不太[會]":
         if CHATBOT_MODE:
             resultDICT["response"] = "最後一個想問的問題是...平常的時候，孩子會像錄音機一樣一直重覆同樣的話嗎？"
             resultDICT["q8"] = False

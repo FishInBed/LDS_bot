@@ -57,14 +57,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "[只][會]出個聲音":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
@@ -84,50 +76,31 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "[只]聽過[一兩][次]":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[可以]但沒那麼多[種]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
+            resultDICT["q6"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
+                resultDICT["q6"] = False
+            else:
                 resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
                 resultDICT["q6"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[會]但[不多]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
+            if "很少" in inputSTR:
+                resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
+                resultDICT["q6"] = False
+            else:
+                resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
+                resultDICT["q6"] = True
         else:
             # write your code here
             pass
@@ -185,33 +158,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "好像不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像沒有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很少":
-        if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-                resultDICT["q6"] = True
-            elif "少" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
     if utterance == "有說但聽不懂":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
@@ -227,34 +173,18 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒有":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "沒聽過":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
+            resultDICT["q6"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "沒那麼多[種]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
             resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒聽過[小孩]說話":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
         else:
             # write your code here
             pass
@@ -274,26 +204,10 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "算有哦":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
     if utterance == "講不[完整]":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
             resultDICT["q6"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "還不[會]說話":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...對了，當您和孩子互動時，孩子一般都不看您的示範或不聽大人的說明嗎？"
-            resultDICT["q6"] = False
         else:
             # write your code here
             pass

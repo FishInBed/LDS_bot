@@ -50,50 +50,10 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "[偶爾]":
         if CHATBOT_MODE:
             resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[只][會]幾[個]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不多]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但[不常]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛講":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
+            resultDICT["q4"] = False
         else:
             # write your code here
             pass
@@ -127,41 +87,9 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "好像[可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "搞不[清楚]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒聽過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另外，想請問您的孩子在團體中，常常是一個人玩，很少和同學一起互動嗎？"
-            resultDICT["q4"] = False
         else:
             # write your code here
             pass

@@ -50,81 +50,80 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-    #NOTE
     if utterance == "[不多]":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
-            resultDICT["q9"] = True
+            resultDICT["q9"] = False
         else:
+            # write your code here
             pass
 
-    if utterance == "[不太]確定":
+    if utterance == "[不太]確定": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
-    #NOTE
+
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            if "常常" in inputSTR:
-                resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
-                resultDICT["q9"] = True
-            elif "不常" in inputSTR:
+            if "不常" in inputSTR:
                 resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
                 resultDICT["q9"] = False
+            else:
+                resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
+                resultDICT["q9"] = True
         else:
+            # write your code here
             pass
-    #NOTE
+
     if utterance == "[很多]":
         if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
-                resultDICT["q9"] = True
-            elif "少" in inputSTR:
+            if "很少" in inputSTR:
                 resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
                 resultDICT["q9"] = False
+            else:
+                resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
+                resultDICT["q9"] = True
         else:
+            # write your code here
             pass
-    
-    #NOTE 如果下面這兩句都是true，那跟會就一樣了，是不是這兩個utterance可以不用
-    if utterance == "[會]但[聲音][都]很像":
+
+    if utterance == "[聲音][都]很像": 
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
             resultDICT["q9"] = True
         else:
+            # write your code here
             pass
-    
-    if utterance == "[會]但[聲音]沒[什麼]變化":
+
+    if utterance == "[聲音]沒[什麼]變化":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
             resultDICT["q9"] = True
         else:
+            # write your code here
             pass
 
-    if utterance == "不[一定]":
+    if utterance == "不[一定]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
-    if utterance == "不太[會]":
+    if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
-            pass
-    
-    #NOTE 如果上面那句是繼續引導，為什麼下面這句不用
-    if utterance == "不太[會]而且[聲音]很少":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "了解...哦，對了...那當您跟孩子玩遊戲(如：手指遊戲或躲貓貓)時，孩子會不會一起玩並被逗笑呢？"
-            resultDICT["q9"] = True
-        else:
+            # write your code here
             pass
 
-    if utterance == "看[心情]":
+    if utterance == "看[心情]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
         else:
+            # write your code here
             pass
 
     return resultDICT

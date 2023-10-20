@@ -88,18 +88,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "沒[問題]":
-        if CHATBOT_MODE:
-            if "問題" in inputSTR:
-                resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
-                resultDICT["q9"] = True
-            elif "辦法" in inputSTR:
-                resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"
-                resultDICT["q9"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "跳來跳去":
         if CHATBOT_MODE:
             resultDICT["response"] = "對了，關於語詞關係的部分...請問您的孩子能不能理解並說出至少三組相對的語詞呢？例如：哥哥是男生，姊姊是…；夏天很熱，冬天…？"

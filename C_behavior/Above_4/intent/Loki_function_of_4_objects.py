@@ -52,19 +52,12 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
+                resultDICT["q3"] = False
+            else:
                 resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
                 resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
         else:
             # write your code here
             pass
@@ -77,50 +70,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "[可以]但[不多]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[可以]但沒那麼多[種]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不到[4個]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛說":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛講":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = True
+            if "很少" in inputSTR:
+                resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
+                resultDICT["q3"] = False
+            else:
+                resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
+                resultDICT["q3"] = True
         else:
             # write your code here
             pass
@@ -139,60 +96,17 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "好像[可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "好像不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很少":
-        if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-                resultDICT["q3"] = True
-            elif "少" in inputSTR:  #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "有而且超過[四個]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒聽過":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒辦法":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
-            resultDICT["q3"] = False
-        else:
-            # write your code here
-            pass
-
     if utterance == "要看是什麼樣的[東西]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
+        else:
+            # write your code here
+            pass
+
+    if utterance == "超過[四個]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "哦...是哦...那您的孩子可以理解並正確回應含有方位詞的句子嗎？例如：指出在樹下的小鳥？"
+            resultDICT["q3"] = True
         else:
             # write your code here
             pass

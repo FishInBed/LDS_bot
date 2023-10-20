@@ -52,78 +52,36 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
     if utterance == "[不常][這樣]":
         if CHATBOT_MODE:
-            if "不" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "很" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+                resultDICT["q1"] = False
+            else:
                 resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
                 resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[不行]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = False
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[好像]不[會]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = False
         else:
             # write your code here
             pass
 
     if utterance == "[常常]":
         if CHATBOT_MODE:
-            if "不常" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
-            elif "常常" in inputSTR:
+            if "不常" in inputSTR:
+                resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+                resultDICT["q1"] = False
+            else:
                 resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
                 resultDICT["q1"] = True
         else:
             # write your code here
             pass
 
-    if utterance == "[會]但[不常]":
+    if utterance == "[很少]":
         if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛說":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[會]但不愛講":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "[都][可以]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-            resultDICT["q1"] = True
+            if "很少" in inputSTR:
+                resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+                resultDICT["q1"] = False
+            else:
+                resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+                resultDICT["q1"] = True
         else:
             # write your code here
             pass
@@ -142,13 +100,18 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             # write your code here
             pass
 
-    if utterance == "很少":
+    if utterance == "不愛說":
         if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
-                resultDICT["q1"] = True
-            elif "少" in inputSTR: #去reply裡面抓引導用問題
-                resultDICT["response"] = getResponse(utterance, args)
+            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+            resultDICT["q1"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "不愛講":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "好的...那...孩子說話時會口齒不清，只有主要照顧者或親近的家人才能聽得懂嗎？"
+            resultDICT["q1"] = False
         else:
             # write your code here
             pass

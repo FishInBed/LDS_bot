@@ -55,7 +55,19 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             if "不常" in inputSTR:
                 resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
                 resultDICT["q8"] = True
-            elif "常常" in inputSTR:
+            else:
+                resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
+                resultDICT["q8"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "[很少]":
+        if CHATBOT_MODE:
+            if "很少" in inputSTR:
+                resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
+                resultDICT["q8"] = True
+            else:
                 resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
                 resultDICT["q8"] = False
         else:
@@ -65,26 +77,6 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "不太[會]": #去reply裡面抓引導用問題
         if CHATBOT_MODE:
             resultDICT["response"] = getResponse(utterance, args)
-        else:
-            # write your code here
-            pass
-
-    if utterance == "很少":
-        if CHATBOT_MODE:
-            if "多" in inputSTR:
-                resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
-                resultDICT["q8"] = False
-            elif "少" in inputSTR:
-                resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
-                resultDICT["q8"] = True
-        else:
-            # write your code here
-            pass
-
-    if utterance == "沒[錯]":
-        if CHATBOT_MODE:
-            resultDICT["response"] = "另一個也是關於數數的問題...在沒有任何的提示或幫忙之下，孩子可不可以從一點數到十三呢？"
-            resultDICT["q8"] = False
         else:
             # write your code here
             pass

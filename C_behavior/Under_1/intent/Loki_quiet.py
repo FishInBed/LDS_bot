@@ -50,12 +50,12 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
-
     if utterance == "[一般][都]很安靜":
         if CHATBOT_MODE:
             resultDICT["response"] = "了解...那如果孩子正在做某個動作，突然聽到大人說「不可以」時，孩子會不會停下來或短暫停止當下的動作呢？"
             resultDICT["q11"] = False
         else:
+            # write your code here
             pass
 
     if utterance == "[不太]有聲音":
@@ -63,6 +63,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那如果孩子正在做某個動作，突然聽到大人說「不可以」時，孩子會不會停下來或短暫停止當下的動作呢？"
             resultDICT["q11"] = False
         else:
+            # write your code here
             pass
 
     if utterance == "[他][都]很吵":
@@ -70,6 +71,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
             resultDICT["response"] = "了解...那如果孩子正在做某個動作，突然聽到大人說「不可以」時，孩子會不會停下來或短暫停止當下的動作呢？"
             resultDICT["q11"] = True
         else:
+            # write your code here
             pass
 
     return resultDICT
