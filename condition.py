@@ -275,11 +275,22 @@ def condition_control(dicts, context, msgSTR):
         amount = meta_data[context]["amount"]
         waiting_question = get_key_from_value(data["behavior"], "None")
         waiting_question.sort(key=order_rule)
-        
+        # DEBUG
+        print("檢查點 1:")
+        print(context,"\n",waiting_question[0], "\n", question_tags[context][waiting_question[0]])
+        # DEBUG
         # 偵測 intent
+        # DEBUG
+        print("檢查點 2:")
+        try:
+            resultDICT
+            print(resultDICT)
+        except NameError:
+            print("乾淨溜溜 🌟")
+        # DEBUG
         resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
-        print("內部測試: ",  resultDICT)
-        if "yes_no" in resultDICT.keys() and waiting_question[0] not in resultDICT:
+        print("檢查點 3: ",  resultDICT)
+        if "yes_no" in resultDICT.keys() and "response" not in resultDICT.keys():
             if waiting_question[0] not in reverse_list[context]:
                 resultDICT[waiting_question[0]] = resultDICT["yes_no"]
                 resultDICT.pop("yes_no")
@@ -291,7 +302,7 @@ def condition_control(dicts, context, msgSTR):
                     resultDICT[waiting_question[0]] = [True]
                     resultDICT.pop("yes_no")
 
-        elif "yes_no" in resultDICT.keys() and waiting_question[0] in resultDICT:
+        elif "yes_no" in resultDICT.keys() and "response" in resultDICT.keys():
             resultDICT.pop("yes_no")
         
         print(waiting_question)
@@ -320,41 +331,5 @@ def condition_control(dicts, context, msgSTR):
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
             data["behavior"]["response"] = give_advice(data["background"]["age"], data)
-
+    resultDICT.clear()
     return data[cont]
-
-if __name__ == "__main__":
-    dicts = {'a': True,
- 'b': True,
- 'background': {'a': True,
-                'age': 14,
-                'congenital_disease': False,
-                'genetic_disease': False,
-                'response': '好的，接下來想針對孩子的生活環境跟 您做一些確認。\n不知道孩子是不是已經上托嬰中心或幼兒園了呢?',   
-                'ten_month': True,
-                'weight': False},
- 'behavior': {'q1': True,
-              'q10': 'None',
-              'q11': 'None',
-              'q12': 'None',
-              'q13': 'None',
-              'q2': True,
-              'q3': True,
-              'q4': False,
-              'q5': 'None',
-              'q6': 'None',
-              'q7': 'None',
-              'q8': 'None',
-              'q9': 'None',
- 'c': False,
- 'environment': {'3c': False,
-                 'b': True,
-                 'response': '好的。關於孩子的一些基本資訊都蒐集完畢，接著要針對他平常的行為表現作 更深入的了解囉。\n'
-                             '孩子會不會用手勢或動作來表達自己的喜好呢？例如：點頭表是「要」或「好 」、搖頭表示「不要」、手指指物、把東西推開？',
-                 'school': True},
- 'latestQuest': '',
- 'response': []}} #弄個測試用的回傳字典
-    context = "above1"
-    msgSTR = "不會"
-    resultDICT = condition_control(dicts, context, msgSTR)
-    print(resultDICT)
