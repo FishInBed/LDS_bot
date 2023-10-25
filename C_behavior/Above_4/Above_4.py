@@ -42,6 +42,7 @@
         }
 """
 
+from copy import deepcopy
 from requests import post
 from requests import codes
 import json
@@ -193,7 +194,7 @@ class LokiResult():
         return rst
 
 def runLoki(inputLIST, filterLIST=[], refDICT={}):
-    resultDICT = refDICT
+    resultDICT = deepcopy(refDICT)
     lokiRst = LokiResult(inputLIST, filterLIST)
     if lokiRst.getStatus():
         for index, key in enumerate(inputLIST):
@@ -271,7 +272,7 @@ def execLoki(content, filterLIST=[], splitLIST=[], refDICT={}):
         resultDICT = execLoki("今天天氣如何？後天氣象如何？", splitLIST=splitLIST) # output => ["今天天氣", "後天氣象"]
         resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"])                # output => ["今天天氣", "後天氣象"]
     """
-    resultDICT = refDICT
+    resultDICT = deepcopy(refDICT)
     if resultDICT is None:
         resultDICT = {}
 

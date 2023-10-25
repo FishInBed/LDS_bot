@@ -275,19 +275,8 @@ def condition_control(dicts, context, msgSTR):
         amount = meta_data[context]["amount"]
         waiting_question = get_key_from_value(data["behavior"], "None")
         waiting_question.sort(key=order_rule)
-        # DEBUG
-        print("檢查點 1:")
-        print(context,"\n",waiting_question[0], "\n", question_tags[context][waiting_question[0]])
-        # DEBUG
+        
         # 偵測 intent
-        # DEBUG
-        print("檢查點 2:")
-        try:
-            resultDICT
-            print(resultDICT)
-        except NameError:
-            print("乾淨溜溜 🌟")
-        # DEBUG
         resultDICT = operateLoki(context, msgSTR, ["yes_no", question_tags[context][waiting_question[0]]])
         print("檢查點 3: ",  resultDICT)
         if "yes_no" in resultDICT.keys() and "response" not in resultDICT.keys():
@@ -331,5 +320,5 @@ def condition_control(dicts, context, msgSTR):
         # 判斷對話是否結束，如果結束就給建議
         if "c" in data["behavior"].keys() and data["behavior"]["c"] == True:
             data["behavior"]["response"] = give_advice(data["background"]["age"], data)
-    resultDICT.clear()
+    # resultDICT.clear()
     return data[cont]
