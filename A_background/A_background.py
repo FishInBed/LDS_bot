@@ -330,13 +330,15 @@ if __name__ == "__main__":
     # testIntent()
 
     # 測試其它句子
-    filterLIST = ["weight"]
+    filterLIST = ["age"]
     splitLIST = ["！", "，", "。", "？", "!", ",", "\n", "；", "\u3000", ";"]
     # 設定參考資料
     refDICT = {
         #"key": []
     }
     # resultDICT = execLoki("今天天氣如何？後天氣象如何？", filterLIST=filterLIST, refDICT=refDICT)                      # output => {"key": ["今天天氣"]}
-    resultDICT = execLoki("3000公克", filterLIST=filterLIST, splitLIST=splitLIST) # output => {"key": ["今天天氣", "後天氣象"]}
+    resultDICT = execLoki("3歲", filterLIST=filterLIST, splitLIST=splitLIST) # output => {"key": ["今天天氣", "後天氣象"]}
+    print("第一次執行：\n",resultDICT)
     # resultDICT = execLoki(["今天天氣如何？", "後天氣象如何？"], filterLIST=filterLIST, refDICT=refDICT)                # output => {"key": ["今天天氣", "後天氣象"]}
-    print(resultDICT)
+    resultDICT = execLoki("3歲", filterLIST=filterLIST, splitLIST=splitLIST) # output => {"key": ["今天天氣", "後天氣象"]}
+    print("第二次執行：\n",resultDICT)
