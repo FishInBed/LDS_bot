@@ -50,9 +50,23 @@ def getResponse(utterance, args):
 
 def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     debugInfo(inputSTR, utterance)
+    if utterance == "不可以":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = False
+        else:
+            # write your code here
+            pass
+
     if utterance == "不是":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "可以":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
@@ -66,7 +80,7 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "對":
         if CHATBOT_MODE:
-            if "不對" in inputSTR or "不行" in inputSTR:
+            if "不" in inputSTR:
                 resultDICT["yes_no"] = False
             else:
                 resultDICT["yes_no"] = True
@@ -76,7 +90,10 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
 
     if utterance == "對啊":
         if CHATBOT_MODE:
-            resultDICT["yes_no"] = True
+            if "不" in inputSTR:
+                resultDICT["yes_no"] = False
+            else:
+                resultDICT["yes_no"] = True
         else:
             # write your code here
             pass
@@ -98,6 +115,20 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
     if utterance == "沒有":
         if CHATBOT_MODE:
             resultDICT["yes_no"] = False
+        else:
+            # write your code here
+            pass
+    
+    if utterance == "沒問題":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = True
+        else:
+            # write your code here
+            pass
+    
+    if utterance == "沒錯":
+        if CHATBOT_MODE:
+            resultDICT["yes_no"] = True
         else:
             # write your code here
             pass

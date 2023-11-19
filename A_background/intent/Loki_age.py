@@ -60,6 +60,14 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             # write your code here
             pass
+    
+    if utterance == "[1]歲[半]":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "{}歲{}啊。\n那麼孩子出生時是否足月呢？".format(args[0], args[1])
+            resultDICT["age"] = articut.parse(args[0], level="lv3")["number"][args[0]]*12+6
+        else:
+            # write your code here
+            pass
 
     if utterance == "[1]歲[2]個月":
         if CHATBOT_MODE:

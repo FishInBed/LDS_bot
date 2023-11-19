@@ -81,5 +81,77 @@ def getResult(inputSTR, utterance, args, resultDICT, refDICT):
         else:
             # write your code here
             pass
+    
+    if utterance == "不是":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = False
+        else:
+            # write your code here
+            pass
+    
+    if utterance == "否":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "對":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "對啊":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "是":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "有":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = True
+        else:
+            # write your code here
+            pass
+
+    if utterance == "沒有":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = False
+        else:
+            # write your code here
+            pass
+
+    if utterance == "沒有足月生":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = False
+        else:
+            # write your code here
+            pass
+    
+    if utterance == "是足月生":
+        if CHATBOT_MODE:
+            resultDICT["response"] = "了解了解，再跟您確認一下孩子出生時的體重是多少呢？"
+            resultDICT["ten_month"] = True
+        else:
+            # write your code here
+            pass
 
     return resultDICT
