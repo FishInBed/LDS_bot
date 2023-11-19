@@ -49,6 +49,50 @@
         ]
     },
     "utterance": {
+        "否": {
+            "id": "f1c2c716-22c0-42ce-9b41-b43c250ca360",
+            "pos": "<ENTITY_oov>否</ENTITY_oov>",
+            "lexy": [],
+            "pattern": "<(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>否</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
+        "對": {
+            "id": "f97da4f5-dc91-4ee1-ae63-5cf13f361654",
+            "pos": "<MODIFIER>對</MODIFIER>",
+            "lexy": [],
+            "pattern": "<(MODIFIER|ModifierP)>[^<]+</(MODIFIER|ModifierP)>"
+        },
+        "是": {
+            "id": "d8d52ccd-a481-4d00-b41a-452789dac573",
+            "pos": "<AUX>是</AUX>",
+            "lexy": [],
+            "pattern": "<AUX>[^<]+</AUX>"
+        },
+        "有": {
+            "id": "b60e0ac3-73c5-4300-8602-151c5a3e5ac9",
+            "pos": "<ACTION_verb>有</ACTION_verb>",
+            "lexy": [
+                "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(有|具有|兼有|存有|帶有|懷有|持有|擁有|有了|有著|保留)</(ACTION_verb|VerbP)>"
+            ],
+            "pattern": "<(ACTION_verb|VerbP)>有</(ACTION_verb|VerbP)>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
+        },
+        "不是": {
+            "id": "cca71963-75ad-459b-9192-6348435dc377",
+            "pos": "<FUNC_negation>不</FUNC_negation><AUX>是</AUX>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation><AUX>[^<]+</AUX>"
+        },
+        "對啊": {
+            "id": "a9fc10fc-547c-42c0-9855-91287257655f",
+            "pos": "<FUNC_inner>對</FUNC_inner><CLAUSE_particle>啊</CLAUSE_particle>",
+            "lexy": [],
+            "pattern": "<FUNC_in(ner|ter)>[^<]+</FUNC_in(ner|ter)><CLAUSE_particle>[^<]+</CLAUSE_particle>"
+        },
+        "沒有": {
+            "id": "24192563-9ace-4058-83f4-e9285329e4b1",
+            "pos": "<FUNC_negation>沒有</FUNC_negation>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation>(<CLAUSE_particle>[^<]+</CLAUSE_particle>)?"
+        },
         "是足月": {
             "id": "1117a540-7d88-45ad-9d6d-a319bfee9c19",
             "pos": "<AUX>是</AUX><ACTION_verb>足月</ACTION_verb>",
@@ -74,6 +118,12 @@
             ],
             "pattern": "<FUNC_negation>[^<]+</FUNC_negation>(<AUX>[^<]+</AUX>)?<(ACTION_verb|VerbP)>早產</(ACTION_verb|VerbP)>"
         },
+        "是足月生": {
+            "id": "a056ad5f-e15d-4ac6-a216-197ff679b1a5",
+            "pos": "<AUX>是</AUX><ENTITY_nouny>足月生</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<AUX>[^<]+</AUX><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>足月生</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
+        },
         "沒有足月": {
             "id": "56c13a0f-5d23-4274-b8ac-805b4a444c70",
             "pos": "<FUNC_negation>沒有</FUNC_negation><ACTION_verb>足月</ACTION_verb>",
@@ -81,6 +131,12 @@
                 "(?<!</FUNC_negation>)<(ACTION_verb|VerbP)>(足月|早產|分娩|死胎|剖腹|懷胎|懷過|夭折|過動|死產|斷奶)</(ACTION_verb|VerbP)>"
             ],
             "pattern": "<FUNC_negation>[^<]+</FUNC_negation>(<AUX>[^<]+</AUX>)?<(ACTION_verb|VerbP)>足月</(ACTION_verb|VerbP)>"
+        },
+        "沒有足月生": {
+            "id": "425fc375-c5c9-4ebc-bab8-51444209bd6e",
+            "pos": "<FUNC_negation>沒有</FUNC_negation><ENTITY_nouny>足月生</ENTITY_nouny>",
+            "lexy": [],
+            "pattern": "<FUNC_negation>[^<]+</FUNC_negation><(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>足月生</(UserDefined|ENTITY_(nounHead|nouny|noun|oov))>"
         }
     },
     "alias": {},
