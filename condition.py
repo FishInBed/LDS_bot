@@ -88,7 +88,7 @@ def give_advice(age, final_data):
         elif accpetance <= 5:
             if target_age >= 6 and target_age < 11:
                 result = "您可以再觀察四至六個月，若孩子的語言表現無明顯變化則建議您或照顧者可帶孩子至醫療院所接受完整評估。"
-            elif target_age > 11:
+            else:
                 result = "您可以再觀察兩到三個月，若孩子的語言表現無明顯變化則建議您或照顧者可帶孩子至醫療院所接受完整評估。"
         else:
             result = "目前孩子正處理語言發展的準備前期，建議您可以多跟孩子互動，並持續觀察孩子與您的互動表現，待孩子大一點，如：十個月大或近一歲時，若還不能發出一些不同的聲音時，再到醫療院所進行語言篩檢。"
@@ -306,7 +306,6 @@ def condition_control(dicts, context, msgSTR):
                 data["behavior"][key] = resultDICT[key][-1]
 
         if len(get_key_from_value(data["behavior"], "None")) == 13-amount:
-            data["behavior"]["response"] = give_advice(data["background"]["age"], data)
             data["behavior"]["c"] = True
         else:
             if "response" not in resultDICT.keys():
